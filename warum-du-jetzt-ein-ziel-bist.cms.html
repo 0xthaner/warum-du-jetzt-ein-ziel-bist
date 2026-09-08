@@ -3,13 +3,14 @@
      Oekonomie des Vertrauens. Reiner Inhaltsblock zum Einfuegen in ein CMS.
      Alle Styles liegen unter der Wrapper-Klasse .essay und koennen nichts
      ausserhalb dieses Blocks ueberschreiben.
-     Die beiden Font-Links koennen entfallen oder in den Theme-Head wandern;
-     ohne sie greift der System-Fallback der Schriftliste.
+     Der Font-Block laedt Satoshi von assecura.xyz - kein Google, kein Fontshare.
+     Er kann entfallen oder in den Theme-Head wandern; ohne ihn greift der
+     System-Fallback der Schriftliste.
      ============================================================ -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap">
+<style>
+@font-face{font-family:'Satoshi';src:url('https://assecura.xyz/fonts/Satoshi-Variable.woff2') format('woff2');font-weight:300 900;font-style:normal;font-display:swap}
+@font-face{font-family:'Satoshi';src:url('https://assecura.xyz/fonts/Satoshi-VariableItalic.woff2') format('woff2');font-weight:300 900;font-style:italic;font-display:swap}
+</style>
 <style>
 
 .essay {
@@ -31,7 +32,7 @@
   --teil-grund: #262a60;
   --spalte: 41rem;
   --breit: 52rem;
-  --schrift: "Satoshi", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+  --schrift: "Satoshi", -apple-system, BlinkMacSystemFont, "Segoe UI",
              system-ui, sans-serif;
 
   background: var(--grund);
