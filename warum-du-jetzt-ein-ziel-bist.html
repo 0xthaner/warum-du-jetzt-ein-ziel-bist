@@ -258,6 +258,168 @@ body { margin: 0; background: #050506; }
 .essay .stufe-text { font-size: 15px; color: var(--text-hell); }
 .essay .th-sub { font-weight: 400; color: var(--text-meta); font-size: 14px; margin-top: 3px; }
 
+/* ------------------------------------------------------------- Bewegung */
+
+/*
+	DIE SCHAUBILDER BAUEN SICH AUF, STATT DAZUSTEHEN.
+
+	Neun schematische Zeichnungen hintereinander sind still. Ein wenig
+	Bewegung macht sie nicht huebscher, sondern lesbarer: die Kostenkurve
+	FAELLT, die Pfade LAUFEN irgendwohin, die Balken WACHSEN. Was die
+	Zeichnung behauptet, vollzieht sie beim Erscheinen einmal nach.
+
+	SIE HAENGT AM SCROLLEN, NICHT AN EINER UHR. `animation-timeline: view()`
+	rechnet der Browser selbst - kein Skript, kein Ereignis pro Bild, nichts,
+	was auf einem Telefon Rechenzeit kostet. Es laeuft einmal beim Eintreten
+	und dann nie wieder.
+
+	UND SIE IST ABSCHALTBAR. Wer im Betriebssystem weniger Bewegung
+	eingestellt hat, bekommt gar keine - die Zeichnungen stehen dann sofort
+	fertig da. Dasselbe gilt in jedem Browser ohne Zeitachse: die Regeln
+	stehen im `@supports`, ausserhalb ist der Ruhezustand der fertige
+	Zustand. Eine Zeichnung, die ohne Animation unsichtbar bliebe, waere
+	ein Fehler, kein Effekt.
+*/
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+
+    /* Die Abbildung als Ganzes hebt sich beim Eintreten kurz an. */
+    .essay figure {
+      animation: abb-auftauchen linear both;
+      animation-timeline: view();
+      animation-range: entry 5% entry 62%;
+    }
+    @keyframes abb-auftauchen {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /*
+      Die Linien zeichnen sich. `stroke-dasharray` ist grosszuegig gewaehlt:
+      sie muss laenger sein als der laengste Pfad, sonst entstuende ein
+      Muster statt einer durchgehenden Linie. Gefuellte Flaechen ohne Kontur
+      beruehrt das nicht.
+    */
+    .essay .diagramm path[stroke]:not([stroke-dasharray]),
+    .essay .diagramm line:not([stroke-dasharray]),
+    .essay .diagramm polyline:not([stroke-dasharray]) {
+      stroke-dasharray: 2400;
+      stroke-dashoffset: 2400;
+      animation: abb-zeichnen linear both;
+      animation-timeline: view();
+      animation-range: entry 10% entry 78%;
+    }
+    @keyframes abb-zeichnen {
+      to { stroke-dashoffset: 0; }
+    }
+
+    /*
+      Beschriftungen, Punkte und Flaechen kommen NACH den Linien: erst der
+      Verlauf, dann was er bedeutet.
+
+      GESTRICHELTE LINIEN WERDEN NICHT GEZEICHNET, SONDERN EINGEBLENDET.
+      Ihr Strichmuster steht als `stroke-dasharray` im SVG und traegt dort
+      eine Bedeutung - die Schwelle in Abb. 1 ist gestrichelt, WEIL sie
+      keine gemessene Groesse ist. Die Zeichenanimation braucht dieselbe
+      Eigenschaft und haette das Muster ueberschrieben: aus der Schwelle
+      waere eine durchgezogene Linie geworden und damit eine andere
+      Aussage. Sie blenden deshalb ein.
+    */
+    .essay .diagramm text,
+    .essay .diagramm circle,
+    .essay .diagramm [stroke-dasharray],
+    .essay .diagramm path:not([stroke]) {
+      animation: abb-einblenden linear both;
+      animation-timeline: view();
+      animation-range: entry 42% entry 88%;
+    }
+    @keyframes abb-einblenden {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    /* ---------------------------------------------- Die einzelnen Bilder */
+
+    /*
+      Jede dieser Bewegungen gehoert zu IHRER Zeichnung. Eine Waage wiegt
+      sich, Balken fahren hoch, bestaetigte Wege fliessen - was das Bild
+      behauptet, tut es auch. Eine allgemeine Animation ueber alle neun
+      haette nur alle gleich zappeln lassen.
+    */
+
+    /* ABB. 2.1 - die Waage wiegt sich um ihre Ruhelage.
+       Gedreht wird der Balken, nicht das Bild: seine Gruppe traegt die
+       Drehung schon als Attribut, die Animation setzt dieselbe Achse fort. */
+    .essay .abb-2-1 .diagramm > g > g {
+      transform-box: view-box;
+      transform-origin: 335px 150px;
+      animation: abb-waage 8s ease-in-out infinite;
+    }
+    @keyframes abb-waage {
+      0%, 100% { transform: rotate(6.4deg); }
+      50%      { transform: rotate(9.6deg); }
+    }
+
+    /* ABB. 3 - die bestaetigten Wege fliessen.
+       Ihr Strichmuster ist 4 auf 4, eine Periode also 8 Einheiten: genau um
+       diesen Betrag wandert der Versatz, damit die Schleife nicht springt. */
+    .essay .abb-3 .diagramm [stroke-dasharray] {
+      animation: abb-fliessen 1.9s linear infinite;
+    }
+    @keyframes abb-fliessen {
+      to { stroke-dashoffset: -8; }
+    }
+
+    /* ABB. 5 und ABB. 8 - die Balken fahren hoch und bleiben stehen.
+       Sie wachsen aus ihrer eigenen linken Kante, deshalb `fill-box`. */
+    .essay .abb-5 .diagramm rect,
+    .essay .abb-8 .diagramm rect {
+      transform-box: fill-box;
+      transform-origin: left center;
+      animation: abb-balken cubic-bezier(0.22, 1, 0.36, 1) both;
+      animation-timeline: view();
+      animation-range: entry 16% entry 62%;
+    }
+    @keyframes abb-balken {
+      from { transform: scaleX(0.015); }
+      to   { transform: scaleX(1); }
+    }
+    /* Nacheinander statt alle auf einmal - so liest man die Reihenfolge. */
+    .essay .abb-5 .diagramm rect:nth-of-type(1) { animation-range: entry 16% entry 50%; }
+    .essay .abb-5 .diagramm rect:nth-of-type(2) { animation-range: entry 19% entry 53%; }
+    .essay .abb-5 .diagramm rect:nth-of-type(3) { animation-range: entry 22% entry 56%; }
+    .essay .abb-5 .diagramm rect:nth-of-type(4) { animation-range: entry 25% entry 59%; }
+    .essay .abb-5 .diagramm rect:nth-of-type(5) { animation-range: entry 28% entry 62%; }
+    .essay .abb-5 .diagramm rect:nth-of-type(6) { animation-range: entry 31% entry 65%; }
+    .essay .abb-5 .diagramm rect:nth-of-type(7) { animation-range: entry 34% entry 68%; }
+    .essay .abb-5 .diagramm rect:nth-of-type(8) { animation-range: entry 37% entry 71%; }
+    .essay .abb-5 .diagramm rect:nth-of-type(9) { animation-range: entry 40% entry 74%; }
+    .essay .abb-5 .diagramm rect:nth-of-type(10) { animation-range: entry 43% entry 77%; }
+    .essay .abb-5 .diagramm rect:nth-of-type(11) { animation-range: entry 46% entry 80%; }
+    .essay .abb-5 .diagramm rect:nth-of-type(12) { animation-range: entry 49% entry 83%; }
+    .essay .abb-8 .diagramm rect:nth-of-type(1) { animation-range: entry 16% entry 50%; }
+    .essay .abb-8 .diagramm rect:nth-of-type(2) { animation-range: entry 21% entry 55%; }
+    .essay .abb-8 .diagramm rect:nth-of-type(3) { animation-range: entry 26% entry 60%; }
+    .essay .abb-8 .diagramm rect:nth-of-type(4) { animation-range: entry 31% entry 65%; }
+    .essay .abb-8 .diagramm rect:nth-of-type(5) { animation-range: entry 36% entry 70%; }
+    .essay .abb-8 .diagramm rect:nth-of-type(6) { animation-range: entry 41% entry 75%; }
+    .essay .abb-8 .diagramm rect:nth-of-type(7) { animation-range: entry 46% entry 80%; }
+
+    /* ABB. 1 - der Punkt an der Schwelle schlaegt ruhig.
+       Er markiert die Stelle, an der die Kurve den erwarteten Nutzen kreuzt;
+       das ist die Aussage des Bildes und darf sich melden. */
+    .essay .abb-1 .diagramm circle {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: abb-schwelle 3.6s ease-in-out infinite;
+    }
+    @keyframes abb-schwelle {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50%      { transform: scale(1.9); opacity: 0.55; }
+    }
+  }
+}
+
 /* Spaltenraster: alles zentriert auf Lesebreite, Abbildungen duerfen breiter */
 .essay .kopf > *,
 .essay .toc > *,
@@ -381,7 +543,7 @@ body { margin: 0; background: #050506; }
 <h3>Erwarteter Nutzen ist nicht immer der Kontostand</h3>
 <p>Damit ist der Begriff aber zu eng gefasst. Mit dem „Wert" eines Ziels ist keine finanzielle oder persönliche Bewertung eines Menschen gemeint, sondern der erwartete Nutzen, den ein Angreifer mit einem erfolgreichen Angriff verbindet. Geld auf einem Konto ist davon nur der offensichtlichste Teil - und kann selbstverständlich selbst das eigentliche Ziel sein.</p>
 <span class="anker" id="kap-1-b"></span>
-<figure>
+<figure class="abb-1">
 <div class="fig-kopf">
 <figcaption>ABB. 1 · UNVERÄNDERTE TECHNIK, ANDERE RECHNUNG</figcaption>
 <span class="fig-tag">SCHEMATISCH</span>
@@ -468,7 +630,7 @@ body { margin: 0; background: #050506; }
 <span class="anker" id="kap-2-b"></span>
 <p>Die folgende Übersicht fasst die kontonahen Zugangspfade zusammen: die reguläre Anmeldung, die Wiederherstellung, den delegierten Zugriff angebundener Dienste, eine bestehende Sitzung, einen mitberechtigten Zugang und den Zugriff des Anbieters über Support und Verwaltung. Nicht jeder Dienst hat die gleichen Berechtigungen und die diversen Berechtigungen sind unterschiedlich stark gesichert.Daneben gibt es Systeme und Dienstleister, auf die ein Anbieter oder eine Privatperson selbst angewiesen sein kann. Sie gewähren zwar nicht unmittelbar Zugang zu einem Konto, können dessen Sicherheit aber dennoch beeinflussen, wenn über bestehende Prozesse, Schnittstellen oder Vertrauensbeziehungen manipulierte Daten, Software oder andere schädliche Inhalte in die eigene Umgebung gelangen. <span><b><br>Supply-Chain-/Trust-Path-Risiko</b></span></p>
 
-<figure>
+<figure class="abb-2">
 <div class="fig-kopf">
 <figcaption>ABB. 2 · MEHRERE ZUGANGSPFADE</figcaption>
 <span class="fig-tag">SCHEMATISCH</span>
@@ -515,7 +677,7 @@ body { margin: 0; background: #050506; }
 
 </figure>
 <span class="anker" id="kap-2-c"></span>
-<figure>
+<figure class="abb-2-1">
 <div class="fig-kopf">
 <figcaption>ABB. 2.1 · DAS GEWICHT DER ÜBRIGEN PFADE</figcaption>
 <span class="fig-tag">SCHEMATISCH</span>
@@ -686,7 +848,7 @@ body { margin: 0; background: #050506; }
 <p>Damit entstehen zwei Fragen, die die ursprüngliche Prüfung nicht mehr beantwortet: Stammt das Ergebnis tatsächlich aus der Quelle, auf die es sich beruft? Und ist es seither unverändert geblieben? Wer nur den Inhalt prüft, übernimmt möglicherweise nicht die Sicherheit der ursprünglichen Prüfung, sondern nur deren Darstellung.</p>
 <p>Worauf vertraut das nächste System also tatsächlich - auf die ursprüngliche Prüfung oder auf das Ergebnis, das ihm vorgelegt wird? Die Sicherheitsbarriere bei der ursprünglichen Prüfung kann stark bleiben. Schwächer werden kann der Weg, auf dem ihr Ergebnis weitergegeben und erneut verwendet wird. Je häufiger geprüfte Angaben Systeme wechseln, desto wichtiger wird deshalb, ob Herkunft und Unverändertheit noch überprüfbar sind.</p>
 
-<figure>
+<figure class="abb-3">
 <div class="fig-kopf">
 <figcaption>ABB. 3 · WAS EIN ZWISCHENZIEL BEITRÄGT</figcaption>
 <span class="fig-tag">SCHEMATISCH</span>
@@ -750,7 +912,7 @@ body { margin: 0; background: #050506; }
 <p>Im hier betrachteten Modell besteht ein gezielter Angriff deshalb häufig darin, mehrere schwache und starke Identitätsmerkmale zu kombinieren und herauszufinden, welcher Dienst unter welchen Umständen einen Ausnahmeprozess zulässt.</p>
 <p>Damit ist auch gesagt, was dieser Text nicht behauptet: nicht, dass ein SIM-Swap trivial wäre. Nicht, dass Mailadresse und Telefonnummer automatisch alle anderen Konten öffnen. Nicht, dass starke Authentifikatoren durch generative KI wertlos werden. Und nicht, dass menschliche Sicherheitsprüfungen verschwinden. Damit ist beschrieben, wo ein gezielter Angriff ansetzen kann und warum ein einzelner erfolgreicher Schritt das Endziel noch nicht automatisch öffnet. Offen bleibt, warum der Aufwand für Vorbereitung und weitere Schritte sinken kann.</p>
 <span class="anker" id="kap-5-c"></span>
-<figure>
+<figure class="abb-4">
 <div class="fig-kopf">
 <figcaption>ABB. 4 · KOSTEN DES NÄCHSTEN SCHRITTS</figcaption>
 <span class="fig-tag">SCHEMATISCH</span>
@@ -842,7 +1004,7 @@ body { margin: 0; background: #050506; }
 <span class="anker" id="kap-7-b"></span>
 <p>Die eigentliche Frage lautet dann: Wie teuer ist es, genügend Informationen, genügend Versuche und genügend menschliche Teilhandlungen zusammenzubringen, bis ein nutzbarer Pfad gefunden wird? Für bestimmte Teile und bestimmte Angriffsformen sinkt dieser Stückpreis je Versuch. Damit ist die Verbilligung digitaler Vorbereitung beschrieben. Doch nicht jeder relevante Schritt lässt sich automatisieren. Wo menschliche Arbeit notwendig bleibt, stellt sich die nächste Frage: Lässt auch sie sich günstiger organisieren?</p>
 
-<figure>
+<figure class="abb-5">
 <div class="fig-kopf">
 <figcaption>ABB. 5 · KOSTENPOSTEN, FRÜHER UND HEUTE</figcaption>
 <span class="fig-tag">SCHEMATISCH</span>
@@ -895,7 +1057,7 @@ body { margin: 0; background: #050506; }
 <p>Für die Frage der Delegation heißt das: Anwesenheit und einfache lokale Aufgaben bleiben delegierbar, echte Legitimation bleibt deutlich schwieriger, und die strategische Koordination bleibt ohnehin beim Koordinator. Weil jede dieser kleinen Aufgaben für sich unauffällig wirkt, muss der lokale Akteur nicht wissen, woran er mitwirkt.</p>
 <p>Nicht delegierbar bleibt außerdem die Aufgabe, zu entscheiden, was als Nächstes kommt und wie die Teilergebnisse zusammengehören. Sie bleibt beim Koordinator, und ein Koordinator kann sehr weit weg sein.</p>
 
-<figure>
+<figure class="abb-5-1">
 <div class="fig-kopf">
 <figcaption>ABB. 5.1 · EIN ECHTES LEGITIMATIONSMITTEL?</figcaption>
 <span class="fig-tag">ILLUSTRATION</span>
@@ -909,7 +1071,7 @@ body { margin: 0; background: #050506; }
 </figure>
 <span class="anker" id="kap-8-c"></span>
 <p>Die Matrix trennt zwei Dinge, die oft vermischt werden: wie digital eine Teilaufgabe ist und wie stark sie an eine bestimmte Person gebunden bleibt.</p>
-<figure>
+<figure class="abb-6">
 <div class="fig-kopf">
 <figcaption>ABB. 6 · WO DELEGATION TEURER WIRD</figcaption>
 <span class="fig-tag">SCHEMATISCH</span>
@@ -973,7 +1135,7 @@ body { margin: 0; background: #050506; }
 <p>Keine einzelne Komponente muss außergewöhnlich leistungsfähig sein. Die Leistung entsteht durch Orchestrierung, also durch das Zusammenführen der Teilergebnisse an einer Stelle: Viele einfache Teile ergeben zusammen etwas Komplexes.</p>
 <p>Europol beschreibt, dass kriminelle Prozesse zunehmend online organisiert werden, von Rekrutierung und Kommunikation bis zu Zahlungen, und dass kriminelle Netzwerke als Stellvertreter für hybride Bedrohungsakteure auftreten können. Die Lageeinschätzung IOCTA 2026 hält zudem fest, dass generative KI zur Personalisierung von Social Engineering eingesetzt wird und dass Automatisierung Reichweite und Tempo von Betrugsschemata erhöht.</p>
 
-<figure>
+<figure class="abb-6-1">
 <div class="fig-kopf">
 <figcaption>ABB. 6.1 · ZAHLUNG OHNE BEKANNTSCHAFT</figcaption>
 <span class="fig-tag">ILLUSTRATION</span>
@@ -986,7 +1148,7 @@ body { margin: 0; background: #050506; }
 </div>
 </figure>
 <span class="anker" id="kap-9-c"></span>
-<figure>
+<figure class="abb-7">
 <div class="fig-kopf">
 <figcaption>ABB. 7 · WER WIE VIEL SIEHT</figcaption>
 <span class="fig-tag">SCHEMATISCH</span>
@@ -1092,7 +1254,7 @@ body { margin: 0; background: #050506; }
 <p>Dagegen wirken drei verschiedene Dinge, die oft in einen Topf geworfen werden. Erstens gebundene Authentifikatoren: gerätegebundene kryptografische Schlüssel, Hardware-Authentifikatoren und vergleichbare starke Authentisierungsmittel. Sie belegen die Kontrolle über ein Authentisierungsmittel, nicht für sich allein die Identität einer Person. Zweitens Identitätsnachweise, also signierte Bestätigungen: behördlich oder institutionell signierte Nachweise, bestätigte Attribute und andere verifizierbare Credentials. Sie bestätigen eine Identität oder bestimmte Eigenschaften aufgrund einer vorgelagerten Prüfung. Drittens Prozesskontrollen: mehrere voneinander unabhängige Faktoren, eine Wiederherstellung, die eine physische Handlung verlangt, Wartezeiten bei kritischen Änderungen, Bestätigungen über einen zweiten unabhängigen Kanal, eine unabhängige menschliche Entscheidung. Sie erschweren oder verzögern den Vorgang selbst.</p>
 <p>Alle drei erhöhen den Aufwand, aber auf unterschiedliche Weise - und keines davon ist perfekt. Das ist das eigentliche Maß der Abwehr: Sie muss den Stückpreis des Angriffs erhöhen, nicht ihn unmöglich machen. Damit wird Vertrauen allerdings nicht abgeschafft, sondern verlagert: auf Stellen, die solche Nachweise ausstellen und bestätigen.</p>
 
-<figure>
+<figure class="abb-8">
 <div class="fig-kopf">
 <figcaption>ABB. 8 · ALLEINIGE BEWEISKRAFT: MERKMALE, AUTHENTIFIKATOREN, IDENTITÄTSNACHWEISE</figcaption>
 <span class="fig-tag">SCHEMATISCH</span>
