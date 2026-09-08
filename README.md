@@ -28,17 +28,26 @@ keine empirischen Zahlenwerte.
 
 ## Der Aufbau
 
+Vier Teile mit **vierzehn Kapiteln**, dazu Schluss und Quellenanhang:
+
 | Teil | Kapitel |
 |---|---|
-| Erster Teil · Die Rechnung | 01 |
-| Zweiter Teil · Wo ein Angriff ansetzen kann | 02 – 05 |
-| Dritter Teil · Warum der Angriff billiger wird | 06 – 10 |
-| Vierter Teil · Wenn Vertrauen zur Infrastruktur wird | 11 – 14 |
-| | Schluss und Quellenanhang |
+| Erster Teil · Die Rechnung | Kapitel 1 |
+| Zweiter Teil · Wo ein Angriff ansetzen kann | Kapitel 2 bis 5 |
+| Dritter Teil · Warum der Angriff billiger wird | Kapitel 6 bis 10 |
+| Vierter Teil · Wenn Vertrauen zur Infrastruktur wird | Kapitel 11 bis 14 |
+| — | Schluss: Drei Mechanismen, eine Rechnung |
+| — | Anhang: Quellen und Belege |
 
-Vierzehn Kapitel, elf Diagramme als Inline-SVG, zwei Illustrationen, dreizehn
-Tabellen und ein Quellenanhang mit Verweisen auf NIST, ENISA, Europol, OWASP,
-RFC 9700, eIDAS und weitere.
+Die Zahlen oben sind **Kapitelnummern, keine Seitenzahlen**. Die ursprüngliche
+A4-Fassung umfasst 51 Seiten; die Webfassung kennt keine Seiten mehr, sondern
+läuft als eine durchgehende Seite.
+
+Dazu elf Diagramme als Inline-SVG, zwei Illustrationen, dreizehn Tabellen und
+ein Quellenanhang mit Verweisen auf NIST SP 800-63A-4 und 800-63B-4, ENISA,
+Europol, NATO, OWASP LLM01 und LLM06, RFC 9700 / BCP 240, UK NCSC und eIDAS.
+
+Umfang: rund 70.900 Zeichen Fließtext, etwa 45 Minuten Lesezeit.
 
 ## Die Dateien
 
