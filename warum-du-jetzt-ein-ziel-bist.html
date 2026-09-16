@@ -746,6 +746,31 @@ body { margin: 0; background: #050506; }
 <p>Hinzu kommt, dass ein Postfachzugriff nicht nur ein Zugang ist, sondern eine Materialquelle. Ein Postfach verrät, bei welchen Anbietern jemand Kunde ist, wie er schreibt, wen er kennt, welche Rechnungen offen sind und wann er antwortet. Recherche und Vorbereitung bilden bei gezielten Angriffen einen wesentlichen Kostenblock - in einem Postfach liegt dieser Teil bereits fertig sortiert. Ein Zugriff, der als Komfortfunktion beginnt, liefert die Vorarbeit für alles Weitere.</p>
 <p>Daraus folgt nicht die Empfehlung, nichts mehr anzubinden. Es folgt, dass eine erteilte Berechtigung dieselbe Aufmerksamkeit verdient wie ein Passwort: befristet, überprüfbar, widerrufbar. Nach einem Vorfall gehören deshalb nicht nur das Passwort, sondern auch bestehende Sitzungen und verbundene Anwendungen auf den Prüfstand.</p>
 
+<h3>Die bestehende Sitzung</h3>
+<p>Nach einer erfolgreichen Anmeldung muss ein System nicht bei jedem Klick erneut prüfen, wer da handelt. Es hält den angemeldeten Zustand fest - über ein Artefakt, das den bereits geführten Nachweis vertritt. Genau darin liegt seine Bedeutung für die Rechnung eines Angreifers: Wer ein gültiges Sitzungsartefakt besitzt, muss den Nachweis nicht mehr erbringen, den es vertritt.</p>
+<aside class="box">
+<div class="stufe-nr">KURZ ERKLÄRT</div>
+<div class="box-text"><b>Sitzung</b>&nbsp;- der angemeldete Zustand zwischen Anmeldung und Abmeldung. <br><br><b>Sitzungsartefakt</b>&nbsp;- der technische Beleg dieses Zustands, meist ein Wert im Browser oder in einer Anwendung. <br><br><b>Vereinfachtes Bild</b>&nbsp;- am Eingang wird der Ausweis geprüft, danach genügt das Einlassband. Das Band ist nicht der Ausweis. Es belegt nur, dass die Prüfung stattgefunden hat. Als Abbild der Technik ist dieser Vergleich ungenau; er zeigt lediglich, warum ein Beleg und ein Nachweis nicht dasselbe sind.</div>
+</aside>
+<p>Damit teilt die Sitzung dieselben vier Eigenschaften, die den delegierten Zugriff zu einem eigenen Pfad machen.</p>
+<table class="tab">
+<tbody>
+<tr><th scope="row" style="width:26%">Sie läuft an der Anmeldung vorbei</th><td>Sie entsteht nach der Anmeldung und vertritt sie anschließend. Solange sie gilt, wird der Nachweis nicht erneut verlangt.</td></tr>
+<tr><th scope="row">Sie kann das Passwort überdauern</th><td>Ob ein Passwortwechsel bestehende Sitzungen beendet, hängt vom System ab. Manche beenden sie ausdrücklich, andere nicht.</td></tr>
+<tr><th scope="row">Sie ist weniger sichtbar</th><td>Ein delegierter Zugriff steht wenigstens auf einer Einstellungsseite. Offene Sitzungen führt nicht jedes System als Liste, und wo es sie gibt, wird sie selten geöffnet.</td></tr>
+<tr><th scope="row">Sie ist als Information kopierbar</th><td>Ein Sitzungsartefakt ist in vielen Systemen eine Zeichenfolge. Wo es zusätzlich an das Gerät gebunden ist, gilt das nur eingeschränkt.</td></tr>
+</tbody>
+</table>
+<aside class="box">
+<div class="box-label">QUELLE</div>
+<div class="box-text">OWASP, Session Management Cheat Sheet: Sitzungskennungen sind schutzbedürftig wie Anmeldedaten. NIST SP 800-63B-4 behandelt die Sitzungsverwaltung als eigenen Abschnitt und sieht für sensible Vorgänge eine erneute Authentifizierung vor.</div>
+</aside>
+<p>Ob daraus ein nutzbarer Zugriff entsteht, hängt vom einzelnen System ab. Viele binden eine Sitzung zusätzlich an Merkmale der Umgebung, begrenzen ihre Laufzeit oder verlangen vor sensiblen Schritten eine erneute Anmeldung. Der Pfad ist deshalb kein Generalschlüssel, und starke Anmeldeverfahren werden durch ihn nicht wertlos. Er verschiebt nur, an welcher Stelle der Aufwand anfällt: nicht mehr an der Anmeldung, sondern an dem, was nach ihr bestehen bleibt.</p>
+<aside class="box">
+<div class="box-label">DER EINFACHE TEST</div>
+<div class="box-text">Wer nach einem Verdachtsfall nur das Passwort ändert, schließt neben den verbundenen Diensten möglicherweise auch die bestehenden Sitzungen nicht. Die Frage lautet, ob das System eine Abmeldung auf allen Geräten kennt - und ob sie ausgelöst wurde.</div>
+</aside>
+<p>Die Sitzung steht damit neben der Wiederherstellung und dem delegierten Zugriff als dritter Weg, der an der Anmeldung vorbeiführt. Sie ist nicht der letzte.</p>
 <h3>Die übrigen kontonahen Pfade</h3>
 <p>Der angebundene Dienst ist nicht der letzte Pfad neben der Anmeldung. Drei weitere gehören in dasselbe Modell, weil sie dieselbe Eigenschaft teilen: Sie können Zugriff auf den geschützten Bereich verschaffen, ohne dass der reguläre Zugang überwunden werden muss - mit jeweils eigener Reichweite. Getrennt davon können Abhängigkeiten entstanden sein, die kein regulärer Kontozugang ist.</p>
 <table class="tab">
@@ -979,6 +1004,21 @@ body { margin: 0; background: #050506; }
 </aside>
 <p>Das Problem war nicht, dass diese Informationen unmöglich zu finden waren. Das Problem war der Aufwand. Viele kleine Informationen mussten gesucht, bewertet, miteinander verbunden und in einen konkreten Angriff übersetzt werden.</p>
 <p>Genau dieser Teil eignet sich gut für Automatisierung. KI muss keinen kryptografischen Schlüssel brechen, keinen Hardware-Sicherheitsschlüssel überwinden und keine starke Identitätsprüfung außer Kraft setzen. Es reicht bereits, wenn sie die Arbeit vor diesen Barrieren erheblich billiger macht.</p>
+<h3>Die Kennung und der Verknüpfungspunkt</h3>
+<p>Eine eindeutige Kennung ohne Namen ist nicht anonym, sondern pseudonym. Der Unterschied ist keine Wortklauberei, sondern entscheidet darüber, wo ein Angriff ansetzt. Eine Kennung trägt für sich genommen keine Person. Sie wird erst dann zu einer Angabe über einen Menschen, wenn eine einzige Stelle sie mit ihm verbindet.</p>
+<p>Diese Stelle - der Verknüpfungspunkt - ist der eigentliche Angriffspunkt, nicht die Kennung. Das Muster erklärt mehrere Dinge mit demselben Satz: eine Sitzungskennung, eine Geräte- oder Werbekennung, eine Adresse auf einer öffentlichen Kette. Alle sind für sich genommen Zeichenfolgen. Alle werden in dem Moment zu Identitätswissen, in dem eine Stelle die Zuordnung liefert.</p>
+<p>Damit fügt sich die Kennung in einen Begriff ein, den dieser Text bereits verwendet. Sie ist ein Informations-Zwischenziel in seiner reinsten Form: wertlos, solange sie nicht verknüpft ist, und wertvoll genau dann, wenn eine Stelle die Verknüpfung herstellt. Der erwartete Nutzen liegt nicht in der Kennung, sondern in der Verbindung.</p>
+<aside class="box">
+<div class="box-label">QUELLE</div>
+<div class="box-text">Meiklejohn et al., „A Fistful of Bitcoins“ (2013): Öffentlich einsehbare Transaktionen ließen sich durch Zusammenführung mit Dienstbeziehungen nachträglich Akteuren zuordnen, ohne dass sich an den Transaktionen selbst etwas geändert hätte.</div>
+</aside>
+<p>Daraus folgt eine zeitliche Eigenschaft, die in einer statischen Kostenrechnung fehlt. Der Aufwand für Recherche muss nicht zum Zeitpunkt des Angriffs anfallen. Er kann Jahre vorher entstanden sein, und er kann von jemand anderem getragen worden sein. Gespeicherte Kennungen wären in dieser Lesart eine Vorauszahlung auf künftige Angriffskosten: Sie liegen folgenlos herum, bis ein Identitätspunkt dazukommt und sie rückwirkend aussagekräftig macht.</p>
+<p>Für das Modell dieses Textes folgt daraus eine Schlussfolgerung, die über den Stückpreis hinausgeht: Die Speicherdauer einer Kennung wäre ein eigener Risikofaktor, unabhängig davon, wie gut sie zum Zeitpunkt ihrer Erhebung geschützt war. Nicht weil sich an der Kennung etwas ändert, sondern weil die Wahrscheinlichkeit steigt, dass irgendwo ein Verknüpfungspunkt entsteht.</p>
+<aside class="merksatz">
+<div class="box-label">MERKSATZ</div>
+<p class="merksatz-text">Eine Kennung ist keine Person. Sie wird zu einer, sobald eine Stelle die Zuordnung liefert - und diese Stelle kann später entstehen als die Kennung selbst. Damit stellt sich die Frage, was ein einzelner Angriffsschritt am Ende überhaupt kostet.</p>
+</aside>
+
 </section>
 
 <section class="kapitel" id="kapitel-07">
