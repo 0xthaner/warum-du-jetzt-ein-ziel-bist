@@ -498,7 +498,7 @@
 <div class="kap-kopf"><span class="kap-nr">01</span><h2>Die Rechnung</h2></div>
 <p class="lead">Ein durchschnittlicher Haushalt war nie deshalb uninteressant für einen gezielten Identitätsangriff, weil seine Identität technisch besonders gut geschützt gewesen wäre.</p>
 <p>Passwörter können zurückgesetzt werden. Telefonnummern dienen als Authentifizierungsfaktor. Mailkonten haben Wiederherstellungswege. Systeme brauchen Verfahren für Menschen, die ihr Passwort vergessen oder ihr Telefon verloren haben. Das gilt für ein gewöhnliches Privatkonto genauso wie für das Konto einer Person mit weitreichenden Rechten: Beide stehen im Wesentlichen hinter denselben Verfahren.</p>
-<p>Wenn die eine Person angegriffen wurde und die andere nicht, lag das deshalb selten an der Technik dazwischen. Es lag an der Rechnung des Angreifers. Einen bestimmten Menschen aus gesammelten Daten zu rekonstruieren, seine Konten und Beziehungen zu finden, glaubwürdig mit mehreren Stellen zu kommunizieren und mehrere Prüfungen zu überwinden, kostete Zeit.</p>
+<p>Wenn die eine Person angegriffen wurde und die andere nicht, lag das deshalb selten an der Technik. Es lag an der Rechnung des Angreifers. Einen bestimmten Menschen aus gesammelten Daten zu rekonstruieren, seine Konten und Beziehungen zu finden, glaubwürdig mit mehreren Stellen zu kommunizieren und mehrere Prüfungen zu überwinden, kostete Zeit.</p>
 <aside class="notiz">
 <div class="box-label">DIE ANNAHME DAHINTER</div>
 <p class="klein">Das steht in keinem Sicherheitskonzept: Bestimmte Formen gezielter Angriffe sind für wirtschaftlich kalkulierende Angreifer wenig attraktiv, solange der erwartete Aufwand höher ist als der erwartete Nutzen.</p>
@@ -561,7 +561,7 @@
 <div class="box-text">NIST SP 800-63B-4 behandelt Account Recovery als eigenen Sicherheitsprozess: Ein verlorener Authentifikator kann durch Recovery-Codes, bestehende Faktoren, hinterlegte Kontakte oder eine erneute Identitätsprüfung ersetzt werden.</div>
 </aside>
 <p>Damit ist die Wiederherstellung ein eigener Zugangspfad - ein Weg, über den Zugriff entstehen kann, ohne die reguläre Anmeldung. Sie ist keine Komfortfunktion am Rand, sondern sicherheitsrelevant wie der Login selbst.</p>
-<p>Damit gibt es mindestens zwei Wege in denselben Bereich, und das hat eine Folge für die Rechnung: Ein Angreifer bezahlt nicht den Durchschnitt aller Wege, sondern den günstigsten, der ihn hineinbringt. Wird die reguläre Anmeldung härter, ändert das an den übrigen Wegen nichts - aber einer von ihnen kann dadurch der günstigste werden. Gegen starke Anmeldeverfahren spricht das nicht. Es heißt nur, dass sie den Aufwand dort erhöhen, wo sie liegen, und nirgendwo sonst.</p>
+<p>Damit gibt es mindestens zwei Wege in denselben Bereich, und das hat eine Folge für die Rechnung: Ein Angreifer bezahlt nicht den Durchschnitt aller Wege, sondern den günstigsten, der ihn hineinbringt. Ein starkes Anmeldeverfahren verteuert genau einen dieser Wege, nämlich die Anmeldung selbst. An der Wiederherstellung ändert es nichts, und an den weiteren Wegen, die gleich folgen, ebenso wenig. Das ist kein Argument gegen starke Anmeldeverfahren - es heißt nur, dass nach ihrer Einführung ein anderer Weg der günstigste sein kann.</p>
 <p>Damit ist auch gesagt, wonach überhaupt zu fragen ist. Nicht: Wie stark ist das Anmeldeverfahren? Sondern: Welche Wege führen in diesen Bereich, und was kostet der günstigste davon? Es sind mehr Wege, als die meisten im Kopf haben.</p>
 <figure class="abb-2">
 <div class="fig-kopf">
@@ -788,7 +788,7 @@
 <p>Bei einem direkten Angriff fällt die Vorbereitung für jedes Ziel neu an. Bei einem gemeinsam genutzten Zwischenziel kann ein Teil dieser Arbeit einmal anfallen und danach mehrere mögliche Endziele betreffen. Genau darin liegt der Konzentrationseffekt: Ein Anbieter, der für sehr viele Nutzer Postfachzugriff hält, bündelt deren Berechtigungen - ein einziger erfolgreicher Angriff senkt dann den Stückpreis je Opfer erheblich. Das Postfach des Einzelnen wird nicht über ihn selbst angegriffen, sondern über einen Dienst, den er vor zwei Jahren einmal verbunden und danach vergessen hat.</p>
 <p>Das reinste Beispiel eines solchen Bausteins ist eine bloße Kennung.</p>
 <h3>Wann eine Kennung zur Person wird</h3>
-<p>Eine eindeutige Kennung ohne Namen ist nicht anonym, sondern pseudonym. Sie trägt für sich genommen keine Person und wird erst dann zu einer Angabe über einen Menschen, wenn eine Stelle sie mit ihm verbindet. Dieser Verknüpfungspunkt ist der eigentliche Angriffspunkt, nicht die Kennung - und das Muster erklärt Sitzungskennungen, Geräte- und Werbekennungen und Adressen auf einer öffentlichen Kette mit demselben Satz.</p>
+<p>Eine eindeutige Kennung ohne Namen ist nicht anonym, sondern pseudonym. Sie trägt für sich genommen keine Person und wird erst dann zu einer Angabe über einen Menschen, wenn eine Stelle sie mit ihm verbindet. Dieser Verknüpfungspunkt ist der eigentliche Angriffspunkt, nicht die Kennung - und das Muster erklärt Sitzungskennungen, Geräte- und Werbekennungen und Adressen in einer öffentlichen Blockchain mit demselben Satz.</p>
 <aside class="box">
 <div class="box-label">QUELLE</div>
 <div class="box-text">Meiklejohn et al., „A Fistful of Bitcoins“ (2013): Öffentlich einsehbare Transaktionen ließen sich durch Zusammenführung mit Dienstbeziehungen nachträglich Akteuren zuordnen, ohne dass sich an den Transaktionen selbst etwas geändert hätte.</div>
@@ -803,7 +803,7 @@
 <tr><th scope="row">Handlungsmöglichkeiten</th><td>Ob es Informationen nur anzeigt oder Aktionen vorbereitet und ausführt. Nicht jeder Assistent besitzt alle drei Ebenen.</td></tr>
 </tbody>
 </table>
-<p>Damit entsteht eine Kette: Der Nutzer vertraut dem Assistenten, der Assistent seinen Werkzeugen, und die Werkzeuge besitzen Berechtigungen gegenüber weiteren Systemen. Ein Sicherheitsproblem muss deshalb nicht im Sprachmodell liegen. Hinzu kommt eine zweite Vertrauensfrage, weil ein Assistent Inhalte verarbeitet, die er nicht selbst erzeugt hat: Dokumente, Mails, Webseiten. Für ein Sprachmodell können diese Daten wie eine Anweisung aussehen.</p>
+<p>Damit entsteht eine Reihe von Vertrauensbeziehungen: Der Nutzer vertraut dem Assistenten, der Assistent seinen Werkzeugen, und die Werkzeuge besitzen Berechtigungen gegenüber weiteren Systemen. Ein Sicherheitsproblem muss deshalb nicht im Sprachmodell liegen. Hinzu kommt eine zweite Vertrauensfrage, weil ein Assistent Inhalte verarbeitet, die er nicht selbst erzeugt hat: Dokumente, Mails, Webseiten. Für ein Sprachmodell können diese Daten wie eine Anweisung aussehen.</p>
 <aside class="box">
 <div class="box-label">DIE ZWEITE FRAGE</div>
 <div class="box-text">„Was darf der Assistent lesen?“ genügt nicht. Zusätzlich muss gefragt werden: „Was darf das Gelesene den Assistenten veranlassen zu tun?“</div>
