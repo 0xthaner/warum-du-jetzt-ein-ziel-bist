@@ -500,7 +500,7 @@ body { margin: 0; background: #050506; }
 <section class="kapitel" id="kapitel-01">
 <div class="kap-kopf"><span class="kap-nr">01</span><h2>Die Rechnung</h2></div>
 <p class="lead">Ein durchschnittlicher Haushalt war nie deshalb uninteressant für einen gezielten Identitätsangriff, weil seine Identität technisch besonders gut geschützt gewesen wäre.</p>
-<p>Passwörter können zurückgesetzt werden. Telefonnummern dienen als Authentifizierungsfaktor. Mailkonten haben Wiederherstellungswege. Systeme brauchen Verfahren für Menschen, die ihr Passwort vergessen oder ihr Telefon verloren haben. Das gilt für ein gewöhnliches Privatkonto genauso wie für das Konto einer Person mit weitreichenden Rechten: Beide stehen im Wesentlichen hinter denselben Verfahren.</p>
+<p>Passwörter können zurückgesetzt werden. Telefonnummern dienen als Authentifizierungsfaktor. Mailkonten haben Wiederherstellungswege. Systeme brauchen Verfahren für Menschen, die ihr Passwort vergessen oder ihr Telefon verloren haben. Das gilt für das Konto eines gewöhnlichen Privatkunden genauso wie für das Konto einer Person mit weitreichenden Rechten: Beide stehen im Wesentlichen hinter denselben Verfahren.</p>
 <p>Wenn die eine Person angegriffen wurde und die andere nicht, lag das deshalb selten an der Technik. Es lag an der Rechnung des Angreifers. Einen bestimmten Menschen aus gesammelten Daten zu rekonstruieren, seine Konten und Beziehungen zu finden, glaubwürdig mit mehreren Stellen zu kommunizieren und mehrere Prüfungen zu überwinden, kostete Zeit.</p>
 <aside class="notiz">
 <div class="box-label">DIE ANNAHME DAHINTER</div>
@@ -563,9 +563,9 @@ body { margin: 0; background: #050506; }
 <div class="box-label">QUELLE</div>
 <div class="box-text">NIST SP 800-63B-4 behandelt Account Recovery als eigenen Sicherheitsprozess: Ein verlorener Authentifikator kann durch Recovery-Codes, bestehende Faktoren, hinterlegte Kontakte oder eine erneute Identitätsprüfung ersetzt werden.</div>
 </aside>
-<p>Damit ist die Wiederherstellung ein eigener Zugangspfad - ein Weg, über den Zugriff entstehen kann, ohne die reguläre Anmeldung. Sie ist keine Komfortfunktion am Rand, sondern sicherheitsrelevant wie der Login selbst.</p>
+<p>Die Wiederherstellung ist damit ein eigener Zugangspfad - ein Weg, über den Zugriff entstehen kann, ohne die reguläre Anmeldung. Sie ist keine Komfortfunktion am Rand, sondern sicherheitsrelevant wie der Login selbst.</p>
 <p>Damit gibt es mindestens zwei Wege in denselben Bereich, und das hat eine Folge für die Rechnung: Ein Angreifer bezahlt nicht den Durchschnitt aller Wege, sondern den günstigsten, der ihn hineinbringt. Ein starkes Anmeldeverfahren verteuert genau einen dieser Wege, nämlich die Anmeldung selbst. An der Wiederherstellung ändert es nichts, und an den weiteren Wegen, die gleich folgen, ebenso wenig. Das ist kein Argument gegen starke Anmeldeverfahren - es heißt nur, dass nach ihrer Einführung ein anderer Weg der günstigste sein kann.</p>
-<p>Damit ist auch gesagt, wonach überhaupt zu fragen ist. Nicht: Wie stark ist das Anmeldeverfahren? Sondern: Welche Wege führen in diesen Bereich, und was kostet der günstigste davon? Es sind mehr Wege, als die meisten im Kopf haben.</p>
+<p>Das ändert auch, wonach überhaupt zu fragen ist. Nicht: Wie stark ist das Anmeldeverfahren? Sondern: Welche Wege führen in diesen Bereich, und was kostet der günstigste davon? Es sind mehr Wege, als die meisten im Kopf haben.</p>
 <figure class="abb-2">
 <div class="fig-kopf">
 <figcaption>ABB. 2 · MEHRERE ZUGANGSPFADE</figcaption>
@@ -640,7 +640,7 @@ body { margin: 0; background: #050506; }
 <div class="box-text">Wer nach einem Verdachtsfall nur das Passwort ändert, hat diese beiden Pfade möglicherweise nicht geschlossen. Die Liste der verbundenen Dienste bleibt bestehen, und die Frage lautet zusätzlich, ob das System eine Abmeldung auf allen Geräten kennt - und ob sie ausgelöst wurde.</div>
 </aside>
 <h3>Wie ein solcher Zugang in fremde Hände gerät</h3>
-<p>Bisher stand offen, wie jemand überhaupt an eine gültige Sitzung oder ein erteiltes Token kommt. Der verbreitetste Weg führt nicht über den Dienst, sondern über das Gerät des Nutzers. Schadsoftware, die dort läuft, kann auslesen, was Browser und Programme für den bequemen Alltag vorhalten: gespeicherte Anmeldedaten, Sitzungsartefakte, Token angebundener Dienste.</p>
+<p>Bisher stand offen, wie jemand überhaupt an eine bestehende Sitzung oder einen delegierten Zugriff kommt. Der verbreitetste Weg führt nicht über den Dienst, sondern über das Gerät des Nutzers. Schadsoftware, die dort läuft, kann auslesen, was Browser und Programme für den bequemen Alltag vorhalten: gespeicherte Anmeldedaten, Sitzungsartefakte, Token angebundener Dienste.</p>
 <p>Für die Rechnung ist daran zweierlei bemerkenswert. Erstens greift dieser Weg den Nachweis nicht an, sondern das, was nach ihm übrig bleibt. Die Anmeldung hat bereits stattgefunden, samt zweitem Faktor. Eine starke Authentifizierung wird dadurch nicht wertlos - sie ist nur nicht mehr die Stelle, an der sich entscheidet, wer Zugriff hat.</p>
 <p>Zweitens ist dieser Weg zunächst nicht gezielt. Solche Software sammelt breit, und was sie sammelt, wird gehandelt. Wer ein bestimmtes Ziel verfolgt, muss die Vorarbeit deshalb nicht selbst leisten; er kann prüfen, ob sie jemand anderes bereits geleistet hat. Der Aufwand, der in Kapitel 01 den eigentlichen Schutz ausmachte, ist dann schon bezahlt - nur von einem Dritten.</p>
 <aside class="box">
@@ -651,7 +651,7 @@ body { margin: 0; background: #050506; }
 <div class="box-label">DOKUMENTIERTE FÄLLE</div>
 <div class="box-text">Uber beschrieb nach dem Vorfall im September 2022 selbst, dass die Zugangsdaten eines externen Dienstleisters vermutlich auf einem Handelsplatz erworben wurden, nachdem dessen privates Gerät mit Schadsoftware infiziert worden war. LastPass führte den Vorfall von 2022 auf den privaten Rechner eines Mitarbeiters zurück, der über eine Schwachstelle in fremder Software angegriffen wurde.</div>
 </aside>
-<p>Auch hier gilt: Ein erbeutetes Artefakt ist kein Generalschlüssel. Systeme, die eine Sitzung an ein Gerät binden, ihre Laufzeit begrenzen oder vor kritischen Schritten erneut fragen, entwerten es teilweise. Was bleibt, ist eine Verschiebung, die den ganzen bisherigen Gedanken zuspitzt: Das eigene Gerät ist selbst ein Zugangspfad - und der einzige, der alle anderen gleichzeitig berührt.</p>
+<p>Ein erbeutetes Artefakt ist allerdings kein Generalschlüssel. Systeme, die eine Sitzung an ein Gerät binden, ihre Laufzeit begrenzen oder vor kritischen Schritten erneut fragen, entwerten es teilweise. Was bleibt, ist eine Verschiebung, die den ganzen bisherigen Gedanken zuspitzt: Das eigene Gerät ist selbst ein Zugangspfad - und der einzige, der alle anderen gleichzeitig berührt.</p>
 <p>Schwerer als der einzelne Pfad wiegt, was hinter ihm liegt. Ein Postfachzugriff ist nicht nur ein Zugang, sondern eine Materialquelle: Er verrät, bei welchen Anbietern jemand Kunde ist, wie er schreibt, wen er kennt, welche Rechnungen offen sind. Recherche und Vorbereitung bilden bei gezielten Angriffen einen wesentlichen Kostenblock - in einem Postfach liegt dieser Teil bereits sortiert. Ein Zugriff, der als Komfortfunktion beginnt, liefert die Vorarbeit für alles Weitere.</p>
 <p>Daraus folgt nicht, nichts mehr anzubinden. Es folgt, dass ein delegierter Zugriff dieselbe Aufmerksamkeit verdient wie ein Passwort: befristet, überprüfbar, widerrufbar.</p>
 <p>Über die Beschaffenheit der Wege, die dieses Kapitel aufgezählt hat, entscheidet allerdings meist nicht der Kontoinhaber, sondern der Anbieter: wie lange eine Sitzung gilt, ob ein Passwortwechsel sie beendet, wie die Wiederherstellung aufgebaut ist, was ein Supportmitarbeiter im Kundenkonto sehen und zurücksetzen darf. Selbst entscheiden lässt sich wenig mehr als das eigene Anmeldeverfahren und der Widerruf erteilter Zugriffe. Der Einzelne verwaltet einen kleinen Ausschnitt seiner eigenen Angriffsfläche.</p>
@@ -659,7 +659,7 @@ body { margin: 0; background: #050506; }
 <section class="kapitel" id="kapitel-03">
 <div class="kap-kopf"><span class="kap-nr">03</span><h2>Ein Schritt öffnet nicht alles</h2></div>
 <p class="lead">Damit ist der Raum möglicher Zugangspfade beschrieben. Bleibt die Frage, was ein einzelner gelungener Schritt wert ist - und die Antwort ist unbequem für alle, die sich eine einfache Kette vorstellen.</p>
-<p>Am häufigsten wird sie am SIM-Swapping durchgespielt: Wer die Telefonnummer hat, hat angeblich alles Weitere. Genau dort lässt sich zeigen, warum das so nicht stimmt.</p>
+<p>Am häufigsten wird diese Kette am SIM-Swapping durchgespielt: Wer die Telefonnummer hat, hat angeblich alles Weitere. Genau dort lässt sich zeigen, warum das so nicht stimmt.</p>
 <p>Eine Telefonnummer lässt sich nämlich nicht automatisch übernehmen, nur weil jemand Name, Mailadresse und Geburtsdatum kennt. Mobilfunkanbieter können Kundenkennwörter, bestehende Zugänge, Dokumente oder andere Nachweise verlangen.</p>
 <aside class="box">
 <div class="box-label">QUELLE</div>
@@ -672,7 +672,7 @@ body { margin: 0; background: #050506; }
 </aside>
 <p>Die beiden Fälle zeigen dieselbe Rechnung von zwei Seiten: Der Pfad funktioniert, wenn eine Kontrolle fehlt, und er endet, wenn eine gebundene Kontrolle greift.</p>
 <p>Das ist ausdrücklich keine Entwarnung. Mailkonto und Telefonnummer bleiben besonders wertvoll, weil viele Dienste sie gleichzeitig für Kommunikation, Wiederherstellung und Bestätigung verwenden. Wird einer von beiden kompromittiert, ist der Schaden groß, breit und schwer zurückzuholen.</p>
-<p>Der Domino fällt nicht von selbst. Was passiert, ist banaler: Jeder gelungene Schritt macht den nächsten billiger. Bereits bestätigte Angaben, offene Sitzungen und einmal erteilte Berechtigungen lassen sich wiederverwenden. Wer eine Rechnungsadresse aus einem Postfach hat, muss sie beim nächsten Anbieter nicht mehr erraten. Sinkt der Aufwand je Versuch, werden weitere Versuche wirtschaftlich vertretbar - und damit steigt die Chance, irgendwo auf einen schwächeren Prozess zu treffen.</p>
+<p>Der Domino fällt nicht von selbst. Was passiert, ist banaler: Jeder gelungene Schritt macht den nächsten billiger. Bereits bestätigte Angaben, bestehende Sitzungen und delegierte Zugriffe lassen sich wiederverwenden. Wer eine Rechnungsadresse aus einem Postfach hat, muss sie beim nächsten Anbieter nicht mehr erraten. Sinkt der Aufwand je Versuch, werden weitere Versuche wirtschaftlich vertretbar - und damit steigt die Chance, irgendwo auf einen schwächeren Prozess zu treffen.</p>
 <figure class="abb-4">
 <div class="fig-kopf">
 <figcaption>ABB. 3 · KOSTEN DES NÄCHSTEN SCHRITTS</figcaption>
@@ -749,7 +749,7 @@ body { margin: 0; background: #050506; }
 </section>
 <section class="kapitel" id="kapitel-05">
 <div class="kap-kopf"><span class="kap-nr">05</span><h2>Wenn Identität zu einem Netzwerk wird</h2></div>
-<p class="lead">Bisher ging es um den direkten Weg: eine Person, ihr Konto, ein Dienst mit erteilten Berechtigungen. Der Weg muss aber nicht direkt sein. Das erste Angriffsziel muss nicht das Endziel sein.</p>
+<p class="lead">Bisher ging es um den direkten Weg: eine Person, ihr Konto, ein Dienst mit delegiertem Zugriff. Der Weg muss aber nicht direkt sein. Das erste Angriffsziel muss nicht das Endziel sein.</p>
 <p>Ein System muss keinen Zugriff auf ein bestimmtes Konto besitzen, um für einen Angreifer relevant zu sein. Manchmal reicht es, dass es etwas weiß, das an anderer Stelle fehlt - oder etwas bestätigt, das dort sonst geprüft werden müsste.</p>
 <aside class="notiz">
 <div class="box-label">WAS EIN ZWISCHENZIEL IST</div>
@@ -789,7 +789,7 @@ body { margin: 0; background: #050506; }
 
 </figure>
 <p>Bei einem direkten Angriff fällt die Vorbereitung für jedes Ziel neu an. Bei einem gemeinsam genutzten Zwischenziel kann ein Teil dieser Arbeit einmal anfallen und danach mehrere mögliche Endziele betreffen. Genau darin liegt der Konzentrationseffekt: Ein Anbieter, der für sehr viele Nutzer Postfachzugriff hält, bündelt deren Berechtigungen - ein einziger erfolgreicher Angriff senkt dann den Stückpreis je Opfer erheblich. Das Postfach des Einzelnen wird nicht über ihn selbst angegriffen, sondern über einen Dienst, den er vor zwei Jahren einmal verbunden und danach vergessen hat.</p>
-<p>Das reinste Beispiel eines solchen Bausteins ist eine bloße Kennung.</p>
+<p>Das reinste Beispiel eines solchen Bausteins - einer Einzelheit, die für sich nichts öffnet und trotzdem gebraucht wird - ist eine bloße Kennung.</p>
 <h3>Wann eine Kennung zur Person wird</h3>
 <p>Eine eindeutige Kennung ohne Namen ist nicht anonym, sondern pseudonym. Sie trägt für sich genommen keine Person und wird erst dann zu einer Angabe über einen Menschen, wenn eine Stelle sie mit ihm verbindet. Dieser Verknüpfungspunkt ist der eigentliche Angriffspunkt, nicht die Kennung - und das Muster erklärt Sitzungskennungen, Geräte- und Werbekennungen und Adressen in einer öffentlichen Blockchain mit demselben Satz.</p>
 <aside class="box">
@@ -889,7 +889,7 @@ body { margin: 0; background: #050506; }
 </tbody>
 </table>
 <p>Dieselbe Technologie, die Recherche und Koordination verbilligt, kann dabei neue Konzentrationspunkte innerhalb legitimer Systeme schaffen: Je tiefer Assistenten in Arbeitsprozesse eingebunden werden, desto mehr Kontext und delegierte Rechte bündeln sie. Das ist eine Schlussfolgerung dieses Textes, keine gemessene Regel.</p>
-<p>Für die Abwehr folgt daraus vor allem eine Blickrichtung: Sie muss dorthin, wo der Aufwand tatsächlich anfällt, und nicht nur auf die stärkste Barriere. Wiederherstellung gehört dann zur Anmeldung. Erteilte Berechtigungen und offene Sitzungen sind eigenständige Vertrauensbeziehungen. Externe Prüfstellen gehören zur Angriffsfläche, auch ohne Kontozugang. Und ein Merkmal, das sich leicht recherchieren oder reproduzieren lässt, trägt allein keine hohe Beweiskraft.</p>
+<p>Für die Abwehr folgt daraus vor allem eine Blickrichtung: Sie muss dorthin, wo der Aufwand tatsächlich anfällt, und nicht nur auf die stärkste Barriere. Wiederherstellung gehört dann zur Anmeldung. Delegierte Zugriffe und bestehende Sitzungen sind eigenständige Vertrauensbeziehungen. Externe Prüfstellen gehören zur Angriffsfläche, auch ohne Kontozugang. Und ein Merkmal, das sich leicht recherchieren oder reproduzieren lässt, trägt allein keine hohe Beweiskraft.</p>
 <p>Alle diese Maßnahmen wirken auf dieselbe Größe: den Aufwand. Keine macht einen Angriff unmöglich. Eine Maßnahme ist deshalb nicht daran zu messen, ob sie unüberwindbar ist, sondern daran, ob sie den Aufwand wieder über den erwarteten Nutzen hebt.</p>
 <p>Das hat einen Preis, und er wird selten genannt: Jede Maßnahme, die einen Angriff verteuert, verteuert auch den legitimen Gebrauch. Eine Wartefrist bei kritischen Änderungen trifft den Angreifer und den Kunden, der es eilig hat. Ein zweiter unabhängiger Kanal kostet Geräte, Zeit und Support. Eine Wiederherstellung, die eine physische Handlung verlangt, schließt Menschen aus, die diese Handlung nicht leisten können. Genau deshalb gibt es bequeme Wiederherstellungswege überhaupt - sie sind kein Versäumnis, sondern eine Abwägung. Sicherheit ist damit auch eine Verteilungsfrage: Wer trägt die Reibung, und wer trägt den Schaden, wenn sie fehlt?</p>
 <p>In diese Abwägung gehört eine Größe, die bisher nur einmal vorkam. Kapitel 01 nannte Werte dann besonders attraktiv, wenn sie sich schnell übertragen und schwer zurückholen lassen. Das gilt allgemeiner: Ein Zugriff, dessen Folgen sich rückgängig machen lassen, ist weniger wert als einer, der endgültig ist. Erkennung, Widerruf und Umkehrbarkeit wirken deshalb auf dieselbe Rechnung wie eine Barriere - nur auf der anderen Seite: Sie erhöhen nicht den Aufwand, sie senken den erwarteten Nutzen.</p>
