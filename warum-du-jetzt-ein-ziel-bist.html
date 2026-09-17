@@ -619,6 +619,10 @@ body { margin: 0; background: #050506; }
 <tr><th scope="row">Externe Abhängigkeiten<br><span class="klein">kein Kontozugang</span></th><td>Systeme und Dienstleister, auf die ein Anbieter selbst vertraut. Sie öffnen kein Konto, können aber einen bestehenden Pfad beeinflussen.</td></tr>
 </tbody>
 </table>
+<aside class="box">
+<div class="box-label">DOKUMENTIERTE FÄLLE</div>
+<div class="box-text">Okta gab im Oktober 2023 bekannt, dass ein Angreifer auf das Kundensupport-System zugriff und dort von Kunden hochgeladene Dateien einsehen konnte, die Sitzungstoken enthielten; mehrere Kunden meldeten anschließend Anmeldeversuche mit diesen Token. Bei den Angriffen auf MGM Resorts und Caesars im September 2023 führte der Weg nach übereinstimmender Darstellung von Sicherheitsforschern und Medienberichten über den IT-Helpdesk, an dem eine Zurücksetzung erwirkt wurde. Beides sind keine gebrochenen Anmeldungen, sondern Wege daneben.</div>
+</aside>
 <p>Zwei dieser Wege verdienen eine genauere Betrachtung, weil sie dieselben vier Eigenschaften teilen: die bestehende Sitzung und der delegierte Zugriff.</p>
 <table class="tab">
 <tbody>
@@ -640,6 +644,10 @@ body { margin: 0; background: #050506; }
 <div class="box-label">QUELLE</div>
 <div class="box-text">Europol beschreibt in seinen Lagebildern den Handel mit gestohlenen Zugangsdaten und die Rolle spezialisierter Zugangshändler. ENISA führt Informationsdiebstahl durch Schadsoftware als eigene Bedrohungskategorie.</div>
 </aside>
+<aside class="box">
+<div class="box-label">DOKUMENTIERTE FÄLLE</div>
+<div class="box-text">Uber beschrieb nach dem Vorfall im September 2022 selbst, dass die Zugangsdaten eines externen Dienstleisters vermutlich auf einem Handelsplatz erworben wurden, nachdem dessen privates Gerät mit Schadsoftware infiziert worden war. LastPass führte den Vorfall von 2022 auf den privaten Rechner eines Mitarbeiters zurück, der über eine Schwachstelle in fremder Software angegriffen wurde.</div>
+</aside>
 <p>Auch hier gilt: Ein erbeutetes Artefakt ist kein Generalschlüssel. Systeme, die eine Sitzung an ein Gerät binden, ihre Laufzeit begrenzen oder vor kritischen Schritten erneut fragen, entwerten es teilweise. Was bleibt, ist eine Verschiebung, die den ganzen bisherigen Gedanken zuspitzt: Das eigene Gerät ist selbst ein Zugangspfad - und der einzige, der alle anderen gleichzeitig berührt.</p>
 <p>Schwerer als der einzelne Pfad wiegt, was hinter ihm liegt. Ein Postfachzugriff ist nicht nur ein Zugang, sondern eine Materialquelle: Er verrät, bei welchen Anbietern jemand Kunde ist, wie er schreibt, wen er kennt, welche Rechnungen offen sind. Recherche und Vorbereitung bilden bei gezielten Angriffen einen wesentlichen Kostenblock - in einem Postfach liegt dieser Teil bereits sortiert. Ein Zugriff, der als Komfortfunktion beginnt, liefert die Vorarbeit für alles Weitere.</p>
 <p>Daraus folgt nicht, nichts mehr anzubinden. Es folgt, dass eine erteilte Berechtigung dieselbe Aufmerksamkeit verdient wie ein Passwort: befristet, überprüfbar, widerrufbar.</p>
@@ -655,6 +663,11 @@ body { margin: 0; background: #050506; }
 <div class="box-text">ENISA, Countering SIM-Swapping: Der Angriff verlangt zunächst genügend Informationen über ein Ziel, bevor überhaupt versucht wird, den Anbieter zur Übertragung der Nummer zu bewegen.</div>
 </aside>
 <p>Dasselbe gilt für Mailkonten, Banken und Unternehmenszugänge. Gut abgesicherte Systeme verlangen für kritische Änderungen zusätzliche, voneinander unabhängige Nachweise: ein bereits registriertes Gerät, einen starken Authentifikator, eine erneute Prüfung. Genau das unterbricht Ketten. Der Verlust eines einzelnen Kanals führt dann nicht unmittelbar zum nächsten Konto.</p>
+<aside class="box">
+<div class="box-label">ZWEI DOKUMENTIERTE FÄLLE</div>
+<div class="box-text">Im Januar 2024 wurde von einem Konto der US-Börsenaufsicht SEC eine unbefugte Nachricht veröffentlicht. Die Behörde erklärte anschließend, der Zugriff sei über einen SIM-Swap der zugehörigen Telefonnummer erfolgt und die Mehrfaktor-Authentifizierung sei Monate zuvor auf Wunsch von Mitarbeitern deaktiviert und nicht wieder aktiviert worden. Umgekehrt beschrieb Cloudflare im August 2022 öffentlich, wie ein Phishing-Angriff, der mehrere Unternehmen gleichzeitig traf, an den eingesetzten Hardware-Sicherheitsschlüsseln scheiterte.</div>
+</aside>
+<p>Die beiden Fälle zeigen dieselbe Rechnung von zwei Seiten: Der Pfad funktioniert, wenn eine Kontrolle fehlt, und er endet, wenn eine gebundene Kontrolle greift.</p>
 <p>Das ist ausdrücklich keine Entwarnung. Mailkonto und Telefonnummer bleiben besonders wertvoll, weil viele Dienste sie gleichzeitig für Kommunikation, Wiederherstellung und Bestätigung verwenden. Wird einer von beiden kompromittiert, ist der Schaden groß, breit und schwer zurückzuholen.</p>
 <p>Der Domino fällt also nicht von selbst. Was passiert, ist banaler: Jeder gelungene Schritt macht den nächsten billiger. Bereits bestätigte Angaben, offene Sitzungen und einmal erteilte Berechtigungen lassen sich wiederverwenden. Wer eine Rechnungsadresse aus einem Postfach hat, muss sie beim nächsten Anbieter nicht mehr erraten. Sinkt der Aufwand je Versuch, werden weitere Versuche wirtschaftlich vertretbar - und damit steigt die Chance, irgendwo auf einen schwächeren Prozess zu treffen.</p>
 <figure class="abb-4">
@@ -843,6 +856,10 @@ body { margin: 0; background: #050506; }
 
 </figure>
 <p>Die Trennlinie verläuft deshalb zunehmend nicht zwischen physisch und digital, sondern zwischen einem bloß dargestellten Nachweis und einem, dessen Echtheit technisch, kryptografisch oder institutionell überprüfbar ist. Bilder, Dokumentdarstellungen, Stimmen und Videos lassen sich günstig synthetisch erzeugen. Das überwindet keine belastbare Identitätsprüfung - es setzt Verfahren unter Druck, die überwiegend prüfen, ob etwas plausibel aussieht.</p>
+<aside class="box">
+<div class="box-label">DOKUMENTIERTER FALL</div>
+<div class="box-text">In Hongkong wurde Anfang 2024 ein Mitarbeiter eines international tätigen Ingenieurbüros in einer Videokonferenz getäuscht, in der weitere Teilnehmer synthetisch erzeugt waren; es kam zu Überweisungen in Millionenhöhe. Der Fall wurde von der Polizei beschrieben und vom Unternehmen bestätigt. Geprüft wurde dort, ob etwas plausibel aussieht - nicht, ob ein Nachweis echt ist.</div>
+</aside>
 <p>Teuer bleibt, was an etwas gebunden ist, das sich nicht beliebig automatisieren lässt: tatsächlicher Besitz eines registrierten Geräts oder Authentifikators, physische Präsenz, belastbare Legitimation, eine unabhängige Entscheidung durch einen Menschen, einen zweiten Kanal oder eine Wartefrist. Diese Barrieren sind nicht alle gleich stark. Aber sie zwingen einen Angriff an bestimmten Stellen aus der rein digitalen Welt heraus.</p>
 <h3>Was sich abgeben lässt und was nicht</h3>
 <p>Damit stellt sich die Frage, ob auch dieser Rest billiger organisiert werden kann. Teilweise. Bloße Anwesenheit, eine lokale Beobachtung, eine Zustellung - solche Aufgaben lassen sich abgeben, oft ohne dass der Ausführende den Zweck kennt. Sobald ein Vorgang ein echtes Legitimationsmittel verlangt, sinkt die Austauschbarkeit dagegen deutlich: Eine solche Handlung kann nicht jeder übernehmen, weil er dafür selbst legitimiert sein müsste. Und die Entscheidung, welche Teilergebnisse zusammengehören und was als Nächstes geschieht, bleibt ohnehin beim Koordinator.</p>
@@ -888,6 +905,7 @@ body { margin: 0; background: #050506; }
 <tbody>
 <tr><th scope="row" style="width:24%">NIST SP 800-63B-4</th><td>Account Recovery, Recovery-Verfahren und Bindung neuer Authentifikatoren. Zitiert in <a href="#kapitel-02">Kapitel 2</a>.</td></tr>
 <tr><th scope="row">NIST SP 800-63A-4</th><td>Identity Proofing, Validierung von Identitätsnachweisen und Verifikation. Zitiert in <a href="#kapitel-06">Kapitel 6</a>.</td></tr>
+<tr><th scope="row">Dokumentierte Fälle</th><td>Okta (Oktober 2023), MGM Resorts und Caesars (September 2023), Uber (September 2022), LastPass (2022) in <a href="#kapitel-02">Kapitel 2</a>; SEC-Konto und Cloudflare in <a href="#kapitel-03">Kapitel 3</a>; Hongkong-Videokonferenz in <a href="#kapitel-06">Kapitel 6</a>. Grundlage sind jeweils die Darstellungen der betroffenen Stellen selbst sowie behördliche Angaben; wo die Ursache nur durch Dritte beschrieben wurde, ist das im Text vermerkt.</td></tr>
 <tr><th scope="row">ENISA, Europol</th><td>Informationsdiebstahl durch Schadsoftware als eigene Bedrohungskategorie; Handel mit gestohlenen Zugangsdaten und spezialisierte Zugangshändler. Zitiert in <a href="#kapitel-02">Kapitel 2</a>.</td></tr>
 <tr><th scope="row">ENISA</th><td>Countering SIM-Swapping: Rolle von Social Engineering, personenbezogenen Informationen und Kundenidentifizierung. Zitiert in <a href="#kapitel-03">Kapitel 3</a>.</td></tr>
 <tr><th scope="row">NATO</th><td>Hybride Aktivitäten unter Nutzung von Proxies im euro-atlantischen Raum. Zitiert in <a href="#kapitel-06">Kapitel 6</a>.</td></tr>
@@ -920,6 +938,87 @@ body { margin: 0; background: #050506; }
 <p class="klein">Dieser Text ist eine konzeptionelle Analyse von Anreiz-, Kosten- und Vertrauensstrukturen digitaler Identität. Er beschreibt keine Verfahren zur Umgehung von Sicherheitsmaßnahmen und bewertet keine konkrete Plattform. Alle Diagramme sind schematisch und enthalten keine empirischen Zahlenwerte. Stand: September 2026.</p>
 </aside>
 </section>
-</article>
-</body>
+			</article>
+
+			<nav class="wissen-fuss" aria-label="Weiter im Bereich Wissen">
+				<a class="wissen-zurueck" href="/wissen">Zurück zu allen Beiträgen</a>
+				<!--
+					DEN TEXT GIBT ES AUCH ZUM MITNEHMEN.
+
+					Das Repository traegt denselben Essay als eine einzelne Datei
+					und als Block fuer ein fremdes CMS. Der Weg steht hier und
+					nicht im Seitenkopf: wer noch liest, braucht ihn nicht - wer
+					fertig ist, vielleicht schon.
+				-->
+				<a class="repo-knopf" href="https://github.com/0xthaner/warum-du-jetzt-ein-ziel-bist" rel="noopener"><svg viewBox="0 0 16 16" width="17" height="17" aria-hidden="true" focusable="false"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" /></svg><span>Der Essay auf GitHub</span></a>
+				<p class="repo-satz">Der ganze Text als einzelne Datei - zum Herunterladen, Weitergeben oder Einbinden.</p>
+			</nav>
+		</main>
+
+		<footer class="site-footer">
+			<p class="brand-line">Assecura</p>
+			<nav aria-label="Rechtliches">
+				<a href="/impressum">Impressum</a>
+				<a href="/datenschutz">Datenschutz</a>
+			</nav>
+			<!--
+				Die Kanaele. Sie stehen NEBEN den Rechtstexten, nicht in derselben
+				Zeile: eine Pflichtangabe und ein Kanal sind nicht dasselbe.
+				Die Zeichen sind einfarbig wie das Traegerlogo - fremde Marken
+				bringen auf dieser Seite ihre Farbe nicht mit.
+			-->
+			<nav class="kanaele" aria-label="Kanäle">
+				<a href="https://x.com/assecuralabs" rel="me noopener"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" /></svg><span>X</span></a>
+				<a href="https://instagram.com/assecura.xyz" rel="me noopener"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zM12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.3-1.46.72-2.13 1.38C1.35 2.68.93 3.35.63 4.14.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.3.79.72 1.46 1.38 2.13.67.66 1.34 1.08 2.13 1.38.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56.79-.3 1.46-.72 2.13-1.38.66-.67 1.08-1.34 1.38-2.13.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91-.3-.79-.72-1.46-1.38-2.13C21.32 1.35 20.65.93 19.86.63 19.1.33 18.22.13 16.95.07 15.67.01 15.26 0 12 0z" /><path d="M12 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zM12 16a4 4 0 1 1 4-4 4 4 0 0 1-4 4z" /><circle cx="18.41" cy="5.59" r="1.44" /></svg><span>Instagram</span></a>
+				<a href="https://t.me/+Y6GbY6W-nKYzODRk" rel="me noopener"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path d="M21.94 4.3 18.62 19.9c-.25 1.1-.9 1.38-1.83.86l-5.05-3.72-2.44 2.35c-.27.27-.5.5-1.02.5l.36-5.15 9.37-8.47c.41-.36-.09-.56-.63-.2L6.79 13.36 1.8 11.8c-1.08-.34-1.1-1.08.23-1.6l19.5-7.52c.9-.33 1.69.2 1.4 1.62z" /></svg><span>Telegram</span></a>
+			</nav>
+			<p class="copy">&copy; <span>2026</span> Assecura GmbH Nfg KG</p>
+		</footer>
+
+		<script>
+			/*
+				Kein Netzwerk, keine Bibliothek, kein Zaehler. Der Knopf steht auf
+				`hidden`, bis feststeht, dass der Browser etwas kann.
+			*/
+			(function () {
+				var knopf = document.querySelector('.site-teilen');
+				if (!knopf) return;
+				var etikett = knopf.querySelector('.etikett');
+				var teilbar = typeof navigator.share === 'function';
+				var kopierbar = !!(navigator.clipboard && navigator.clipboard.writeText);
+				if (!teilbar && !kopierbar) return;
+
+				knopf.hidden = false;
+				knopf.setAttribute('aria-label', teilbar ? 'Diesen Beitrag teilen' : 'Adresse dieses Beitrags kopieren');
+				/* Auf schmalen Geraeten das kuerzere Wort: sonst waechst der
+				   klebende Kopf um eine Zeile. */
+				var kurz = !!(window.matchMedia && window.matchMedia('(max-width: 720px)').matches);
+				if (!teilbar) etikett.textContent = kurz ? 'Kopieren' : 'Link kopieren';
+
+				var zurueckstellen;
+				function sagen(wort) {
+					var vorher = etikett.textContent;
+					etikett.textContent = wort;
+					clearTimeout(zurueckstellen);
+					zurueckstellen = setTimeout(function () { etikett.textContent = vorher; }, 2400);
+				}
+
+				knopf.addEventListener('click', function () {
+					var daten = {
+						title: document.title,
+						text: 'Identität, Sicherheit und die Ökonomie des Vertrauens',
+						url: location.href
+					};
+					if (teilbar) {
+						/* Ein Abbruch durch den Nutzer ist kein Fehler und bleibt still. */
+						navigator.share(daten).catch(function () {});
+						return;
+					}
+					navigator.clipboard.writeText(location.href)
+						.then(function () { sagen(kurz ? 'Kopiert' : 'Link kopiert'); })
+						.catch(function () { sagen('Kopieren ging nicht'); });
+				});
+			})();
+		</script>
+	</body>
 </html>
