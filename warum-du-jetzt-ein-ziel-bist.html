@@ -632,6 +632,15 @@ body { margin: 0; background: #050506; }
 <div class="box-label">DER EINFACHE TEST</div>
 <div class="box-text">Wer nach einem Verdachtsfall nur das Passwort ändert, hat diese beiden Pfade möglicherweise nicht geschlossen. Die Liste der verbundenen Dienste bleibt bestehen, und die Frage lautet zusätzlich, ob das System eine Abmeldung auf allen Geräten kennt - und ob sie ausgelöst wurde.</div>
 </aside>
+<h3>Wie ein solcher Zugang in fremde Hände gerät</h3>
+<p>Bisher stand offen, wie jemand überhaupt an eine gültige Sitzung oder ein erteiltes Token kommt. Der verbreitetste Weg führt nicht über den Dienst, sondern über das Gerät des Nutzers. Schadsoftware, die dort läuft, kann auslesen, was Browser und Programme für den bequemen Alltag vorhalten: gespeicherte Anmeldedaten, Sitzungsartefakte, Token angebundener Dienste.</p>
+<p>Für die Rechnung ist daran zweierlei bemerkenswert. Erstens greift dieser Weg den Nachweis nicht an, sondern das, was nach ihm übrig bleibt. Die Anmeldung hat bereits stattgefunden, samt zweitem Faktor. Eine starke Authentifizierung wird dadurch nicht wertlos - sie ist nur nicht mehr die Stelle, an der sich entscheidet, wer Zugriff hat.</p>
+<p>Zweitens ist dieser Weg zunächst nicht gezielt. Solche Software sammelt breit, und was sie sammelt, wird gehandelt. Wer ein bestimmtes Ziel verfolgt, muss die Vorarbeit deshalb nicht selbst leisten; er kann prüfen, ob sie jemand anderes bereits geleistet hat. Der Aufwand, der in Kapitel 01 den eigentlichen Schutz ausmachte, ist dann schon bezahlt - nur von einem Dritten.</p>
+<aside class="box">
+<div class="box-label">QUELLE</div>
+<div class="box-text">Europol beschreibt in seinen Lagebildern den Handel mit gestohlenen Zugangsdaten und die Rolle spezialisierter Zugangshändler. ENISA führt Informationsdiebstahl durch Schadsoftware als eigene Bedrohungskategorie.</div>
+</aside>
+<p>Auch hier gilt: Ein erbeutetes Artefakt ist kein Generalschlüssel. Systeme, die eine Sitzung an ein Gerät binden, ihre Laufzeit begrenzen oder vor kritischen Schritten erneut fragen, entwerten es teilweise. Was bleibt, ist eine Verschiebung, die den ganzen bisherigen Gedanken zuspitzt: Das eigene Gerät ist selbst ein Zugangspfad - und der einzige, der alle anderen gleichzeitig berührt.</p>
 <p>Schwerer als der einzelne Pfad wiegt, was hinter ihm liegt. Ein Postfachzugriff ist nicht nur ein Zugang, sondern eine Materialquelle: Er verrät, bei welchen Anbietern jemand Kunde ist, wie er schreibt, wen er kennt, welche Rechnungen offen sind. Recherche und Vorbereitung bilden bei gezielten Angriffen einen wesentlichen Kostenblock - in einem Postfach liegt dieser Teil bereits sortiert. Ein Zugriff, der als Komfortfunktion beginnt, liefert die Vorarbeit für alles Weitere.</p>
 <p>Daraus folgt nicht, nichts mehr anzubinden. Es folgt, dass eine erteilte Berechtigung dieselbe Aufmerksamkeit verdient wie ein Passwort: befristet, überprüfbar, widerrufbar.</p>
 </section>
@@ -875,6 +884,7 @@ body { margin: 0; background: #050506; }
 <tbody>
 <tr><th scope="row" style="width:24%">NIST SP 800-63B-4</th><td>Account Recovery, Recovery-Verfahren und Bindung neuer Authentifikatoren. Zitiert in <a href="#kapitel-02">Kapitel 2</a>.</td></tr>
 <tr><th scope="row">NIST SP 800-63A-4</th><td>Identity Proofing, Validierung von Identitätsnachweisen und Verifikation. Zitiert in <a href="#kapitel-06">Kapitel 6</a>.</td></tr>
+<tr><th scope="row">ENISA, Europol</th><td>Informationsdiebstahl durch Schadsoftware als eigene Bedrohungskategorie; Handel mit gestohlenen Zugangsdaten und spezialisierte Zugangshändler. Zitiert in <a href="#kapitel-02">Kapitel 2</a>.</td></tr>
 <tr><th scope="row">ENISA</th><td>Countering SIM-Swapping: Rolle von Social Engineering, personenbezogenen Informationen und Kundenidentifizierung. Zitiert in <a href="#kapitel-03">Kapitel 3</a>.</td></tr>
 <tr><th scope="row">NATO</th><td>Hybride Aktivitäten unter Nutzung von Proxies im euro-atlantischen Raum. Zitiert in <a href="#kapitel-06">Kapitel 6</a>.</td></tr>
 <tr><th scope="row">Europol</th><td>Operational Taskforce GRIMM sowie das Modell von Instigator, Recruiter, Enabler und Perpetrator bei Violence-as-a-Service.</td></tr>
