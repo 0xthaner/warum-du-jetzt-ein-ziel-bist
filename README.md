@@ -1,7 +1,7 @@
 # Warum du jetzt ein Ziel bist
 
 **Identität, Sicherheit und die Ökonomie des Vertrauens**
-Ein Essay von 0xthaner × Assecura · September 2026 · rund 45 Minuten
+Ein Essay von 0xthaner × Assecura · September 2026 · rund 18 Minuten
 
 Zu lesen unter **<https://assecura.xyz/wissen/warum-du-jetzt-ein-ziel-bist>**
 
@@ -23,31 +23,30 @@ neue Risikokonzentrationen entstehen.
 
 Der Text unterscheidet zwischen belegter Entwicklung, Analogie aus anderen
 Deliktfeldern und der eigenen Schlussfolgerung. Wo eine Aussage nicht belegt
-ist, steht sie im Konjunktiv. Alle Diagramme sind schematisch und enthalten
+ist, steht sie im Konjunktiv oder wird ausdrücklich als Schlussfolgerung
+dieses Textes bezeichnet. Alle Diagramme sind schematisch und enthalten
 keine empirischen Zahlenwerte.
 
 ## Der Aufbau
 
-Vier Teile mit **vierzehn Kapiteln**, dazu Schluss und Quellenanhang:
+**Sieben Kapitel**, dazu Quellenanhang:
 
-| Teil | Kapitel |
+| | |
 |---|---|
-| Erster Teil · Die Rechnung | Kapitel 1 |
-| Zweiter Teil · Wo ein Angriff ansetzen kann | Kapitel 2 bis 5 |
-| Dritter Teil · Warum der Angriff billiger wird | Kapitel 6 bis 10 |
-| Vierter Teil · Wenn Vertrauen zur Infrastruktur wird | Kapitel 11 bis 14 |
-| — | Schluss: Drei Mechanismen, eine Rechnung |
+| 01 | Die Rechnung |
+| 02 | Mehrere Wege in denselben Bereich |
+| 03 | Ein Schritt öffnet nicht alles |
+| 04 | Was KI tatsächlich verändert |
+| 05 | Wenn die Identität von anderen Stellen abhängt |
+| 06 | Der letzte Meter |
+| 07 | Was daraus folgt |
 | — | Anhang: Quellen und Belege |
 
-Die Zahlen oben sind **Kapitelnummern, keine Seitenzahlen**. Die ursprüngliche
-A4-Fassung umfasst 51 Seiten; die Webfassung kennt keine Seiten mehr, sondern
-läuft als eine durchgehende Seite.
+Dazu fünf Diagramme als Inline-SVG, elf Tabellen und ein Quellenanhang mit
+Verweisen auf NIST SP 800-63A-4 und 800-63B-4, ENISA, Europol, NATO,
+OWASP LLM01 und LLM06, RFC 9700 / BCP 240, UK NCSC und eIDAS.
 
-Dazu elf Diagramme als Inline-SVG, zwei Illustrationen, dreizehn Tabellen und
-ein Quellenanhang mit Verweisen auf NIST SP 800-63A-4 und 800-63B-4, ENISA,
-Europol, NATO, OWASP LLM01 und LLM06, RFC 9700 / BCP 240, UK NCSC und eIDAS.
-
-Umfang: rund 70.900 Zeichen Fließtext, etwa 45 Minuten Lesezeit.
+Umfang: rund 40.700 Zeichen Fließtext, etwa 18 Minuten Lesezeit.
 
 ## Die Dateien
 
@@ -55,23 +54,29 @@ Umfang: rund 70.900 Zeichen Fließtext, etwa 45 Minuten Lesezeit.
 |---|---|
 | `warum-du-jetzt-ein-ziel-bist.html` | Der ganze Essay in einer Datei. Bilder und Schriftverweise enthalten, keine externen Abhängigkeiten außer den Web-Schriften. Herunterladen, doppelklicken, lesen. |
 | `warum-du-jetzt-ein-ziel-bist.cms.html` | Derselbe Inhalt als reiner Block ohne `<html>`/`<head>`, für die Einbindung in ein CMS. Alle Selektoren liegen unter der Klasse `.essay` und können nichts auf der umgebenden Seite überschreiben. |
-| `bilder/reisepass.webp`, `bilder/portraet.webp` | Die beiden Illustrationen einzeln, falls das CMS lieber Uploads als eingebettete Bilder möchte. |
+| `bilder/reisepass.webp`, `bilder/portraet.webp` | Die beiden Illustrationen der ersten Fassung. Der Text führt sie seit der Überarbeitung nicht mehr; sie liegen hier, weil sie zum Thema gehören. |
 | `bilder/vorschaukarte.png` | Die Karte fürs Teilen, 1200 × 630. |
 | `AENDERUNGEN.md` | Was beim Weg von der A4-Fassung zur Webfassung entfallen ist — und der Nachweis, dass am Text nichts geändert wurde. |
 
-Die Web-Fassung entstand aus einer auf feste A4-Seiten gebauten Vorlage.
-Entfallen sind Seitenzahlen, laufende Kopfzeilen, Kolumnentitel, Seitenrand-
-Marker und der zweispaltige Satz. **Am Text selbst wurde nichts geändert** —
-kein Wort, keine Zahl, keine Quelle, keine Überschrift, keine Kapitelreihenfolge.
-Die 70.857 Zeichen sichtbarer Text sind zeichenweise identisch mit der Vorlage,
-maschinell gegengeprüft.
+Die erste Web-Fassung entstand aus einer auf feste A4-Seiten gebauten Vorlage
+und übernahm deren Text unverändert; entfallen waren nur Seitenzahlen, laufende
+Kopfzeilen, Kolumnentitel, Seitenrand-Marker und der zweispaltige Satz.
+
+**Diese Fassung ist eine andere.** Im September 2026 wurde der Essay von
+vierzehn Kapiteln in vier Teilen auf sieben Kapitel gekürzt, rund um die Hälfte
+des Textes entfiel, Abbildungen und Tabellen wurden zusammengeführt und neu
+nummeriert, und einzelne Abschnitte kamen hinzu — dokumentierte Fälle, die
+Kostenseite der Abwehr und die Umkehrbarkeit eines Zugriffs. Argument und
+Quellen sind dieselben geblieben, der Wortlaut ist es nicht. `AENDERUNGEN.md`
+hält beides fest: was beim Weg von der A4-Fassung entfiel und was bei der
+Überarbeitung geschah.
 
 ## Barrierefreiheit
 
 Einspaltig, Textbreite rund 70 Zeichen, Fließtext 18 px auf dem Desktop und
-17 px auf schmalen Geräten. Alt-Texte an beiden Illustrationen, `role="img"`
-und `aria-label` an allen neun Diagrammen, sichtbarer Fokus, Kontrast im
-Fließtext etwa 18:1. Brauchbar ab 360 px Breite.
+17 px auf schmalen Geräten. `role="img"` und `aria-label` an allen fünf
+Diagrammen, sichtbarer Fokus, Kontrast im Fließtext etwa 18:1. Brauchbar ab
+360 px Breite.
 
 ## Rechte
 

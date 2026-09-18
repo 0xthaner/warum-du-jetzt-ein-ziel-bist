@@ -12,8 +12,21 @@
 @font-face{font-family:'Satoshi';src:url('https://assecura.xyz/fonts/Satoshi-VariableItalic.woff2') format('woff2');font-weight:300 900;font-style:italic;font-display:swap}
 </style>
 <style>
+/*
+	Eigenstaendige Fassung: identisch mit essay.css von assecura.xyz,
+	davor die zwei Regeln, die dort aus styles.css kommen.
+*/
 html { background: #050506; }
 body { margin: 0; background: #050506; }
+
+/*
+	DER ESSAY ALS EIGENES DOKUMENT.
+
+	Alle Regeln liegen unter `.essay` und koennen nichts ausserhalb des
+	Artikels beruehren. Der Essay bringt seine eigene Farbfamilie mit, weil
+	er als geschlossenes Dokument gestaltet wurde - deshalb steht er hier
+	und NICHT in `styles.css`, wo genau eine Akzentfamilie gilt.
+*/
 
 .essay {
   --grund: #050506;
@@ -34,8 +47,8 @@ body { margin: 0; background: #050506; }
   --teil-grund: #262a60;
   --spalte: 41rem;
   --breit: 52rem;
-  --schrift: "Satoshi", -apple-system, BlinkMacSystemFont, "Segoe UI",
-             system-ui, sans-serif;
+  --schrift: var(--sans, "Satoshi", "Segoe UI", system-ui, -apple-system,
+             "Helvetica Neue", Arial, sans-serif);
 
   background: var(--grund);
   color: var(--text);
@@ -258,6 +271,18 @@ body { margin: 0; background: #050506; }
 .essay .stufe-text { font-size: 15px; color: var(--text-hell); }
 .essay .th-sub { font-weight: 400; color: var(--text-meta); font-size: 14px; margin-top: 3px; }
 
+/*
+  Der Wachstumsgrad der Balken. Angemeldet, damit der Browser ihn als Zahl
+  kennt und stufenlos verrechnen kann; vererbt, damit er von der Abbildung
+  bis in die einzelnen Balken durchreicht. Ausgangswert 1: ohne Bewegung
+  steht das Diagramm fertig da.
+*/
+@property --abb-wachs {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 1;
+}
+
 /* ------------------------------------------------------------- Bewegung */
 
 /*
@@ -281,13 +306,44 @@ body { margin: 0; background: #050506; }
 	ein Fehler, kein Effekt.
 */
 @media (prefers-reduced-motion: no-preference) {
+  /* ------------- an der Uhr, nicht am Scrollen -------------
+     Diese Bewegungen brauchen keine Scroll-Zeitachse. Sie standen
+     trotzdem im @supports darunter - damit bekamen Browser ohne
+     Zeitachse, Firefox etwa, weder Waage noch Fluss, obwohl beides
+     dort problemlos laeuft. Nur was am Scrollen haengt, gehoert in
+     die Weiche. */
+
+  /* ABB. 4 - die bestaetigten Wege fliessen.
+     Ihr Strichmuster ist 4 auf 4, eine Periode also 8 Einheiten: genau um
+     diesen Betrag wandert der Versatz, damit die Schleife nicht springt. */
+  .essay .abb-4 .diagramm [stroke-dasharray] {
+    animation: abb-fliessen 1.9s linear infinite;
+  }
+  @keyframes abb-fliessen {
+    to { stroke-dashoffset: -8; }
+  }
+
+  /* ABB. 1 - der Punkt an der Schwelle schlaegt ruhig.
+     Er markiert die Stelle, an der die Kurve den erwarteten Nutzen kreuzt;
+     das ist die Aussage des Bildes und darf sich melden. */
+  .essay .abb-1 .diagramm circle {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: abb-schwelle 3.6s ease-in-out infinite;
+  }
+  @keyframes abb-schwelle {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50%      { transform: scale(1.9); opacity: 0.55; }
+  }
+
+  /* ---- ab hier scrollgesteuert: braucht die Zeitachse ---- */
   @supports (animation-timeline: view()) {
 
     /* Die Abbildung als Ganzes hebt sich beim Eintreten kurz an. */
     .essay figure {
       animation: abb-auftauchen linear both;
       animation-timeline: view();
-      animation-range: entry 5% entry 62%;
+      animation-range: cover 4% cover 26%;
     }
     @keyframes abb-auftauchen {
       from { opacity: 0; transform: translateY(16px); }
@@ -307,7 +363,7 @@ body { margin: 0; background: #050506; }
       stroke-dashoffset: 2400;
       animation: abb-zeichnen linear both;
       animation-timeline: view();
-      animation-range: entry 10% entry 78%;
+      animation-range: cover 10% cover 40%;
     }
     @keyframes abb-zeichnen {
       to { stroke-dashoffset: 0; }
@@ -331,7 +387,7 @@ body { margin: 0; background: #050506; }
     .essay .diagramm path:not([stroke]) {
       animation: abb-einblenden linear both;
       animation-timeline: view();
-      animation-range: entry 42% entry 88%;
+      animation-range: cover 26% cover 50%;
     }
     @keyframes abb-einblenden {
       from { opacity: 0; }
@@ -347,50 +403,42 @@ body { margin: 0; background: #050506; }
       haette nur alle gleich zappeln lassen.
     */
 
-    /* ABB. 4 - die bestaetigten Wege fliessen.
-       Ihr Strichmuster ist 4 auf 4, eine Periode also 8 Einheiten: genau um
-       diesen Betrag wandert der Versatz, damit die Schleife nicht springt. */
-    .essay .abb-4 .diagramm [stroke-dasharray] {
-      animation: abb-fliessen 1.9s linear infinite;
-    }
-    @keyframes abb-fliessen {
-      to { stroke-dashoffset: -8; }
-    }
+    /*
+      ABB. 5 UND ABB. 8 - DIE BALKEN FAHREN HOCH UND BLEIBEN STEHEN.
 
-    /* ABB. 5 - die Balken fahren hoch und bleiben stehen.
-       Sie wachsen aus ihrer eigenen linken Kante, deshalb `fill-box`. */
+      Nicht der Balken traegt die Zeitachse, sondern die Abbildung. Ein
+      <rect> im SVG hat keinen eigenen Layoutkasten wie ein Absatz; ob eine
+      Scroll-Zeitachse daran haelt, entscheidet die Browser-Engine, und
+      genau das war der Grund, warum hier nichts wuchs. Die Abbildung ist
+      ein gewoehnlicher Block - an ihr haelt sie sicher.
+
+      Uebertragen wird der Fortschritt als Zahl in einer angemeldeten
+      Eigenschaft. Angemeldet muss sie sein, sonst waere sie fuer den
+      Browser Text und liesse sich nicht stufenlos verrechnen; vererbt,
+      damit sie bis in die Balken durchreicht.
+
+      IHR AUSGANGSWERT IST 1, also der fertige Balken. Faellt die Bewegung
+      aus - alter Browser, abgeschaltete Animationen, was auch immer -,
+      steht das Diagramm vollstaendig da. Ein Balkendiagramm ohne Balken
+      waere ein Fehler, kein Effekt.
+    */
+    .essay .abb-5 {
+      animation-name: abb-auftauchen, abb-wachsen;
+      animation-timing-function: linear, cubic-bezier(0.22, 1, 0.36, 1);
+      animation-fill-mode: both, both;
+      animation-timeline: view(), view();
+      animation-range: cover 4% cover 26%, cover 14% cover 46%;
+    }
+    @keyframes abb-wachsen {
+      from { --abb-wachs: 0.02; }
+      to   { --abb-wachs: 1; }
+    }
     .essay .abb-5 .diagramm rect {
       transform-box: fill-box;
       transform-origin: left center;
-      animation: abb-balken cubic-bezier(0.22, 1, 0.36, 1) both;
-      animation-timeline: view();
-      animation-range: entry 16% entry 62%;
+      transform: scaleX(var(--abb-wachs, 1));
     }
-    @keyframes abb-balken {
-      from { transform: scaleX(0.015); }
-      to   { transform: scaleX(1); }
-    }
-    /* Nacheinander statt alle auf einmal - so liest man die Reihenfolge. */
-    .essay .abb-5 .diagramm rect:nth-of-type(1) { animation-range: entry 16% entry 50%; }
-    .essay .abb-5 .diagramm rect:nth-of-type(2) { animation-range: entry 21% entry 55%; }
-    .essay .abb-5 .diagramm rect:nth-of-type(3) { animation-range: entry 26% entry 60%; }
-    .essay .abb-5 .diagramm rect:nth-of-type(4) { animation-range: entry 31% entry 65%; }
-    .essay .abb-5 .diagramm rect:nth-of-type(5) { animation-range: entry 36% entry 70%; }
-    .essay .abb-5 .diagramm rect:nth-of-type(6) { animation-range: entry 41% entry 75%; }
-    .essay .abb-5 .diagramm rect:nth-of-type(7) { animation-range: entry 46% entry 80%; }
 
-    /* ABB. 1 - der Punkt an der Schwelle schlaegt ruhig.
-       Er markiert die Stelle, an der die Kurve den erwarteten Nutzen kreuzt;
-       das ist die Aussage des Bildes und darf sich melden. */
-    .essay .abb-1 .diagramm circle {
-      transform-box: fill-box;
-      transform-origin: center;
-      animation: abb-schwelle 3.6s ease-in-out infinite;
-    }
-    @keyframes abb-schwelle {
-      0%, 100% { transform: scale(1); opacity: 1; }
-      50%      { transform: scale(1.9); opacity: 0.55; }
-    }
   }
 }
 

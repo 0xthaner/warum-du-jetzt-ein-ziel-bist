@@ -85,3 +85,36 @@ und das Schlusszitat bleiben eigene, abgesetzte Blöcke.
   `table`/`th`/`td`, `blockquote`, `aside`. Alt-Texte an beiden Bildern, `role="img"` und
   `aria-label` an allen neun SVG, sichtbarer Fokus-Stil, Fließtext-Kontrast ≈ 18:1.
 - Kein PDF, kein iframe, kein Framework, kein Build-Schritt.
+
+## Überarbeitung, September 2026
+
+Alles oben beschreibt den Weg von der A4-Seitenfassung zur ersten Web-Fassung.
+Dabei blieb der Wortlaut unangetastet. Diese Überarbeitung ist ein zweiter,
+anderer Schritt: Der Text wurde gekürzt und umgebaut.
+
+- **Vierzehn Kapitel in vier Teilen wurden sieben Kapitel ohne Teile.** Die
+  Teil-Zwischentitel und der eigene Schlussabschnitt entfallen; was dort stand,
+  ist in Kapitel 07 aufgegangen. Rund die Hälfte des Fließtextes ist weg:
+  70.857 Zeichen vorher, 40.672 nachher. Lesedauer 45 auf 18 Minuten.
+- **Elf Abbildungen wurden fünf**, neu durchnummeriert als ABB. 1 bis 5.
+  Dreizehn Tabellen wurden elf. Die beiden Illustrationen führt der Text nicht
+  mehr; die Dateien bleiben unter `bilder/`.
+- **Hinzugekommen** sind dokumentierte Fälle mit Quellen (Okta, MGM und
+  Caesars, Uber, LastPass, SEC, Cloudflare, Hongkong), ein Abschnitt darüber,
+  wie ein Zugang über Schadsoftware auf dem Gerät in fremde Hände gerät, die
+  Kostenseite der Abwehr — jede Maßnahme verteuert auch den legitimen Gebrauch —
+  und die Umkehrbarkeit eines Zugriffs als eigene Größe der Rechnung.
+- **Begriffe vereinheitlicht.** Die beiden Wege neben der Anmeldung heißen
+  durchgehend „bestehende Sitzung" und „delegierter Zugriff"; vorher standen
+  dafür sechs verschiedene Ausdrücke im Text. Eine Begriffstabelle erklärt
+  Authentifikator, Passkey, Recovery-Code und Token beim ersten Auftreten.
+- **Gedankenstriche** sind durchgehend durch Bindestriche ersetzt.
+- **Anker.** Die Sprungziele heißen jetzt `#kapitel-01` … `#kapitel-07` und
+  `#anhang`. Links auf `#kapitel-08` bis `#kapitel-14`, `#abgrenzung` und
+  `#schluss` gehen ins Leere — diese Abschnitte gibt es nicht mehr.
+- **Klassennamen der Abbildungen** folgen wieder ihren Nummern (`abb-1` …
+  `abb-5`). Zwischenzeitlich trugen sie die Nummern der alten Fassung.
+
+Argument, Aufbau der Rechnung und Quellen sind dieselben geblieben. Der
+Wortlaut ist es nicht — wer aus der ersten Fassung zitiert hat, zitiert eine
+andere.
