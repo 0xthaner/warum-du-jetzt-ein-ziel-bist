@@ -652,13 +652,13 @@ body { margin: 0; background: #050506; }
 <tr><th scope="row">Bestehende Sitzung</th><td>Nach der Anmeldung hält ein System den angemeldeten Zustand fest, über ein Artefakt, das den bereits geführten Nachweis vertritt.</td></tr>
 <tr><th scope="row">Delegierter Zugriff</th><td>Wer einem Mailprogramm, einem Kalenderdienst oder einem Assistenten Zugriff erteilt, vergibt eine längerlebige Berechtigung, typischerweise über ein Token.</td></tr>
 <tr><th scope="row">Mitberechtigter Zugang</th><td>Familie, Team, Vollmacht: legitime Rechte am Konto, mit eigener Reichweite.</td></tr>
-<tr><th scope="row">Anbieter- und Supportzugriff</th><td>Verwaltungswerkzeuge des Betreibers. Notwendig, und außerhalb der Kontrolle des Nutzers.</td></tr>
+<tr><th scope="row">Anbieter- und Supportzugriff</th><td>Verwaltungswerkzeuge des Betreibers, bedient von Menschen. Ein Zugang mit solchen Rechten ist selbst ein Ziel: Wird er übernommen oder sein Inhaber getäuscht, bleibt der Vorgang von einem regulären Supportfall nicht zu unterscheiden. Notwendig, und außerhalb der Kontrolle des Nutzers.</td></tr>
 <tr><th scope="row">Externe Abhängigkeiten<br><span class="klein">kein Kontozugang</span></th><td>Systeme und Dienstleister, auf die ein Anbieter selbst vertraut. Sie öffnen kein Konto, können aber einen bestehenden Pfad beeinflussen.</td></tr>
 </tbody>
 </table>
 <aside class="box">
 <div class="box-label">DOKUMENTIERTE FÄLLE</div>
-<div class="box-text">Okta gab im Oktober 2023 bekannt, dass ein Angreifer auf das Kundensupport-System zugriff und dort von Kunden hochgeladene Dateien einsehen konnte, die Sitzungstoken enthielten; mehrere Kunden meldeten anschließend Anmeldeversuche mit diesen Token. Bei den Angriffen auf MGM Resorts und Caesars im September 2023 führte der Weg nach übereinstimmender Darstellung von Sicherheitsforschern und Medienberichten über den IT-Helpdesk, an dem eine Zurücksetzung erwirkt wurde. Beides sind keine gebrochenen Anmeldungen, sondern Wege daneben.</div>
+<div class="box-text">Okta gab im Oktober 2023 bekannt, dass ein Angreifer auf das Kundensupport-System zugriff und dort von Kunden hochgeladene Dateien einsehen konnte, die Sitzungstoken enthielten; mehrere Kunden meldeten anschließend Anmeldeversuche mit diesen Token. Bei den Angriffen auf MGM Resorts und Caesars im September 2023 führte der Weg nach übereinstimmender Darstellung von Sicherheitsforschern und Medienberichten über den IT-Helpdesk, an dem eine Zurücksetzung erwirkt wurde. Beides sind keine gebrochenen Anmeldungen, sondern Wege daneben. In beiden Fällen war der Weg vorgesehen - benutzt hat ihn jemand, für den er nicht gedacht war.</div>
 </aside>
 <p>Zwei dieser Wege verdienen eine genauere Betrachtung, weil sie dieselben vier Eigenschaften teilen: die bestehende Sitzung und der delegierte Zugriff.</p>
 <table class="tab">
