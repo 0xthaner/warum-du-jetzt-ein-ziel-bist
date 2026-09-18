@@ -42,7 +42,7 @@ keine empirischen Zahlenwerte.
 | 07 | Was daraus folgt |
 | — | Anhang: Quellen und Belege |
 
-Dazu fünf Diagramme als Inline-SVG, elf Tabellen und ein Quellenanhang mit
+Dazu sechs Diagramme als Inline-SVG, elf Tabellen und ein Quellenanhang mit
 Verweisen auf NIST SP 800-63A-4 und 800-63B-4, ENISA, Europol, NATO,
 OWASP LLM01 und LLM06, RFC 9700 / BCP 240, UK NCSC und eIDAS.
 
@@ -74,7 +74,7 @@ hält beides fest: was beim Weg von der A4-Fassung entfiel und was bei der
 ## Barrierefreiheit
 
 Einspaltig, Textbreite rund 70 Zeichen, Fließtext 18 px auf dem Desktop und
-17 px auf schmalen Geräten. `role="img"` und `aria-label` an allen fünf
+17 px auf schmalen Geräten. `role="img"` und `aria-label` an allen sechs
 Diagrammen, sichtbarer Fokus, Kontrast im Fließtext etwa 18:1. Brauchbar ab
 360 px Breite.
 

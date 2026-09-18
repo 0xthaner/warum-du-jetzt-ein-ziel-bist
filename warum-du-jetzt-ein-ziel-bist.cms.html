@@ -422,7 +422,7 @@ body { margin: 0; background: #050506; }
       steht das Diagramm vollstaendig da. Ein Balkendiagramm ohne Balken
       waere ein Fehler, kein Effekt.
     */
-    .essay .abb-5 {
+    .essay .abb-6 {
       animation-name: abb-auftauchen, abb-wachsen;
       animation-timing-function: linear, cubic-bezier(0.22, 1, 0.36, 1);
       animation-fill-mode: both, both;
@@ -433,7 +433,7 @@ body { margin: 0; background: #050506; }
       from { --abb-wachs: 0.02; }
       to   { --abb-wachs: 1; }
     }
-    .essay .abb-5 .diagramm rect {
+    .essay .abb-6 .diagramm rect {
       transform-box: fill-box;
       transform-origin: left center;
       transform: scaleX(var(--abb-wachs, 1));
@@ -631,6 +631,7 @@ body { margin: 0; background: #050506; }
 <rect x="424" y="112" width="228" height="90" fill="#14151c" stroke="#595d6c"></rect>
 <text x="442" y="146" fill="#f3f5fe" font-size="12">dasselbe Konto -</text>
 <text x="442" y="168" fill="#b5abfc" font-size="11">unterschiedliche Reichweite</text>
+<text x="424" y="236" fill="#9397ab" font-size="9.5">Dieselben Wege gibt es beim Anbieter -</text><text x="424" y="250" fill="#9397ab" font-size="9.5">dort für alle seine Kunden auf einmal.</text><text x="424" y="264" fill="#b5abfc" font-size="9.5">Siehe ABB. 5.</text>
 <line x1="18" y1="318" x2="652" y2="318" stroke="#292b31"></line>
 <rect x="18" y="322" width="634" height="82" fill="#191627" stroke="#9184d9" stroke-width="1.4"></rect>
 <rect x="18" y="322" width="3" height="82" fill="#9184d9"></rect>
@@ -820,6 +821,48 @@ body { margin: 0; background: #050506; }
 
 </figure>
 <p>Bei einem direkten Angriff fällt die Vorbereitung für jedes Ziel neu an. Bei einem gemeinsam genutzten Zwischenziel kann ein Teil dieser Arbeit einmal anfallen und danach mehrere mögliche Endziele betreffen. Genau darin liegt der Konzentrationseffekt: Ein Anbieter, der für sehr viele Nutzer Postfachzugriff hält, bündelt deren Berechtigungen - ein einziger erfolgreicher Angriff senkt dann den Stückpreis je Opfer erheblich. Das Postfach des Einzelnen wird nicht über ihn selbst angegriffen, sondern über einen Dienst, den er vor zwei Jahren einmal verbunden und danach vergessen hat.</p>
+<figure class="abb-5">
+<div class="fig-kopf">
+<figcaption>ABB. 5 · WARUM EIN GEMEINSAMER PUNKT DEN STÜCKPREIS SENKT</figcaption>
+<span class="fig-tag">SCHEMATISCH</span>
+</div>
+
+<svg class="diagramm" viewBox="0 0 670 350" role="img" aria-label="Schematischer Vergleich: bei einem direkten Angriff faellt die Vorbereitung fuer jedes Ziel neu an, ueber einen gemeinsam genutzten Dienst nur einmal fuer viele Konten">
+<g font-family="Satoshi, Inter, sans-serif">
+<text x="14" y="22" fill="#b5abfc" font-size="10">DIREKTER WEG</text>
+<rect x="14" y="52" width="120" height="52" fill="#14151c" stroke="#3f424d"></rect>
+<text x="26" y="76" fill="#f3f5fe" font-size="12">Angreifer</text><text x="26" y="92" fill="#9397ab" font-size="10">ein Ziel nach dem andern</text>
+<path d="M134 78 C300 78 340 53 520 53" fill="none" stroke="#595d6c" stroke-width="1"></path>
+<path d="M134 78 H520" stroke="#595d6c" stroke-width="1"></path>
+<path d="M134 78 C300 78 340 129 520 129" fill="none" stroke="#595d6c" stroke-width="1"></path>
+<text x="258" y="34" fill="#9397ab" font-size="10">Vorbereitung fällt je Ziel neu an</text>
+<rect x="520" y="38" width="136" height="30" fill="#14151c" stroke="#595d6c"></rect><text x="532" y="58" fill="#f3f5fe" font-size="11">Konto</text>
+<rect x="520" y="76" width="136" height="30" fill="#14151c" stroke="#595d6c"></rect><text x="532" y="96" fill="#f3f5fe" font-size="11">Konto</text>
+<rect x="520" y="114" width="136" height="30" fill="#14151c" stroke="#595d6c"></rect><text x="532" y="134" fill="#f3f5fe" font-size="11">Konto</text>
+
+<line x1="14" y1="166" x2="656" y2="166" stroke="#292b31"></line>
+
+<text x="14" y="196" fill="#b5abfc" font-size="10">ÜBER EINEN GEMEINSAM GENUTZTEN PUNKT</text>
+<rect x="14" y="224" width="110" height="52" fill="#14151c" stroke="#3f424d"></rect>
+<text x="26" y="248" fill="#f3f5fe" font-size="12">Angreifer</text><text x="26" y="264" fill="#9397ab" font-size="10">ein Angriff</text>
+<path d="M124 250 H230" stroke="#595d6c" stroke-width="1"></path>
+<text x="130" y="242" fill="#9397ab" font-size="10">einmal</text>
+<rect x="230" y="218" width="200" height="64" fill="#262a60" stroke="#4c5397"></rect>
+<text x="244" y="244" fill="#f3f5fe" font-size="12">Gemeinsam genutzte Stelle</text><text x="244" y="262" fill="#d2cefd" font-size="10">hält Zugriff für viele Konten</text>
+<path d="M430 250 C470 250 480 202 520 202" fill="none" stroke="#9184d9" stroke-width="1" stroke-dasharray="4 4"></path>
+<path d="M430 250 H520" stroke="#9184d9" stroke-width="1" stroke-dasharray="4 4"></path>
+<path d="M430 250 C470 250 480 298 520 298" fill="none" stroke="#9184d9" stroke-width="1" stroke-dasharray="4 4"></path>
+<rect x="520" y="187" width="136" height="30" fill="#14151c" stroke="#595d6c"></rect><text x="532" y="207" fill="#f3f5fe" font-size="11">Konto</text>
+<rect x="520" y="235" width="136" height="30" fill="#14151c" stroke="#595d6c"></rect><text x="532" y="255" fill="#f3f5fe" font-size="11">Konto</text>
+<rect x="520" y="283" width="136" height="30" fill="#14151c" stroke="#595d6c"></rect><text x="532" y="303" fill="#f3f5fe" font-size="11">Konto</text>
+<text x="14" y="338" fill="#b5abfc" font-size="10">derselbe Aufwand, mehr erreichte Ziele - der Stückpreis je Opfer sinkt</text>
+</g>
+</svg>
+<div class="fig-text">Oben fällt die Vorbereitung für jedes Ziel neu an. Unten trägt ein einziger erfolgreicher Angriff auf eine gemeinsam genutzte Stelle zu mehreren Konten bei.</div>
+
+<div class="fig-methode">Schematisch, ohne Zahlenwerte. Drei Konten stehen für beliebig viele. Gestrichelt wie in ABB. 4: Die Stelle öffnet die Konten nicht automatisch - sie senkt den Preis des nächsten Schritts.</div>
+
+</figure>
 <p>Ein solcher Baustein öffnet für sich genommen nichts. Er liefert nur, was an anderer Stelle fehlt. Der einfachste Fall davon ist eine bloße Kennung.</p>
 <h3>Wann eine Kennung zur Person wird</h3>
 <p>Eine eindeutige Kennung ohne Namen ist nicht anonym, sondern pseudonym. Sie trägt für sich genommen keine Person und wird erst dann zu einer Angabe über einen Menschen, wenn eine Stelle sie mit ihm verbindet. Dieser Verknüpfungspunkt ist der eigentliche Angriffspunkt, nicht die Kennung - und das Muster erklärt Sitzungskennungen, Geräte- und Werbekennungen und Adressen in einer öffentlichen Blockchain mit demselben Satz.</p>
@@ -865,9 +908,9 @@ body { margin: 0; background: #050506; }
 <div class="box-label">QUELLE</div>
 <div class="box-text">NIST SP 800-63A-4 trennt konsequent zwischen Identität, Identitätsnachweis und dem Besitz eines Authentifikators. Stärkere Verfahren prüfen nicht, ob jemand bestimmte Informationen kennt, sondern ob präsentierte Nachweise echt sind und zur behaupteten Person gehören.</div>
 </aside>
-<figure class="abb-5">
+<figure class="abb-6">
 <div class="fig-kopf">
-<figcaption>ABB. 5 · ALLEINIGE BEWEISKRAFT: MERKMALE, AUTHENTIFIKATOREN, IDENTITÄTSNACHWEISE</figcaption>
+<figcaption>ABB. 6 · ALLEINIGE BEWEISKRAFT: MERKMALE, AUTHENTIFIKATOREN, IDENTITÄTSNACHWEISE</figcaption>
 <span class="fig-tag">SCHEMATISCH</span>
 </div>
 <svg class="diagramm" viewBox="0 0 670 250" role="img" aria-label="Schematische Skala: wie viel ein Identitätsmerkmal allein noch trägt">
