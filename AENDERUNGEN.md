@@ -109,9 +109,11 @@ anderer Schritt: Der Text wurde gekürzt und umgebaut.
   dafür sechs verschiedene Ausdrücke im Text. Eine Begriffstabelle erklärt
   Authentifikator, Passkey, Recovery-Code und Token beim ersten Auftreten.
 - **Gedankenstriche** sind durchgehend durch Bindestriche ersetzt.
-- **Anker.** Die Sprungziele heißen jetzt `#kapitel-01` … `#kapitel-07` und
-  `#anhang`. Links auf `#kapitel-08` bis `#kapitel-14`, `#abgrenzung` und
-  `#schluss` gehen ins Leere — diese Abschnitte gibt es nicht mehr.
+- **Anker.** Links von außen auf `#kapitel-08` bis `#kapitel-14` und auf
+  `#schluss` gehen ins Leere — diese Abschnitte gibt es nicht mehr. Die Seite
+  öffnet sich, springt aber nirgendwohin. `#kapitel-01` bis `#kapitel-07`,
+  `#inhalt`, `#abgrenzung` und `#anhang` bestehen unverändert; alle Verweise
+  innerhalb des Textes wurden geprüft und zeigen auf vorhandene Ziele.
 - **Klassennamen der Abbildungen** folgen wieder ihren Nummern (`abb-1` …
   `abb-5`). Zwischenzeitlich trugen sie die Nummern der alten Fassung.
 
