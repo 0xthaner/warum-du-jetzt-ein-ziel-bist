@@ -120,3 +120,27 @@ anderer Schritt: Der Text wurde gekürzt und umgebaut.
 Argument, Aufbau der Rechnung und Quellen sind dieselben geblieben. Der
 Wortlaut ist es nicht — wer aus der ersten Fassung zitiert hat, zitiert eine
 andere.
+
+## Fassung 2.1, September 2026
+
+Die Fassung 2.0 war die gekuerzte Webfassung. Diese Ueberarbeitung hat den
+Text nicht gekuerzt, sondern nachgezogen: rund 7.300 Zeichen kamen hinzu,
+von 40.672 auf 47.948.
+
+- **Neue Abbildung ABB. 5** zum Konzentrationseffekt; die bisherige ABB. 5
+  heisst jetzt ABB. 6. **ABB. 1 neu gezeichnet**: statt einer Nutzenlinie drei,
+  die die Aufwandskurve nacheinander kreuzt.
+- **Drei Quellen ergaenzt**: CCC zu Video-Ident (2022), FinCEN zu
+  Deepfake-Identitaeten (2024), Google Advanced Protection und Apple Advanced
+  Data Protection als Ausnahme vom Regelverfahren. Kapitel 04 hatte bis dahin
+  als einziges Kapitel keine Quelle.
+- **Anhangverweise berichtigt**: Vier zeigten noch auf die Kapitelnummerierung
+  der 14-Kapitel-Fassung, fuenf Zeilen hatten gar keinen Verweis.
+- **Zwei Quellen wieder im Text**: Reuters/PET und OCCRP standen im Anhang,
+  wurden aber nirgends zitiert - und Kapitel 06 relativierte dazu "die
+  Beispiele" und "ein bestimmter Messenger", die es nicht mehr gab.
+- **Begriffe vereinheitlicht und erklaert**, Rueckbezuege repariert,
+  Kapitelueberschriften 02 und 05 neu gefasst, Kapitel 07 um die Folgerung
+  ergaenzt, die die Titelfrage beantwortet.
+- **Lesedauer korrigiert**: 18 Minuten entsprachen 2.664 Zeichen pro Minute.
+  Auf der Rechengrundlage der Urfassung (1.575 Zeichen pro Minute) sind es 30.

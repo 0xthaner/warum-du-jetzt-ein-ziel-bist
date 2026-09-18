@@ -1,7 +1,7 @@
 # Warum du jetzt ein Ziel bist
 
 **Identität, Sicherheit und die Ökonomie des Vertrauens**
-Ein Essay von 0xthaner × Assecura · September 2026 · rund 18 Minuten
+Ein Essay von 0xthaner × Assecura · September 2026 · rund 30 Minuten
 
 Zu lesen unter **<https://assecura.xyz/wissen/warum-du-jetzt-ein-ziel-bist>**
 
@@ -46,7 +46,7 @@ Dazu sechs Diagramme als Inline-SVG, elf Tabellen und ein Quellenanhang mit
 Verweisen auf NIST SP 800-63A-4 und 800-63B-4, ENISA, Europol, NATO,
 OWASP LLM01 und LLM06, RFC 9700 / BCP 240, UK NCSC und eIDAS.
 
-Umfang: rund 40.700 Zeichen Fließtext, etwa 18 Minuten Lesezeit.
+Umfang: rund 47.900 Zeichen Fließtext, etwa 30 Minuten Lesezeit.
 
 ## Die Dateien
 
