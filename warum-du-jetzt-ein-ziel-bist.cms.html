@@ -534,6 +534,10 @@ body { margin: 0; background: #050506; }
 <div class="box-label">DIE ANNAHME DAHINTER</div>
 <p class="klein">Das steht in keinem Sicherheitskonzept: Bestimmte Formen gezielter Angriffe sind für wirtschaftlich kalkulierende Angreifer wenig attraktiv, solange der erwartete Aufwand höher ist als der erwartete Nutzen.</p>
 </aside>
+<aside class="box">
+<div class="box-label">WOHER DIESER GEDANKE KOMMT</div>
+<div class="box-text">Neu ist er nicht. Ross Anderson begründete 2001 mit „Why Information Security is Hard - An Economic Perspective" die Sicherheitsökonomie: Unsicherheit entsteht dort, wo Anreize falsch verteilt sind. Cormac Herley unterschied 2010 skalierbare Angriffe, deren Kosten kaum von der Zahl der Opfer abhängen, von gezielten, die Aufwand je Person verlangen - und folgerte, dass ein gezielter Angreifer deshalb Ziele mit überdurchschnittlichem Wert braucht, und dass dieser Wert sichtbar und konzentriert sein muss. Dieser Text setzt dort an und fragt, was geschieht, wenn der Aufwand je Ziel sinkt.</div>
+</aside>
 <figure class="abb-1">
 <div class="fig-kopf">
 <figcaption>ABB. 1 · UNVERÄNDERTE TECHNIK, ANDERE RECHNUNG</figcaption>
@@ -991,6 +995,7 @@ body { margin: 0; background: #050506; }
 <p>Alle diese Maßnahmen wirken auf dieselbe Größe: den Aufwand. Keine macht einen Angriff unmöglich. Eine Maßnahme ist deshalb nicht daran zu messen, ob sie unüberwindbar ist, sondern daran, ob sie den Aufwand wieder über den erwarteten Nutzen hebt.</p>
 <p>Das hat einen Preis, und er wird selten genannt: Jede Maßnahme, die einen Angriff verteuert, verteuert auch den legitimen Gebrauch. Eine Wartefrist bei kritischen Änderungen trifft den Angreifer und den Kunden, der es eilig hat. Ein zweiter unabhängiger Kanal kostet Geräte, Zeit und Support. Eine Wiederherstellung, die eine physische Handlung verlangt, schließt Menschen aus, die diese Handlung nicht leisten können. Genau deshalb gibt es bequeme Wiederherstellungswege überhaupt - sie sind kein Versäumnis, sondern eine Abwägung. Sicherheit ist damit auch eine Verteilungsfrage: Wer trägt die Reibung, und wer trägt den Schaden, wenn sie fehlt?</p>
 <p>In diese Abwägung gehört eine Größe, die bisher nur einmal vorkam. Kapitel 01 nannte Werte dann besonders attraktiv, wenn sie sich schnell übertragen und schwer zurückholen lassen. Das gilt allgemeiner: Ein Zugriff, dessen Folgen sich rückgängig machen lassen, ist weniger wert als einer, der endgültig ist. Erkennung, Widerruf und Umkehrbarkeit wirken deshalb auf dieselbe Rechnung wie eine Barriere - nur auf der anderen Seite: Sie erhöhen nicht den Aufwand, sie senken den erwarteten Nutzen.</p>
+<p>Ein Einwand bleibt, und er ist der stärkste gegen diesen Text: Die Rechnung lässt die Angriffsseite billiger werden und hält die Abwehr konstant. Das ist eine Modellannahme, keine Beschreibung. Auch die Verteidigung wird billiger - Passkeys werden zur Voreinstellung, Anbieter schalten alte Wiederherstellungswege ab, phishing-resistente Verfahren kommen serienmäßig statt auf Antrag. Welche Seite schneller ist, sagt dieser Text nicht, weil er es nicht wissen kann. Er behauptet nur, dass die Angriffsseite sich bewegt - und dass eine unveränderte Barriere deshalb keine unveränderte Sicherheit bedeutet.</p>
 <p>Bleibt die Frage aus dem Titel. Wer bisher kein lohnendes Ziel war, war es selten deshalb, weil er hinter einer besonders hohen Mauer saß. Er war es, weil sich der Weg zu ihm nicht rechnete. Das ist kein Zustand, sondern ein Preis - und ein Preis kann fallen, ohne dass an der Mauer jemand etwas ändert. Fällt er weit genug, ändert sich nicht die Sicherheit, sondern die Auswahl. Die Menge der Ziele, bei denen sich der Weg rechnet, wächst - und sie wächst von unten, weil dort die stehen, deren Schutz überwiegend im Aufwand lag. Von innen ist das nicht zu bemerken: Am eigenen Konto ändert sich nichts, es wechselt nur die Seite der Rechnung.</p>
 <aside class="merksatz">
 <div class="box-label">MERKSATZ</div>
@@ -1004,6 +1009,7 @@ body { margin: 0; background: #050506; }
 </div>
 <table class="tab">
 <tbody>
+<tr><th scope="row" style="width:24%">Anderson 2001, Herley 2010</th><td>Ross Anderson, „Why Information Security is Hard - An Economic Perspective" (ACSAC 2001), Begründung der Sicherheitsökonomie; Cormac Herley, „The Plight of the Targeted Attacker in a World of Scale" (WEIS 2010), Unterscheidung von skalierbaren und gezielten Angriffen. Zitiert in <a href="#kapitel-01">Kapitel 1</a>.</td></tr>
 <tr><th scope="row" style="width:24%">NIST SP 800-63B-4</th><td>Account Recovery, Recovery-Verfahren und Bindung neuer Authentifikatoren. Zitiert in <a href="#kapitel-02">Kapitel 2</a>.</td></tr>
 <tr><th scope="row" >Google, Apple</th><td>Google Advanced Protection Program und Apple Advanced Data Protection: verschärfte beziehungsweise selbst einzurichtende Wiederherstellung als ausdrückliche Ausnahme vom Regelverfahren. Zitiert in <a href="#kapitel-01">Kapitel 1</a>.</td></tr>
 <tr><th scope="row">CCC, 10. 8. 2022</th><td>Martin Tschirsich, Praktischer Angriff auf Video-Ident: sechs Fernidentifizierungsverfahren getäuscht, Zugriff auf die elektronische Patientenakte einer Testperson. Die gematik untersagte die Verfahren am 9. 8. 2022 in der Telematikinfrastruktur. Zitiert in <a href="#kapitel-02">Kapitel 2</a>.</td></tr>
