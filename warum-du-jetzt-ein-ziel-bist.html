@@ -596,14 +596,14 @@ body { margin: 0; background: #050506; }
 <div class="box-text">NIST SP 800-63B-4 behandelt Account Recovery als eigenen Sicherheitsprozess: Ein verlorener Authentifikator kann durch Recovery-Codes, bestehende Faktoren, hinterlegte Kontakte oder eine erneute Identitätsprüfung ersetzt werden.</div>
 </aside>
 <p>Die Wiederherstellung ist damit ein eigener Zugangspfad - ein Weg, über den Zugriff entstehen kann, ohne den Authentifikator, den die reguläre Anmeldung verlangt. Sie ist keine Komfortfunktion am Rand, sondern sicherheitsrelevant wie der Login selbst.</p>
-<p>Damit gibt es mindestens zwei Wege in denselben Bereich, und das hat eine Folge für die Rechnung: Ein Angreifer bezahlt nicht den Durchschnitt aller Wege, sondern den günstigsten, der ihn hineinbringt. Ein starkes Anmeldeverfahren verteuert genau einen dieser Wege, nämlich die Anmeldung selbst. An der Wiederherstellung ändert es nichts. Das ist kein Argument gegen starke Anmeldeverfahren - es heißt nur, dass nach ihrer Einführung ein anderer Weg der günstigste sein kann.</p>
-<p>Das ändert auch, wonach überhaupt zu fragen ist. Nicht: Wie stark ist das Anmeldeverfahren? Sondern: Welche Wege führen in diesen Bereich, und was kostet der günstigste davon? Es sind mehr Wege, als die meisten im Kopf haben.</p>
+<p>Damit gibt es mindestens zwei Wege in dasselbe Konto, und das hat eine Folge für die Rechnung: Ein Angreifer bezahlt nicht den Durchschnitt aller Wege, sondern den günstigsten, der ihn hineinbringt. Ein starkes Anmeldeverfahren verteuert genau einen dieser Wege, nämlich die Anmeldung selbst. An der Wiederherstellung ändert es nichts. Das ist kein Argument gegen starke Anmeldeverfahren - es heißt nur, dass nach ihrer Einführung ein anderer Weg der günstigste sein kann.</p>
+<p>Das ändert auch, wonach überhaupt zu fragen ist. Nicht: Wie stark ist das Anmeldeverfahren? Sondern: Welche Wege führen in dieses Konto, und was kostet der günstigste davon? Es sind mehr Wege, als die meisten im Kopf haben.</p>
 <figure class="abb-2">
 <div class="fig-kopf">
 <figcaption>ABB. 2 · MEHRERE ZUGANGSPFADE</figcaption>
 <span class="fig-tag">SCHEMATISCH</span>
 </div>
-<svg class="diagramm" viewBox="0 0 670 416" role="img" aria-label="Schematisches Diagramm: mehrere Zugangspfade betreffen denselben geschützten Bereich mit unterschiedlicher Reichweite">
+<svg class="diagramm" viewBox="0 0 670 416" role="img" aria-label="Schematisches Diagramm: mehrere Zugangspfade betreffen dasselbe Konto mit unterschiedlicher Reichweite">
 <g font-family="Satoshi, Inter, sans-serif">
 <rect x="18" y="16" width="286" height="42" fill="#14151c" stroke="#9184d9"></rect>
 <text x="30" y="34" fill="#f3f5fe" font-size="12">Reguläre Anmeldung</text><text x="30" y="49" fill="#9397ab" font-size="10">Passkey, Schlüssel, Gerät</text>
@@ -626,9 +626,8 @@ body { margin: 0; background: #050506; }
 <path d="M392 37 V277" stroke="#595d6c" stroke-width="1"></path>
 <path d="M392 157 H424" stroke="#e4e7f5" stroke-width="1.4"></path>
 <rect x="424" y="112" width="228" height="90" fill="#14151c" stroke="#595d6c"></rect>
-<text x="442" y="140" fill="#f3f5fe" font-size="12">derselbe geschützte</text>
-<text x="442" y="158" fill="#f3f5fe" font-size="12">Bereich -</text>
-<text x="442" y="180" fill="#b5abfc" font-size="11">unterschiedliche Reichweite</text>
+<text x="442" y="146" fill="#f3f5fe" font-size="12">dasselbe Konto -</text>
+<text x="442" y="168" fill="#b5abfc" font-size="11">unterschiedliche Reichweite</text>
 <line x1="18" y1="318" x2="652" y2="318" stroke="#292b31"></line>
 <rect x="18" y="322" width="634" height="82" fill="#191627" stroke="#9184d9" stroke-width="1.4"></rect>
 <rect x="18" y="322" width="3" height="82" fill="#9184d9"></rect>
@@ -639,7 +638,7 @@ body { margin: 0; background: #050506; }
 <path d="M209 322 V300" stroke="#9184d9" stroke-width="1.4" stroke-dasharray="4 4"></path>
 </g>
 </svg>
-<div class="fig-text">Stärkere Anmeldung kann andere Zugangspfade relativ attraktiver machen. Der abgesetzte Bereich zeigt keinen zusätzlichen Kontozugang, sondern technische Abhängigkeiten, die einzelne Sicherheitsprozesse mittragen.</div>
+<div class="fig-text">Stärkere Anmeldung kann andere Zugangspfade relativ attraktiver machen. Der abgesetzte Kasten zeigt keinen zusätzlichen Kontozugang, sondern technische Abhängigkeiten, die einzelne Sicherheitsprozesse mittragen.</div>
 
 <div class="fig-methode">Schematisch. Nicht jeder Dienst hat alle diese Pfade, und sie sind unterschiedlich gut gesichert. Die Reichweite ist ebenfalls verschieden: gleicher Schutzgegenstand, nicht gleiche Rechte.</div>
 
@@ -649,7 +648,7 @@ body { margin: 0; background: #050506; }
 <tr><th scope="row" style="width:26%">Wiederherstellung</th><td>Der Weg zurück nach dem Verlust eines Faktors. Notwendig, damit legitime Nutzer ihren Zugang wiederbekommen.</td></tr>
 <tr><th scope="row">Bestehende Sitzung</th><td>Nach der Anmeldung hält ein System den angemeldeten Zustand fest, über ein Artefakt, das den bereits geführten Nachweis vertritt.</td></tr>
 <tr><th scope="row">Delegierter Zugriff</th><td>Wer einem Mailprogramm, einem Kalenderdienst oder einem Assistenten Zugriff erteilt, vergibt eine längerlebige Berechtigung, typischerweise über ein Token.</td></tr>
-<tr><th scope="row">Mitberechtigter Zugang</th><td>Familie, Team, Vollmacht: legitime Rechte am geschützten Bereich, mit eigener Reichweite.</td></tr>
+<tr><th scope="row">Mitberechtigter Zugang</th><td>Familie, Team, Vollmacht: legitime Rechte am Konto, mit eigener Reichweite.</td></tr>
 <tr><th scope="row">Anbieter- und Supportzugriff</th><td>Verwaltungswerkzeuge des Betreibers. Notwendig, und außerhalb der Kontrolle des Nutzers.</td></tr>
 <tr><th scope="row">Externe Abhängigkeiten<br><span class="klein">kein Kontozugang</span></th><td>Systeme und Dienstleister, auf die ein Anbieter selbst vertraut. Sie öffnen kein Konto, können aber einen bestehenden Pfad beeinflussen.</td></tr>
 </tbody>
