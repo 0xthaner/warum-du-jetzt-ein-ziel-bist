@@ -34,7 +34,7 @@ keine empirischen Zahlenwerte.
 | | |
 |---|---|
 | 01 | Die Rechnung |
-| 02 | Mehrere Wege in denselben Bereich |
+| 02 | Nicht nur die Anmeldung führt hinein |
 | 03 | Ein Schritt öffnet nicht alles |
 | 04 | Was KI tatsächlich verändert |
 | 05 | Wenn die Identität von anderen Stellen abhängt |
