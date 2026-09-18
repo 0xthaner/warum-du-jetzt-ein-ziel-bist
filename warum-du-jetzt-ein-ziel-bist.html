@@ -536,7 +536,7 @@ body { margin: 0; background: #050506; }
 </svg>
 <div class="fig-text">Die getönte Fläche ist die Spanne zwischen erwartetem Nutzen und Aufwand. Sie öffnet sich, ohne dass sich die Barriere ändert.</div>
 
-<div class="fig-methode">Schematisches Modell, keine empirische Messreihe. Technische Sicherheit und erwarteter Nutzen werden hier bewusst konstant gehalten - eine Modellannahme, um den Kosteneffekt isoliert zu zeigen; in der Realität kann sich auch der erwartete Nutzen verändern. Der Punkt ist: Selbst wenn sich an einer Sicherheitsbarriere nichts ändert, kann ein Angriff wirtschaftlich attraktiv werden, sobald seine übrigen Kosten sinken.</div>
+<div class="fig-methode">Schematisches Modell, keine empirische Messreihe. Technische Sicherheit und erwarteter Nutzen werden hier bewusst konstant gehalten - eine Modellannahme, um den Kosteneffekt isoliert zu zeigen; in der Realität kann sich auch der erwartete Nutzen verändern.</div>
 
 </figure>
 <p>Mit dem Nutzen eines Ziels ist dabei keine Bewertung eines Menschen gemeint, sondern das, was ein Angreifer aus einem erfolgreichen Angriff zu gewinnen hofft. Geld auf einem Konto ist davon nur der offensichtlichste Teil.</p>
@@ -718,9 +718,9 @@ body { margin: 0; background: #050506; }
 <text x="48" y="228" fill="#9397ab" font-size="10">Die gestrichelten Übergänge sind nicht zwangsläufig. Sie sind nur billiger geworden.</text>
 </g>
 </svg>
-<div class="fig-text">Kein Dominoeffekt im mechanischen Sinn: Die Stufen sind Kostenniveaus, die Übergänge Wahrscheinlichkeiten.</div>
+<div class="fig-text">Kein Dominoeffekt im mechanischen Sinn: Die Stufen sind Kostenniveaus, die Übergänge Wahrscheinlichkeiten. Genau deshalb wirkt jede unterbrochene Abhängigkeit als echte Verteuerung.</div>
 
-<div class="fig-methode">Schematisch, ohne Zahlenwerte. Genau deshalb wirkt jede unterbrochene Abhängigkeit als echte Verteuerung.</div>
+<div class="fig-methode">Schematisch, ohne Zahlenwerte.</div>
 
 </figure>
 <aside class="merksatz">
@@ -789,9 +789,9 @@ body { margin: 0; background: #050506; }
 <text x="532" y="136" fill="#d2cefd" font-size="10">bleibt eigenständig</text>
 <text x="532" y="149" fill="#d2cefd" font-size="10">geschützt</text>
 </g>
-</svg><div class="fig-text">Zwischenziele können Systeme, Organisationen oder Personen sein; dargestellt sind die systembezogenen Formen. Gestrichelt: liefert eine Voraussetzung oder Teilinformation - keinen automatischen Zugriff auf das Endziel.</div>
+</svg><div class="fig-text">Zwischenziele können Systeme, Organisationen oder Personen sein; dargestellt sind die systembezogenen Formen. Gestrichelt: liefert eine Voraussetzung oder Teilinformation - keinen automatischen Zugriff auf das Endziel. Die Sicherheitsbarriere rechts bleibt dabei unverändert stark.</div>
 
-<div class="fig-methode">Schematisches Modell, keine Darstellung eines konkreten Ablaufs. Keiner der drei Wege öffnet das Endziel von selbst. Jeder kann einen Teil dessen beisteuern, was für den nächsten Schritt fehlt. Die Sicherheitsbarriere rechts bleibt dabei unverändert stark.</div>
+<div class="fig-methode">Schematisches Modell, keine Darstellung eines konkreten Ablaufs.</div>
 
 </figure>
 <p>Bei einem direkten Angriff fällt die Vorbereitung für jedes Ziel neu an. Bei einem gemeinsam genutzten Zwischenziel kann ein Teil dieser Arbeit einmal anfallen und danach mehrere mögliche Endziele betreffen. Genau darin liegt der Konzentrationseffekt: Ein Anbieter, der für sehr viele Nutzer Postfachzugriff hält, bündelt deren Berechtigungen - ein einziger erfolgreicher Angriff senkt dann den Stückpreis je Opfer erheblich. Das Postfach des Einzelnen wird nicht über ihn selbst angegriffen, sondern über einen Dienst, den er vor zwei Jahren einmal verbunden und danach vergessen hat.</p>
@@ -809,9 +809,10 @@ body { margin: 0; background: #050506; }
 <tbody>
 <tr><th scope="row" style="width:26%">Kontext</th><td>Was das System über den Nutzer weiß: Beziehungen, Projekte, Zuständigkeiten, Kommunikation.</td></tr>
 <tr><th scope="row">Delegierte Rechte</th><td>Auf welche Systeme es zugreifen darf und welche Operationen dort erlaubt sind.</td></tr>
-<tr><th scope="row">Handlungsmöglichkeiten</th><td>Ob es Informationen nur anzeigt oder Aktionen vorbereitet und ausführt. Nicht jeder Assistent besitzt alle drei Ebenen.</td></tr>
+<tr><th scope="row">Handlungsmöglichkeiten</th><td>Ob es Informationen nur anzeigt oder Aktionen vorbereitet und ausführt.</td></tr>
 </tbody>
 </table>
+<p class="klein">Nicht jeder Assistent besitzt alle drei Ebenen.</p>
 <p>Damit entsteht eine Reihe von Vertrauensbeziehungen: Der Nutzer vertraut dem Assistenten, der Assistent seinen Werkzeugen, und die Werkzeuge besitzen Berechtigungen gegenüber weiteren Systemen. Ein Sicherheitsproblem muss deshalb nicht im Sprachmodell liegen. Hinzu kommt eine zweite Vertrauensfrage, weil ein Assistent Inhalte verarbeitet, die er nicht selbst erzeugt hat: Dokumente, Mails, Webseiten. Für ein Sprachmodell können diese Daten wie eine Anweisung aussehen.</p>
 <aside class="box">
 <div class="box-label">DIE ZWEITE FRAGE</div>
