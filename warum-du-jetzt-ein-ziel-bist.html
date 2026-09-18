@@ -347,33 +347,19 @@ body { margin: 0; background: #050506; }
       haette nur alle gleich zappeln lassen.
     */
 
-    /* ABB. 2.1 - die Waage wiegt sich um ihre Ruhelage.
-       Gedreht wird der Balken, nicht das Bild: seine Gruppe traegt die
-       Drehung schon als Attribut, die Animation setzt dieselbe Achse fort. */
-    .essay .abb-2-1 .diagramm > g > g {
-      transform-box: view-box;
-      transform-origin: 335px 150px;
-      animation: abb-waage 8s ease-in-out infinite;
-    }
-    @keyframes abb-waage {
-      0%, 100% { transform: rotate(6.4deg); }
-      50%      { transform: rotate(9.6deg); }
-    }
-
-    /* ABB. 3 - die bestaetigten Wege fliessen.
+    /* ABB. 4 - die bestaetigten Wege fliessen.
        Ihr Strichmuster ist 4 auf 4, eine Periode also 8 Einheiten: genau um
        diesen Betrag wandert der Versatz, damit die Schleife nicht springt. */
-    .essay .abb-3 .diagramm [stroke-dasharray] {
+    .essay .abb-4 .diagramm [stroke-dasharray] {
       animation: abb-fliessen 1.9s linear infinite;
     }
     @keyframes abb-fliessen {
       to { stroke-dashoffset: -8; }
     }
 
-    /* ABB. 5 und ABB. 8 - die Balken fahren hoch und bleiben stehen.
+    /* ABB. 5 - die Balken fahren hoch und bleiben stehen.
        Sie wachsen aus ihrer eigenen linken Kante, deshalb `fill-box`. */
-    .essay .abb-5 .diagramm rect,
-    .essay .abb-8 .diagramm rect {
+    .essay .abb-5 .diagramm rect {
       transform-box: fill-box;
       transform-origin: left center;
       animation: abb-balken cubic-bezier(0.22, 1, 0.36, 1) both;
@@ -386,24 +372,12 @@ body { margin: 0; background: #050506; }
     }
     /* Nacheinander statt alle auf einmal - so liest man die Reihenfolge. */
     .essay .abb-5 .diagramm rect:nth-of-type(1) { animation-range: entry 16% entry 50%; }
-    .essay .abb-5 .diagramm rect:nth-of-type(2) { animation-range: entry 19% entry 53%; }
-    .essay .abb-5 .diagramm rect:nth-of-type(3) { animation-range: entry 22% entry 56%; }
-    .essay .abb-5 .diagramm rect:nth-of-type(4) { animation-range: entry 25% entry 59%; }
-    .essay .abb-5 .diagramm rect:nth-of-type(5) { animation-range: entry 28% entry 62%; }
-    .essay .abb-5 .diagramm rect:nth-of-type(6) { animation-range: entry 31% entry 65%; }
-    .essay .abb-5 .diagramm rect:nth-of-type(7) { animation-range: entry 34% entry 68%; }
-    .essay .abb-5 .diagramm rect:nth-of-type(8) { animation-range: entry 37% entry 71%; }
-    .essay .abb-5 .diagramm rect:nth-of-type(9) { animation-range: entry 40% entry 74%; }
-    .essay .abb-5 .diagramm rect:nth-of-type(10) { animation-range: entry 43% entry 77%; }
-    .essay .abb-5 .diagramm rect:nth-of-type(11) { animation-range: entry 46% entry 80%; }
-    .essay .abb-5 .diagramm rect:nth-of-type(12) { animation-range: entry 49% entry 83%; }
-    .essay .abb-8 .diagramm rect:nth-of-type(1) { animation-range: entry 16% entry 50%; }
-    .essay .abb-8 .diagramm rect:nth-of-type(2) { animation-range: entry 21% entry 55%; }
-    .essay .abb-8 .diagramm rect:nth-of-type(3) { animation-range: entry 26% entry 60%; }
-    .essay .abb-8 .diagramm rect:nth-of-type(4) { animation-range: entry 31% entry 65%; }
-    .essay .abb-8 .diagramm rect:nth-of-type(5) { animation-range: entry 36% entry 70%; }
-    .essay .abb-8 .diagramm rect:nth-of-type(6) { animation-range: entry 41% entry 75%; }
-    .essay .abb-8 .diagramm rect:nth-of-type(7) { animation-range: entry 46% entry 80%; }
+    .essay .abb-5 .diagramm rect:nth-of-type(2) { animation-range: entry 21% entry 55%; }
+    .essay .abb-5 .diagramm rect:nth-of-type(3) { animation-range: entry 26% entry 60%; }
+    .essay .abb-5 .diagramm rect:nth-of-type(4) { animation-range: entry 31% entry 65%; }
+    .essay .abb-5 .diagramm rect:nth-of-type(5) { animation-range: entry 36% entry 70%; }
+    .essay .abb-5 .diagramm rect:nth-of-type(6) { animation-range: entry 41% entry 75%; }
+    .essay .abb-5 .diagramm rect:nth-of-type(7) { animation-range: entry 46% entry 80%; }
 
     /* ABB. 1 - der Punkt an der Schwelle schlaegt ruhig.
        Er markiert die Stelle, an der die Kurve den erwarteten Nutzen kreuzt;
@@ -683,7 +657,7 @@ body { margin: 0; background: #050506; }
 <p>Die beiden Fälle zeigen dieselbe Rechnung von zwei Seiten: Der Pfad funktioniert, wenn eine Kontrolle fehlt, und er endet, wenn eine gebundene Kontrolle greift.</p>
 <p>Das ist ausdrücklich keine Entwarnung. Mailkonto und Telefonnummer bleiben besonders wertvoll, weil viele Dienste sie gleichzeitig für Kommunikation, Wiederherstellung und Bestätigung verwenden. Wird einer von beiden kompromittiert, ist der Schaden groß, breit und schwer zurückzuholen.</p>
 <p>Der Domino fällt nicht von selbst. Was passiert, ist banaler: Jeder gelungene Schritt macht den nächsten billiger. Bereits bestätigte Angaben, bestehende Sitzungen und delegierte Zugriffe lassen sich wiederverwenden. Wer eine Rechnungsadresse aus einem Postfach hat, muss sie beim nächsten Anbieter nicht mehr erraten. Sinkt der Aufwand je Versuch, werden weitere Versuche wirtschaftlich vertretbar - und damit steigt die Chance, irgendwo auf einen schwächeren Prozess zu treffen.</p>
-<figure class="abb-4">
+<figure class="abb-3">
 <div class="fig-kopf">
 <figcaption>ABB. 3 · KOSTEN DES NÄCHSTEN SCHRITTS</figcaption>
 <span class="fig-tag">SCHEMATISCH</span>
@@ -761,7 +735,7 @@ body { margin: 0; background: #050506; }
 <div class="box-label">WAS EIN ZWISCHENZIEL IST</div>
 <p class="klein">Eine andere Person, Stelle oder ein anderes System als das Endziel, das etwas besitzt, weiß oder erzeugt, das einen späteren Angriffsschritt erleichtert: Information, Kontext, Bestätigung, ein bereits geprüftes Merkmal, eine begrenzte Berechtigung oder eine legitime Beziehung.</p>
 </aside>
-<figure class="abb-3">
+<figure class="abb-4">
 <div class="fig-kopf">
 <figcaption>ABB. 4 · WAS EIN ZWISCHENZIEL BEITRÄGT</figcaption>
 <span class="fig-tag">SCHEMATISCH</span>
@@ -840,7 +814,7 @@ body { margin: 0; background: #050506; }
 <div class="box-label">QUELLE</div>
 <div class="box-text">NIST SP 800-63A-4 trennt konsequent zwischen Identität, Identitätsnachweis und dem Besitz eines Authentifikators. Stärkere Verfahren prüfen nicht, ob jemand bestimmte Informationen kennt, sondern ob präsentierte Nachweise echt sind und zur behaupteten Person gehören.</div>
 </aside>
-<figure class="abb-8">
+<figure class="abb-5">
 <div class="fig-kopf">
 <figcaption>ABB. 5 · ALLEINIGE BEWEISKRAFT: MERKMALE, AUTHENTIFIKATOREN, IDENTITÄTSNACHWEISE</figcaption>
 <span class="fig-tag">SCHEMATISCH</span>
