@@ -42,7 +42,7 @@ keine empirischen Zahlenwerte.
 | 07 | Was daraus folgt |
 | — | Anhang: Quellen und Belege |
 
-Dazu sechs Diagramme als Inline-SVG, elf Tabellen und ein Quellenanhang mit
+Dazu sechs Diagramme als Inline-SVG, eine Illustration, elf Tabellen und ein Quellenanhang mit
 Verweisen auf NIST SP 800-63A-4 und 800-63B-4, ENISA, Europol, NATO,
 OWASP LLM01 und LLM06, RFC 9700 / BCP 240, UK NCSC und eIDAS.
 
@@ -54,6 +54,7 @@ Umfang: rund 47.900 Zeichen Fließtext, etwa 30 Minuten Lesezeit.
 |---|---|
 | `warum-du-jetzt-ein-ziel-bist.html` | Der ganze Essay in einer Datei. Bilder und Schriftverweise enthalten, keine externen Abhängigkeiten außer den Web-Schriften. Herunterladen, doppelklicken, lesen. |
 | `warum-du-jetzt-ein-ziel-bist.cms.html` | Derselbe Inhalt als reiner Block ohne `<html>`/`<head>`, für die Einbindung in ein CMS. Alle Selektoren liegen unter der Klasse `.essay` und können nichts auf der umgebenden Seite überschreiben. |
+| `bilder/netz.webp` | Die Illustration aus Kapitel 2, auch einzeln, falls das CMS lieber Uploads als eingebettete Bilder möchte. |
 | `bilder/reisepass.webp`, `bilder/portraet.webp` | Die beiden Illustrationen der ersten Fassung. Der Text führt sie seit der Überarbeitung nicht mehr; sie liegen hier, weil sie zum Thema gehören. |
 | `bilder/vorschaukarte.png` | Die Karte fürs Teilen, 1200 × 630. |
 | `AENDERUNGEN.md` | Was beim Weg von der A4-Fassung zur Webfassung entfallen ist — und der Nachweis, dass am Text nichts geändert wurde. |
