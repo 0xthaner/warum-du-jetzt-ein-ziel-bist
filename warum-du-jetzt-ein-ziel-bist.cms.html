@@ -481,6 +481,42 @@ body { margin: 0; background: #050506; }
   .essay .tab tbody tr:last-child th { border-bottom: 0; }
 }
 
+/*
+	BELEGE KLAPPEN AUF, STATT DEN TEXT ZU UNTERBRECHEN.
+
+	Die Klappzeile nennt, was drinsteht - sonst sieht ein ueberfliegender
+	Leser gar keine Belege mehr, und die Belegdichte ist das Pfund dieses
+	Textes. Zugeklappt liest man also, DASS belegt ist und WOMIT.
+*/
+.essay .beleg {
+  display: block; margin: 1.8rem auto; padding: 0.7rem 1.2rem;
+  background: var(--flaeche-2); border-left: 2px solid var(--akzent);
+  border-radius: 0 6px 6px 0;
+}
+.essay .beleg > summary {
+  cursor: pointer; list-style: none; display: flex; flex-wrap: wrap;
+  gap: 0.2rem 0.6rem; align-items: baseline;
+}
+.essay .beleg > summary::-webkit-details-marker { display: none; }
+.essay .beleg > summary::before {
+  content: "+"; color: var(--akzent-hell); font-size: 13px; line-height: 1.5;
+  width: 0.8em; flex: none;
+}
+.essay .beleg[open] > summary::before { content: "\2212"; }
+.essay .beleg-art {
+  font-size: 11px; letter-spacing: 0.13em; color: var(--akzent-hell); line-height: 1.5;
+}
+.essay .beleg-was { font-size: 13px; color: var(--text-meta); line-height: 1.5; }
+.essay .beleg > summary:hover .beleg-was { color: var(--text-leise); }
+.essay .beleg > summary:focus-visible { outline: 2px solid var(--akzent-link); outline-offset: 3px; }
+.essay .beleg[open] > .box-text { margin-top: 0.7rem; }
+
+/* Gedruckt wird alles - ein Beleg, den man nicht sieht, ist keiner. */
+@media print {
+  .essay .beleg > .box-text { display: block !important; }
+  .essay .beleg > summary::before { content: ""; }
+}
+
 </style>
 
 <article class="essay" lang="de">
@@ -523,10 +559,10 @@ body { margin: 0; background: #050506; }
 <div class="kap-kopf"><span class="kap-nr">01</span><h2>Die Rechnung</h2></div>
 <p class="lead">Ein durchschnittlicher Haushalt war nie deshalb uninteressant für einen gezielten Identitätsangriff, weil seine Identität technisch besonders gut geschützt gewesen wäre.</p>
 <p>Passwörter können zurückgesetzt werden. Telefonnummern werden wie ein Faktor behandelt. Mailkonten haben Wiederherstellungswege. Systeme brauchen Verfahren für Menschen, die ihr Passwort vergessen oder ihr Telefon verloren haben. Das gilt für das Konto eines gewöhnlichen Privatkunden genauso wie für das Konto einer Person, deren Rechte, Wissen oder Entscheidungsbefugnisse einen unbefugten Zugriff ungleich folgenreicher machen: Bei denselben Anbietern stehen beide hinter denselben Verfahren, solange nicht ausdrücklich ein strengeres gewählt wird.</p>
-<aside class="box">
-<div class="box-label">QUELLE</div>
+<details class="beleg">
+<summary><span class="beleg-art">QUELLE</span><span class="beleg-was">Google Advanced Protection, Apple Advanced Data Protection</span></summary>
 <div class="box-text">Einzelne Anbieter führen dafür eigene Programme, die man selbst einschalten muss. Google beschreibt für sein Advanced Protection Program eine verschärfte Wiederherstellung: Wer den Sicherheitsschlüssel verliert, durchläuft eine Prüfung über mehrere Tage; als Zielgruppe nennt Google unter anderem Journalisten, Aktivisten, Wahlkampfmitarbeiter und Administratoren. Apple gibt für Advanced Data Protection an, die Schlüssel selbst nicht zu besitzen - ohne zuvor eingerichteten Wiederherstellungskontakt oder -schlüssel ist der Zugang verloren.</div>
-</aside>
+</details>
 
 <p>Wenn die eine Person angegriffen wurde und die andere nicht, lag das deshalb selten an der Technik. Es lag an der Rechnung des Angreifers. Einen bestimmten Menschen aus gesammelten Daten zu rekonstruieren, seine Konten und Beziehungen zu finden, glaubwürdig mit mehreren Stellen zu kommunizieren und mehrere Prüfungen zu überwinden, kostete Zeit.</p>
 <p>Entscheidend daran war nicht die Höhe dieser Kosten, sondern ihre Form: Sie fielen für jedes Ziel neu an. Die Recherche zu einer Person war nicht übertragbar: Was über einen Menschen zusammengetragen war, half beim nächsten nicht, solange die beiden nichts miteinander zu tun hatten. Wo Menschen zusammenhängen - Familie, Team, Firma -, ist das anders; darauf kommt <a href="#kapitel-05">Kapitel 5</a> zurück. Und wer sich in einem Telefonat als jemand anderes ausgab, musste dessen Verhältnisse kennen und auf Rückfragen antworten können. Der Stückpreis sank also nicht, wenn jemand mehr Ziele verfolgte - wer zehn davon angriff, zahlte ungefähr das Zehnfache. Ein Angriff auf einen einzelnen Haushalt war damit nicht unmöglich, sondern unrentabel. Ob das so bleibt, hängt vor allem daran, ob diese Kosten ihre Form behalten.</p>
@@ -604,24 +640,24 @@ body { margin: 0; background: #050506; }
 </tbody>
 </table>
 <p>Menschen verlieren solche Authentifikatoren. Telefone gehen kaputt, Geräte werden gestohlen, Recovery-Codes verschwinden in einer Mappe, Mitarbeiter verlassen Unternehmen. Die meisten massentauglichen Dienste brauchen deshalb einen Weg zurück. Das ist kein Konstruktionsfehler: Ein Dienst ohne Weg zurück sperrt beim ersten verlorenen Telefon endgültig aus. Wer je sein Gerät verloren hat, war froh, dass es ihn gab.</p>
-<aside class="box">
-<div class="box-label">QUELLE</div>
+<details class="beleg">
+<summary><span class="beleg-art">QUELLE</span><span class="beleg-was">NIST SP 800-63B-4 zu Account Recovery</span></summary>
 <div class="box-text">NIST SP 800-63B-4 behandelt Account Recovery als eigenen Sicherheitsprozess: Ein verlorener Authentifikator kann durch Recovery-Codes, bestehende Faktoren, hinterlegte Kontakte oder eine erneute Identitätsprüfung ersetzt werden.</div>
-</aside>
-<aside class="box">
-<div class="box-label">QUELLE</div>
+</details>
+<details class="beleg">
+<summary><span class="beleg-art">QUELLE</span><span class="beleg-was">Google, Millionen Wiederherstellungsversuche</span></summary>
 <div class="box-text">Wie belastbar so ein Weg zurück ist, hat Google 2015 an Millionen echter Wiederherstellungsversuche untersucht. Sicherheitsfragen boten demnach ein deutlich geringeres Sicherheitsniveau als selbstgewählte Passwörter, und rund 40 Prozent der englischsprachigen Nutzer in den USA konnten ihre eigene Antwort nicht mehr abrufen. Wer absichtlich falsche Antworten hinterlegte, um sie schwerer erratbar zu machen, machte sie im Mittel leichter erratbar. Daraus wurde eine Regel: Die aktuelle Fassung von NIST SP 800-63B untersagt Sicherheitsfragen als Nachweis ausdrücklich. Der Weg zurück verschwand damit nicht, er verlagerte sich - auf die erneute Identitätsprüfung und auf den Anruf beim Support.</div>
-</aside>
+</details>
 <p>Die Wiederherstellung ist damit ein eigener Zugangspfad - ein Weg, über den Zugriff entstehen kann, ohne den Authentifikator, den die reguläre Anmeldung verlangt. Sie ist keine Komfortfunktion am Rand, sondern sicherheitsrelevant wie der Login selbst.</p>
 <p>Damit gibt es mindestens zwei Wege in dasselbe Konto, und das hat eine Folge für die Rechnung: Ein Angreifer bezahlt nicht den Durchschnitt aller Wege, sondern den günstigsten, der ihn hineinbringt. Ein starkes Anmeldeverfahren verteuert vor allem einen dieser Wege, nämlich die Anmeldung selbst. An der Wiederherstellung ändert es nichts. Bei einem Teil der Wiederherstellungswege kann die Rechnung sogar in die andere Richtung laufen. Wird ein verlorener Authentifikator durch eine erneute Identitätsprüfung ersetzt - Ausweis, Selfie, Videoanruf -, sieht das nach einer hohen Hürde aus. Das soll es auch sein. Wie hoch sie wirklich ist, hängt daran, was geprüft wird: die Echtheit des Nachweises oder nur sein Aussehen. Ein Chip im Ausweis lässt sich kryptografisch prüfen, ein Bild davon nicht. In der Praxis wird meist das Bild geprüft, per Videoanruf oder Selfie. Warum diese Prüfung billiger zu täuschen geworden ist, behandelt <a href="#kapitel-06">Kapitel 6</a>. Das ist kein Argument gegen starke Anmeldeverfahren - es heißt nur, dass nach ihrer Einführung ein anderer Weg der günstigste sein kann.</p>
-<aside class="box">
-<div class="box-label">QUELLE</div>
+<details class="beleg">
+<summary><span class="beleg-art">QUELLE</span><span class="beleg-was">PwC 2026 zur Verbreitung von Video-Ident</span></summary>
 <div class="box-text">Wie verbreitet welche Variante ist, zeigt eine Erhebung von PwC aus dem Jahr 2026: Jede zweite Person in Deutschland hat sich demnach schon einmal per Video-Ident ausgewiesen. Die chipbasierte eID ist zwar 73 Prozent bekannt, aktiv genutzt wird sie aber nur von etwa jedem Fünften.</div>
-</aside>
-<aside class="box">
-<div class="box-label">DOKUMENTIERTER FALL</div>
+</details>
+<details class="beleg">
+<summary><span class="beleg-art">DOKUMENTIERTER FALL</span><span class="beleg-was">Chaos Computer Club, Video-Ident 2022</span></summary>
 <div class="box-text">Im August 2022 führte Martin Tschirsich vom Chaos Computer Club vor, dass sich sechs Video-Ident-Verfahren täuschen lassen - mit Open-Source-Software, zusammenkopierten Videoaufnahmen und etwas roter Aquarellfarbe. Keines der Verfahren erkannte die Täuschung. Er kam damit an die elektronische Patientenakte einer eingeweihten Testperson: eingelöste Rezepte, Arbeitsunfähigkeitsbescheinigungen, Diagnosen, Behandlungsunterlagen. Die gematik, die mehrheitlich dem Bund gehörende Betreiberin des deutschen Gesundheitsdatennetzes, untersagte Video-Ident daraufhin am 9. August 2022 bis auf Weiteres. Der Zugang entstand hier nicht über eine Anmeldung, sondern über den Nachweis, wer jemand ist. Besondere Technik brauchte es dafür nicht, auch keine künstliche Intelligenz. Sie war umgekehrt als Verbesserung solcher Verfahren angekündigt worden, und Tschirsich hielt fest, dass sich diese Annahme in der Praxis als falsch erwiesen hat.</div>
-</aside>
+</details>
 <p>Das ändert auch, wonach überhaupt zu fragen ist. Nicht: Wie stark ist das Anmeldeverfahren? Sondern: Welche Wege führen in dieses Konto, und was kostet der günstigste davon? Es sind mehr Wege, als die meisten im Kopf haben.</p>
 <figure class="abb-2">
 <div class="fig-kopf">
@@ -679,10 +715,10 @@ body { margin: 0; background: #050506; }
 <tr><th scope="row">Externe Abhängigkeiten<br><span class="klein">kein Kontozugang</span></th><td>Systeme und Dienstleister, auf die ein Anbieter selbst vertraut. Sie öffnen kein Konto, können aber einen bestehenden Pfad beeinflussen.</td></tr>
 </tbody>
 </table>
-<aside class="box">
-<div class="box-label">DOKUMENTIERTE FÄLLE</div>
+<details class="beleg">
+<summary><span class="beleg-art">DOKUMENTIERTE FÄLLE</span><span class="beleg-was">Okta, MGM und Caesars, dazu die CISA-Warnmeldung</span></summary>
 <div class="box-text">Okta gab im Oktober 2023 bekannt, dass ein Angreifer auf das Kundensupport-System zugriff und dort von Kunden hochgeladene Dateien einsehen konnte, die Sitzungstoken enthielten; mehrere Kunden meldeten anschließend Anmeldeversuche mit diesen Token. Bei den Angriffen auf MGM Resorts und Caesars im September 2023 führte der Weg nach übereinstimmender Darstellung von Sicherheitsforschern und Medienberichten über den IT-Helpdesk, an dem eine Zurücksetzung erwirkt wurde. Beides sind keine gebrochenen Anmeldungen, sondern Wege daneben. In beiden Fällen war der Weg vorgesehen - benutzt hat ihn jemand, für den er nicht gedacht war. Der Helpdesk ist dabei kein Einzelfall: CISA und FBI beschreiben in einer gemeinsamen Warnmeldung, zuletzt aktualisiert im Juli 2025, eine Gruppe, die gezielt IT-Helpdesks angeht - die Täter geben sich als Beschäftigte oder als Helpdesk-Personal aus, lassen Passwörter zurücksetzen, schalten die Mehrfaktor-Authentifizierung ab und installieren Fernwartungswerkzeuge. MGM und Caesars werden derselben Gruppe zugerechnet.</div>
-</aside>
+</details>
 <p>Zwei dieser Wege verdienen eine genauere Betrachtung: die bestehende Sitzung und der delegierte Zugriff. Sie teilen vier Eigenschaften.</p>
 <table class="tab">
 <tbody>
@@ -698,21 +734,21 @@ body { margin: 0; background: #050506; }
 </aside>
 <h3>Wie ein solcher Zugang in fremde Hände gerät</h3>
 <p>Bisher stand offen, wie jemand überhaupt an eine bestehende Sitzung oder einen delegierten Zugriff kommt. Häufig führt das nicht über den Dienst, sondern über das Gerät des Nutzers. Schadsoftware, die dort läuft, kann auslesen, was Browser und Programme vorhalten: gespeicherte Anmeldedaten, Sitzungsartefakte, Token angebundener Dienste. Ein Programm, das unter demselben Benutzerkonto läuft wie der Browser, kommt an diese Ablage heran - und angelegt hat der Browser sie, damit man sich nicht jedes Mal neu anmelden muss. Wie sie dorthin gelangt, ist eine eigene Frage. Der Weg führt über gewöhnliche Vorgänge: einen Anhang, einen Download von einer nachgebauten Seite, eine Erweiterung, ein Update. Und nicht jeder davon sieht nach einem Angriff aus - was jemand selbst installiert, weil er der Quelle vertraut, prüft er nicht. Das ist derselbe fremde Programmcode, der auch in den Diensten selbst steckt, nur an einem anderen Ort. Darin liegt die Schwierigkeit: Es sind nicht zwei Probleme, sondern eines an zwei Stellen. Beim Anbieter - dem Mailunternehmen, der Bank, dem Arbeitgeber - steckt fremder Code in der Software des Dienstes. Ist er manipuliert, verändert sich, was der Dienst tut: welche Prüfungen er ausführt, welche Seite er ausliefert, wie er mit den Daten umgeht. Das betrifft alle Kunden zugleich. Ein einzelnes Konto ist damit noch nicht geöffnet - geschwächt ist das, worauf sich alle Konten stützen. Auf dem Gerät steckt fremder Code in den eigenen Programmen. Dort läuft er mit den eigenen Rechten und erreicht, was dort abgelegt ist: den Zugang zu allen Konten dieses einen Menschen.</p>
-<aside class="box">
-<div class="box-label">QUELLE</div>
+<details class="beleg">
+<summary><span class="beleg-art">QUELLE</span><span class="beleg-was">Chrome App-Bound Encryption und ihre Umgehung</span></summary>
 <div class="box-text">Diese Ablage wird inzwischen stärker geschützt: Chrome bindet sie seit Juli 2024 unter Windows an die eigene Anwendung, sodass ein anderes Programm desselben Benutzerkontos sie nicht mehr ohne Weiteres entschlüsseln kann. Die ersten Schadprogramme, die das umgingen, wurden nach rund sechs Wochen beobachtet; inzwischen beherrschen es zahlreiche Familien, neuere Varianten auch ohne erhöhte Rechte. Ein Weg wurde teurer gemacht, und der Angriff wanderte zur nächstgünstigen Methode.</div>
-</aside>
+</details>
 <p>Es geht auch ohne das Gerät. Eine Sitzung entsteht im Augenblick der Anmeldung, und wer sich dort dazwischenschaltet, kann sie mitnehmen: Die nachgebaute Seite reicht jede Eingabe an den echten Dienst weiter, der Nutzer meldet sich tatsächlich an, auch mit zweitem Faktor - und was der Dienst zurückgibt, behält der Angreifer. Ein Passwort und ein Einmalcode helfen dagegen nicht, weil beide vorgezeigt und weitergereicht werden können. Hardwaregebundene Verfahren helfen: Ihre Antwort gilt nur für die Adresse, für die sie erzeugt wurde, und auf einer nachgebauten Seite entsteht sie gar nicht erst. Genau das ist im Cloudflare-Fall in <a href="#kapitel-03">Kapitel 3</a> passiert.</p>
 <p>Für die Rechnung sind daran zwei Dinge bemerkenswert. Erstens greift beides nicht den Nachweis an, sondern das, was nach ihm übrig bleibt. Die Anmeldung hat bereits stattgefunden, samt zweitem Faktor. Eine starke Authentifizierung wird dadurch nicht wertlos - sie ist nur nicht in jedem Fall die Stelle, an der sich entscheidet, wer Zugriff hat.</p>
 <p>Zweitens arbeitet Schadsoftware zunächst ungezielt. Sie sammelt breit, und was sie sammelt, wird gehandelt. Wer ein bestimmtes Ziel verfolgt, muss die Vorarbeit deshalb nicht selbst leisten; er kann nachsehen, ob sie schon jemand anderes geleistet hat. Und die ist billig: Wer viele Geräte auf einmal abschöpft, zahlt einmal für das Netz und nicht für jede Person einzeln. In Kapitel 01 kostete jede Person eigene Arbeit. Hier kostet sie fast nichts.</p>
-<aside class="box">
-<div class="box-label">QUELLE</div>
+<details class="beleg">
+<summary><span class="beleg-art">QUELLE</span><span class="beleg-was">Europol und ENISA zum Handel mit Zugangsdaten</span></summary>
 <div class="box-text">Europol beschreibt in seinen Lagebildern den Handel mit gestohlenen Zugangsdaten und die Rolle spezialisierter Zugangshändler. ENISA führt Informationsdiebstahl durch Schadsoftware als eigene Bedrohungskategorie.</div>
-</aside>
-<aside class="box">
-<div class="box-label">DOKUMENTIERTE FÄLLE</div>
+</details>
+<details class="beleg">
+<summary><span class="beleg-art">DOKUMENTIERTE FÄLLE</span><span class="beleg-was">Uber 2022, LastPass 2022</span></summary>
 <div class="box-text">Uber beschrieb nach dem Vorfall im September 2022 selbst, dass die Zugangsdaten eines externen Dienstleisters vermutlich auf einem Handelsplatz erworben wurden, nachdem dessen privates Gerät mit Schadsoftware infiziert worden war. LastPass führte den Vorfall von 2022 auf den privaten Rechner eines Mitarbeiters zurück, der über eine Schwachstelle in fremder Software angegriffen wurde.</div>
-</aside>
+</details>
 <p>Ein erbeutetes Artefakt ist allerdings kein Generalschlüssel. Systeme, die eine Sitzung an ein Gerät binden, ihre Laufzeit begrenzen oder vor kritischen Schritten erneut fragen, entwerten es teilweise. Was bleibt, ist eine Verschiebung, die den ganzen bisherigen Gedanken zuspitzt: Das eigene Gerät ist selbst ein Zugangspfad - und der Punkt, an dem mehrere der anderen zusammenlaufen: Anmeldung, bestehende Sitzung, delegierter Zugriff.</p>
 <p>Schwerer als der einzelne Pfad wiegt, was hinter ihm liegt. Ein Postfachzugriff ist nicht nur ein Zugang, sondern eine Materialquelle: Er verrät, bei welchen Anbietern jemand Kunde ist, wie er schreibt, wen er kennt, welche Rechnungen offen sind. Recherche und Vorbereitung bilden bei gezielten Angriffen einen wesentlichen Kostenblock - in einem Postfach liegt dieser Teil bereits sortiert. Ein Zugriff, der als Komfortfunktion beginnt, liefert die Vorarbeit für alles Weitere.</p>
 <p>Daraus folgt nicht, nichts mehr anzubinden. Es folgt, dass ein delegierter Zugriff dieselbe Aufmerksamkeit verdient wie ein Passwort: befristet, überprüfbar, widerrufbar.</p>
@@ -725,15 +761,15 @@ body { margin: 0; background: #050506; }
 <p class="lead">Damit ist beschrieben, worüber ein Angriff hereinkommen kann und was er dort vorfindet. Bleibt die Frage, was ein einzelner gelungener Schritt wert ist - und die Antwort ist unbequem für alle, die sich eine einfache Kette vorstellen.</p>
 <p>Am häufigsten wird diese Kette am SIM-Swapping durchgespielt - dem Vorgang, bei dem ein Angreifer den Mobilfunkanbieter dazu bringt, eine fremde Rufnummer auf eine eigene SIM-Karte zu übertragen. Wer die Telefonnummer hat, hat angeblich alles Weitere. Genau dort lässt sich zeigen, warum das so nicht stimmt.</p>
 <p>Eine Telefonnummer lässt sich nämlich nicht automatisch übernehmen, nur weil jemand Name, Mailadresse und Geburtsdatum kennt. Mobilfunkanbieter können Kundenkennwörter, bestehende Zugänge, Dokumente oder andere Nachweise verlangen.</p>
-<aside class="box">
-<div class="box-label">QUELLE</div>
+<details class="beleg">
+<summary><span class="beleg-art">QUELLE</span><span class="beleg-was">ENISA, Countering SIM-Swapping</span></summary>
 <div class="box-text">ENISA, Countering SIM-Swapping: Der Angriff verlangt zunächst genügend Informationen über ein Ziel, bevor überhaupt versucht wird, den Anbieter zur Übertragung der Nummer zu bewegen.</div>
-</aside>
+</details>
 <p>Dasselbe gilt für Mailkonten, Banken und Unternehmenszugänge. Gut abgesicherte Systeme verlangen für kritische Änderungen zusätzliche, voneinander unabhängige Nachweise: ein bereits registriertes Gerät, einen starken Authentifikator, eine erneute Prüfung. Genau das unterbricht Ketten. Der Verlust eines einzelnen Kanals führt dann nicht unmittelbar zum nächsten Konto.</p>
-<aside class="box">
-<div class="box-label">ZWEI DOKUMENTIERTE FÄLLE</div>
+<details class="beleg">
+<summary><span class="beleg-art">ZWEI DOKUMENTIERTE FÄLLE</span><span class="beleg-was">SEC-Konto 2024, Cloudflare 2022</span></summary>
 <div class="box-text">Im Januar 2024 wurde von einem Konto der US-Börsenaufsicht SEC eine unbefugte Nachricht veröffentlicht. Die Behörde erklärte anschließend, der Zugriff sei über einen SIM-Swap der zugehörigen Telefonnummer erfolgt und die Mehrfaktor-Authentifizierung sei Monate zuvor auf Wunsch von Mitarbeitern deaktiviert und nicht wieder aktiviert worden. Umgekehrt beschrieb Cloudflare im August 2022 öffentlich, wie ein Phishing-Angriff, der mehrere Unternehmen gleichzeitig traf, an den eingesetzten Hardware-Sicherheitsschlüsseln scheiterte.</div>
-</aside>
+</details>
 <p>Die beiden Fälle zeigen dieselbe Rechnung von zwei Seiten, an zwei verschiedenen Wegen: Der eine funktionierte, weil eine Kontrolle fehlte, der andere endete, weil eine gebundene Kontrolle griff.</p>
 <p>Das ist ausdrücklich keine Entwarnung. Mailkonto und Telefonnummer bleiben besonders wertvoll, weil viele Dienste sie gleichzeitig für Kommunikation, Wiederherstellung und Bestätigung verwenden. Wird einer von beiden kompromittiert, ist der Schaden groß, breit und schwer zurückzuholen.</p>
 <p>Der Domino fällt nicht von selbst. Was passiert, ist banaler: Jeder gelungene Schritt macht den nächsten billiger. Bereits bestätigte Angaben, bestehende Sitzungen und delegierte Zugriffe lassen sich wiederverwenden. Wer eine Rechnungsadresse aus einem Postfach hat, muss sie beim nächsten Anbieter nicht mehr erraten. Sinkt der Aufwand je Versuch, werden weitere Versuche wirtschaftlich vertretbar - und damit steigt die Chance, irgendwo auf einen schwächeren Prozess zu treffen.</p>
@@ -801,10 +837,10 @@ body { margin: 0; background: #050506; }
 </tbody>
 </table>
 <p>Die relevante Frage lautet deshalb nicht, ob sich ein gezielter Identitätsangriff vollständig automatisieren lässt. Entscheidend ist, wie viele seiner teuren Teilaufgaben verbilligt werden können. Je weniger menschliche Arbeit pro Ziel nötig ist, desto stärker sinkt der Stückpreis - auch wenn einzelne Schritte weiterhin einen Menschen verlangen.</p>
-<aside class="box">
-<div class="box-label">QUELLEN</div>
+<details class="beleg">
+<summary><span class="beleg-art">QUELLEN</span><span class="beleg-was">NCSC, FinCEN, Europol IOCTA 2026</span></summary>
 <div class="box-text">Das britische NCSC beschreibt künstliche Intelligenz als Verstärker bestehender Angriffsschritte, nicht als neues Angriffsmittel. FinCEN hält in seiner Warnmeldung vom 13. November 2024 fest, dass generative Werkzeuge den Aufwand für hochwertige synthetische Inhalte erheblich gesenkt haben. Europol beschreibt im IOCTA 2026 vom 28. April 2026, wie Kriminelle mit künstlicher Intelligenz Reichweite und Wirkungsgrad ihrer Abläufe erhöhen. Keine dieser Quellen sagt, dass ein gezielter Identitätsangriff als Ganzes automatisierbar wäre; sie sagen, dass einzelne Posten billiger werden.</div>
-</aside>
+</details>
 <aside class="merksatz">
 <div class="box-label">MERKSATZ</div>
 <p class="merksatz-text">KI muss die Tür nicht aufbrechen. Es reicht, wenn sie den Weg zur Tür billiger macht.</p>
@@ -898,10 +934,10 @@ body { margin: 0; background: #050506; }
 <p>Ein solcher Baustein öffnet für sich genommen nichts. Er liefert nur, was an anderer Stelle fehlt. Der einfachste Fall davon ist eine bloße Kennung.</p>
 <h3>Wann eine Kennung zur Person wird</h3>
 <p>Eine eindeutige Kennung ohne Namen ist nicht anonym, sondern pseudonym. Sie trägt für sich genommen keine Person und wird erst dann zu einer Angabe über einen Menschen, wenn eine Stelle sie mit ihm verbindet. Dieser Verknüpfungspunkt ist der eigentliche Angriffspunkt, nicht die Kennung - und das Muster erklärt Sitzungskennungen, Geräte- und Werbekennungen und Adressen in einer öffentlichen Blockchain mit demselben Satz.</p>
-<aside class="box">
-<div class="box-label">QUELLE</div>
+<details class="beleg">
+<summary><span class="beleg-art">QUELLE</span><span class="beleg-was">Meiklejohn u. a., „A Fistful of Bitcoins“ (2013)</span></summary>
 <div class="box-text">Meiklejohn et al., „A Fistful of Bitcoins“ (2013): Öffentlich einsehbare Transaktionen ließen sich durch Zusammenführung mit Dienstbeziehungen nachträglich Akteuren zuordnen, ohne dass sich an den Transaktionen selbst etwas geändert hätte.</div>
-</aside>
+</details>
 <p>Daraus folgt eine zeitliche Eigenschaft, die in einer statischen Kostenrechnung fehlt: Der Aufwand für Recherche muss nicht zum Zeitpunkt des Angriffs anfallen. Er kann Jahre vorher entstanden und von jemand anderem getragen worden sein. Gespeicherte Kennungen wären in dieser Lesart eine Vorauszahlung auf künftige Angriffskosten - sie liegen folgenlos herum, bis ein Identitätspunkt dazukommt und sie rückwirkend aussagekräftig macht. Die Speicherdauer einer Kennung wäre damit ein eigener Risikofaktor, unabhängig davon, wie gut sie zum Zeitpunkt ihrer Erhebung geschützt war.</p>
 <h3>Der Assistent als Konzentrationspunkt</h3>
 <p>Eine Kennung ist der kleinste Beitrag, den ein Zwischenziel leisten kann. Am anderen Ende steht ein Punkt, an dem sich sehr vieles gleichzeitig sammelt. Ein isoliertes Sprachmodell, im Englischen LLM, ohne Zugriff auf persönliche oder betriebliche Systeme ändert an der Rechnung wenig. Anders ist es bei einem Assistenten, der für seine Arbeit auf Mail, Kalender, Dateien, Kontakte und interne Systeme zugreifen darf. Drei Dinge können sich dort bündeln - die Einteilung ist eine Beschreibung dieses Textes, keine etablierte Taxonomie.</p>
@@ -919,10 +955,10 @@ body { margin: 0; background: #050506; }
 <div class="box-text">„Was darf der Assistent lesen?“ genügt nicht. Zusätzlich muss gefragt werden: „Was darf das Gelesene den Assistenten veranlassen zu tun?“</div>
 </aside>
 <p>Ein System wird also nicht deshalb zu einem interessanteren Ziel, weil es KI verwendet. Es kann interessanter werden, weil es mehr Kontext, mehr Berechtigungen und mehr Handlungsmöglichkeiten an einem Punkt bündelt. Der Konzentrationspunkt besteht dann nicht mehr aus einem Modell, sondern aus dem gesamten Verbund, der ihm ermöglicht zu handeln.</p>
-<aside class="box">
-<div class="box-label">QUELLEN</div>
+<details class="beleg">
+<summary><span class="beleg-art">QUELLEN</span><span class="beleg-was">OWASP, RFC 9700, NCSC</span></summary>
 <div class="box-text">OWASP zu übermäßiger Handlungsvollmacht in LLM-Anwendungen. RFC 9700, OAuth 2.0 Security Best Current Practice, zu eng gefassten und kurzlebigen Berechtigungen. NCSC zu KI als Verstärker bestehender Angriffsschritte.</div>
-</aside>
+</details>
 <h3>Wenn Vertrauen sich bündelt</h3>
 <p>Ein Zwischenziel liefert einen Baustein. Eine Stelle, die Nachweise ausstellt, liefert etwas anderes: ein fertiges Prüfergebnis, das andere übernehmen, ohne es zu wiederholen. Wo Systeme einem signierten oder institutionell bestätigten Nachweis vertrauen, prüfen sie nicht jede zugrunde liegende Tatsache selbst. Sie verlassen sich darauf, dass eine andere Stelle das korrekt getan hat. Eine solche Stelle - ein Identitätsanbieter, eine Zertifizierungsstelle, eine Behörde, das interne Identitätssystem eines Unternehmens - ist ein Vertrauensanker. Neu ist das Grundmuster nicht. Mit wachsender Abhängigkeit von gemeinsam genutzten Nachweisen gewinnt es aber an Gewicht.</p>
 <p>Eine kryptografische Prüfung kann zeigen, ob ein Nachweis von der erwarteten Quelle stammt und unverändert ist. Sie beantwortet nicht, ob die zugrunde liegende Aussage inhaltlich korrekt war. Ein Nachweis kann echt und trotzdem falsch sein. Angreifbar ist deshalb nicht nur der Nachweis, sondern auch die Prüfung, auf der er beruht, und die Stelle, die ihn ausstellt.</p>
@@ -936,10 +972,10 @@ body { margin: 0; background: #050506; }
 <div class="kap-kopf"><span class="kap-nr">06</span><h2>Der letzte Meter</h2></div>
 <p class="lead">Das meiste bisher Beschriebene lässt sich als Information weitergeben: ein Baustein, eine Berechtigung, ein fertiges Prüfergebnis. Information lässt sich kopieren. Nicht alles, was ein Angriff braucht, ist von dieser Art. Am Ende bleibt ein letzter Meter, der sich nicht kopieren lässt. Die Vorstellung eines vollständig autonomen Agenten, der selbstständig eine Identität übernimmt, greift zu kurz. Nicht weil Software zu schwach wäre, sondern weil viele Prozesse etwas anderes verlangen als Information: einen gebundenen Nachweis.</p>
 <p>In vielen alltäglichen Verfahren wird digitale Identität noch immer auf Informationen über eine Person reduziert: Name, Geburtsdatum, Adresse, Nummer, Stimme, Gesicht. Informationen haben aber eine unangenehme Eigenschaft. Sie lassen sich kopieren. Eine Information über einen Menschen ist deshalb kein Beweis dafür, dass dieser Mensch gerade vor einem System steht.</p>
-<aside class="box">
-<div class="box-label">QUELLE</div>
+<details class="beleg">
+<summary><span class="beleg-art">QUELLE</span><span class="beleg-was">NIST SP 800-63A-4 zu Identitätsnachweisen</span></summary>
 <div class="box-text">NIST SP 800-63A-4 trennt konsequent zwischen Identität, Identitätsnachweis und dem Besitz eines Authentifikators. Stärkere Verfahren prüfen nicht, ob jemand bestimmte Informationen kennt, sondern ob präsentierte Nachweise echt sind und zur behaupteten Person gehören.</div>
-</aside>
+</details>
 <figure class="abb-6">
 <div class="fig-kopf">
 <figcaption>ABB. 6 · ALLEINIGE BEWEISKRAFT: MERKMALE, AUTHENTIFIKATOREN, IDENTITÄTSNACHWEISE</figcaption>
@@ -966,26 +1002,26 @@ body { margin: 0; background: #050506; }
 
 </figure>
 <p>Üblicherweise wird die Grenze zwischen physisch und digital gezogen: das Dokument in der Hand gegen die Datei auf dem Schirm. Diese Grenze trägt immer weniger. Entscheidend ist, ob ein Nachweis bloß dargestellt wird oder ob seine Echtheit technisch, kryptografisch oder institutionell überprüfbar ist. Bilder, Dokumentdarstellungen, Stimmen und Videos lassen sich günstig synthetisch erzeugen. Das überwindet keine belastbare Identitätsprüfung - es setzt Verfahren unter Druck, die überwiegend prüfen, ob etwas plausibel aussieht.</p>
-<aside class="box">
-<div class="box-label">DOKUMENTIERTER FALL</div>
+<details class="beleg">
+<summary><span class="beleg-art">DOKUMENTIERTER FALL</span><span class="beleg-was">Hongkong 2024, synthetische Videokonferenz</span></summary>
 <div class="box-text">In Hongkong wurde Anfang 2024 ein Mitarbeiter eines international tätigen Ingenieurbüros in einer Videokonferenz getäuscht, in der weitere Teilnehmer synthetisch erzeugt waren; es kam zu Überweisungen in Millionenhöhe. Der Fall wurde von der Polizei beschrieben und vom Unternehmen bestätigt. Geprüft wurde dort, ob etwas plausibel aussieht - nicht, ob ein Nachweis echt ist.</div>
-</aside>
-<aside class="box">
-<div class="box-label">QUELLE</div>
+</details>
+<details class="beleg">
+<summary><span class="beleg-art">QUELLE</span><span class="beleg-was">FinCEN, 13. November 2024</span></summary>
 <div class="box-text">FinCEN, die Finanzermittlungseinheit des US-Finanzministeriums, warnte am 13. November 2024, dass Kriminelle mit generativer KI gefälschte Dokumente, Fotos und Videos erzeugen, um die Kundenidentifizierung von Finanzinstituten zu umgehen; nach Auswertung der Verdachtsmeldungen wurden damit auch Konten eröffnet. Zwei Einschränkungen nennt die Behörde selbst oder legt sie nahe: Sie schreibt von Identitäten, bei denen eine Erzeugung durch generative KI <em>vermutet</em> wird, und es geht um das Eröffnen neuer Konten, nicht um die Übernahme bestehender. Dass dieselbe Schwäche auch auf einem Wiederherstellungsweg wirksam wird, ist eine Schlussfolgerung dieses Textes.</div>
-</aside>
+</details>
 <p>Teuer bleibt, was an etwas gebunden ist, das sich nicht beliebig automatisieren lässt: tatsächlicher Besitz eines registrierten Geräts oder Authentifikators, physische Präsenz, belastbare Legitimation, eine unabhängige Entscheidung durch einen Menschen, einen zweiten Kanal oder eine Wartefrist. Diese Barrieren sind nicht alle gleich stark. Aber sie zwingen einen Angriff an bestimmten Stellen aus der rein digitalen Welt heraus.</p>
 <h3>Was sich abgeben lässt und was nicht</h3>
 <p>Damit stellt sich die Frage, ob sich auch diese physischen Anteile billiger organisieren lassen. Teilweise. Bloße Anwesenheit, eine lokale Beobachtung, eine Zustellung - solche Aufgaben lassen sich abgeben, oft ohne dass der Ausführende den Zweck kennt. Sobald ein Vorgang ein echtes Legitimationsmittel verlangt, sinkt die Austauschbarkeit dagegen deutlich: Eine solche Handlung kann nicht jeder übernehmen, weil er dafür selbst legitimiert sein müsste. Und die Entscheidung, welche Teilergebnisse zusammengehören und was als Nächstes geschieht, bleibt ohnehin beim Koordinator.</p>
 <p>Dass sich komplexe Vorhaben so organisieren lassen, ist nicht hypothetisch - allerdings ist es bisher aus anderen Deliktfeldern belegt, nicht für Identitätsangriffe.</p>
-<aside class="box">
-<div class="box-label">QUELLEN</div>
+<details class="beleg">
+<summary><span class="beleg-art">QUELLEN</span><span class="beleg-was">NATO, Europol, EU-SOCTA 2025, IOCTA 2026</span></summary>
 <div class="box-text">NATO beschreibt hybride Aktivitäten in Europa als teilweise über Proxies ausgeführt. Europol beschreibt bei Violence-as-a-Service eine arbeitsteilige Struktur aus Auftraggeber, Recruiter, Unterstützer und ausführender Person, bei der die Tat von jemandem ausgeführt wird, der zum Auftraggeber keine direkte Verbindung hat. EU-SOCTA 2025 und IOCTA 2026 beschreiben die Digitalisierung von Rekrutierung, Kommunikation und Zahlung sowie generative KI zur Personalisierung von Social Engineering.</div>
-</aside>
-<aside class="box">
-<div class="box-label">DOKUMENTIERTE FÄLLE</div>
+</details>
+<details class="beleg">
+<summary><span class="beleg-art">DOKUMENTIERTE FÄLLE</span><span class="beleg-was">PET 2026, Recherche von OCCRP und anderen</span></summary>
 <div class="box-text">Der dänische Nachrichtendienst PET beschrieb Anfang September 2026, dass Russland Dänen über soziale Netzwerke und Gaming-Plattformen anwirbt, um Fotos von Unternehmen und Infrastruktur zu machen - Vorarbeit für mögliche Sabotage. Die russische Seite weist die Vorwürfe zurück. Eine gemeinsame Recherche von OCCRP, Paper Trail Media, Delfi und Der Standard beschrieb die Anwerbung für Sabotageaufgaben über Telegram. Beides betrifft keine Identitätsangriffe. Zu sehen ist daran, wie sich einfache Aufgaben an Fremde vergeben lassen, die den Zweck nicht kennen.</div>
-</aside>
+</details>
 <p>Die Übertragung dieses Organisationsprinzips auf wirtschaftlich motivierte Identitätsangriffe ist eine analytische Annahme dieses Textes, keine belegte Praxis. Entscheidend daran ist weder die politische Herkunft der Beispiele noch ein bestimmter Messenger, sondern dass digitale Koordination die Trennung von Auftraggeber, Vermittlung und Ausführung erleichtert. Ein großes Vorhaben ist auffällig. Zwanzig kleine Aufgaben müssen es nicht sein.</p>
 <aside class="merksatz">
 <div class="box-label">MERKSATZ</div>
@@ -1147,5 +1183,13 @@ body { margin: 0; background: #050506; }
 				});
 			})();
 		</script>
-	</body>
+	<script>
+addEventListener('beforeprint', function () {
+  document.querySelectorAll('details.beleg:not([open])').forEach(function (d) { d.open = true; d.dataset.warZu = '1'; });
+});
+addEventListener('afterprint', function () {
+  document.querySelectorAll('details.beleg[data-war-zu]').forEach(function (d) { d.open = false; delete d.dataset.warZu; });
+});
+</script>
+</body>
 </html>
