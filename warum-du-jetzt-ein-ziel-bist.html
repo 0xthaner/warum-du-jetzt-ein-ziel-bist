@@ -254,6 +254,8 @@ body { margin: 0; background: #050506; }
   font-weight: 500; color: var(--text-hell); padding-right: 18px;
 }
 .essay .tab td { color: var(--text-gedaempft); }
+.essay .tab-paare td { padding-right: 18px; }
+.essay .tab-titel { display: block; color: var(--text-hell); margin-bottom: 4px; }
 .essay .tab tbody tr:last-child th,
 .essay .tab tbody tr:last-child td { border-bottom: 1px solid rgba(233,233,237,0.12); }
 
@@ -450,6 +452,14 @@ body { margin: 0; background: #050506; }
 .essay .kapitel > figure { max-width: var(--breit); }
 
 @media (max-width: 720px) {
+  .essay .tab-paare thead { display: none; }
+  .essay .tab-paare td { display: block; width: 100%; padding-right: 0; }
+  .essay .tab-paare tr + tr td:first-child { border-top: 1px solid rgba(233,233,237,0.12); }
+  .essay .tab-paare td::before {
+    content: attr(data-art); display: block;
+    font-size: 11px; letter-spacing: 0.13em; color: var(--akzent-hell); margin-bottom: 5px;
+  }
+
   .essay { padding: 0 18px 64px; font-size: 17px; }
   /* Der Seitenkopf ist auf schmalen Geraeten dreizeilig; Sprungziele
      brauchen entsprechend mehr Vorlauf, sonst stehen sie dahinter. */
@@ -635,13 +645,14 @@ body { margin: 0; background: #050506; }
 <div class="fig-text">Links drei Zielklassen, je vier Gr&#246;&#223;en. Der Aufwand ist bei allen dreien gleich, weil &#252;berall dieselben Verfahren im Weg stehen. Verschieden sind die beiden Nutzenbalken, und zwar unterschiedlich: Kapital und Ertrag folgen keiner Rangfolge - ein kleines Unternehmen hat mehr davon als eine Person mit weitreichenden Rechten. Zugang und Wirkung steigen dagegen steil an. Lohnend ist ein Ziel, wenn einer der beiden &#252;ber das Ende des Aufwands hinausreicht - Beim Unternehmen ist das das Kapital, bei der Person der Zugang, beim Haushalt keiner von beiden. Jede Klasse lohnt sich also aus einem anderen Grund - und f&#252;r einen anderen Angreifer. Rechts derselbe Haushalt sp&#228;ter, mit gewachsenem Kapital und gesunkenem Aufwand.</div>
 </figure>
 <h3>Was mit dem Nutzen eines Ziels gemeint ist</h3>
-<p>Der Nutzen eines Ziels ist keine Bewertung eines Menschen, sondern das, was ein Angreifer aus einem erfolgreichen Angriff zu gewinnen hofft. Geld auf einem Konto ist der offensichtlichste Teil davon und je nach Ziel auch der wichtigste. Es ist nur nicht der einzige. Die vier Posten unten verteilen sich auf die beiden Arten, die <a href="#abb-1">ABB. 1</a> trennt: Übertragbare Vermögenswerte und Druckmittel zählen zu Kapital und Ertrag, Funktion und Daten zu Zugang und Wirkung.</p>
-<table class="tab">
+<p>Der Nutzen eines Ziels ist keine Bewertung eines Menschen, sondern das, was ein Angreifer aus einem erfolgreichen Angriff zu gewinnen hofft. Er hat zwei Seiten, und <a href="#abb-1">ABB. 1</a> zeigt sie als getrennte Balken. Die eine ist Kapital und Ertrag - Geld auf einem Konto ist davon der offensichtlichste Teil und je nach Ziel auch der wichtigste. Die andere ist Zugang und Wirkung: was sich über eine Person erreichen lässt, nicht was bei ihr liegt.</p>
+<table class="tab tab-paare">
+<thead>
+<tr><th scope="col" style="width:50%">Kapital und Ertrag</th><th scope="col" style="width:50%">Zugang und Wirkung</th></tr>
+</thead>
 <tbody>
-<tr><th scope="row" style="width:26%">Übertragbare Vermögenswerte</th><td>Wo Werte schnell übertragen und schwer zurückgeholt werden können, ist ein erfolgreicher Zugriff besonders attraktiv. Selbst verwahrte digitale Vermögenswerte sind der klarste Fall: Eine Übertragung lässt sich nicht widerrufen, und meist gibt es keine Stelle, die sie zurückholen könnte. Ausnahmen sind Token, deren Herausgeber einzelne Adressen sperren kann.</td></tr>
-<tr><th scope="row">Funktion statt Vermögen</th><td>Wer über besondere Rechte, Wissen oder Entscheidungsbefugnisse verfügt, kann als Zugang zu einem größeren Ziel relevant werden - in Unternehmen ebenso wie in Politik, Verwaltung oder Journalismus. Der erwartete Nutzen liegt dann in Information, Einfluss oder der Möglichkeit, etwas zu stören.</td></tr>
-<tr><th scope="row">Daten als Rohstoff</th><td>Geprüfte Angaben, bestehende Konten und Beziehungsdaten behalten Wert, weil sie ein anderes Ziel überhaupt erreichbar machen können.</td></tr>
-<tr><th scope="row">Druck statt Besitz</th><td>Manchmal liegt der erwartete Nutzen nicht in dem, was jemand besitzt, sondern in einem Verhalten, das sich durch Druck erzwingen lässt. Dabei zählt auch, wie leicht jemand zahlen kann: Wer bereits Kryptowerte hält, begleicht eine Forderung ohne Kontoeröffnung, Identitätsprüfung und Wartezeit, und unter Zeitdruck ist das ein Unterschied. Dass ihn das als Ziel zusätzlich attraktiv macht, ist eine Schlussfolgerung dieses Textes.</td></tr>
+<tr><td data-art="Kapital und Ertrag"><span class="tab-titel">Übertragbare Vermögenswerte</span>Wo Werte schnell übertragen und schwer zurückgeholt werden können, ist ein erfolgreicher Zugriff besonders attraktiv. Selbst verwahrte digitale Vermögenswerte sind der klarste Fall: Eine Übertragung lässt sich nicht widerrufen, und meist gibt es keine Stelle, die sie zurückholen könnte. Ausnahmen sind Token, deren Herausgeber einzelne Adressen sperren kann.</td><td data-art="Zugang und Wirkung"><span class="tab-titel">Funktion statt Vermögen</span>Wer über besondere Rechte, Wissen oder Entscheidungsbefugnisse verfügt, kann als Zugang zu einem größeren Ziel relevant werden - in Unternehmen ebenso wie in Politik, Verwaltung oder Journalismus. Der erwartete Nutzen liegt dann in Information, Einfluss oder der Möglichkeit, etwas zu stören.</td></tr>
+<tr><td data-art="Kapital und Ertrag"><span class="tab-titel">Druck statt Besitz</span>Manchmal liegt der erwartete Nutzen nicht in dem, was jemand besitzt, sondern in einem Verhalten, das sich durch Druck erzwingen lässt. Dabei zählt auch, wie leicht jemand zahlen kann: Wer bereits Kryptowerte hält, begleicht eine Forderung ohne Kontoeröffnung, Identitätsprüfung und Wartezeit, und unter Zeitdruck ist das ein Unterschied. Dass ihn das als Ziel zusätzlich attraktiv macht, ist eine Schlussfolgerung dieses Textes.</td><td data-art="Zugang und Wirkung"><span class="tab-titel">Daten als Rohstoff</span>Geprüfte Angaben, bestehende Konten und Beziehungsdaten behalten Wert, weil sie ein anderes Ziel überhaupt erreichbar machen können.</td></tr>
 </tbody>
 </table>
 <h3>Zwei Folgen aus dieser Rechnung</h3>
