@@ -316,7 +316,7 @@ body { margin: 0; background: #050506; }
   /* ABB. 4 - die bestaetigten Wege fliessen.
      Ihr Strichmuster ist 4 auf 4, eine Periode also 8 Einheiten: genau um
      diesen Betrag wandert der Versatz, damit die Schleife nicht springt. */
-  .essay .abb-6 .diagramm [stroke-dasharray] {
+  .essay .abb-5 .diagramm [stroke-dasharray] {
     animation: abb-fliessen 1.9s linear infinite;
   }
   @keyframes abb-fliessen {
@@ -422,7 +422,7 @@ body { margin: 0; background: #050506; }
       steht das Diagramm vollstaendig da. Ein Balkendiagramm ohne Balken
       waere ein Fehler, kein Effekt.
     */
-    .essay .abb-8 {
+    .essay .abb-7 {
       animation-name: abb-auftauchen, abb-wachsen;
       animation-timing-function: linear, cubic-bezier(0.22, 1, 0.36, 1);
       animation-fill-mode: both, both;
@@ -433,7 +433,7 @@ body { margin: 0; background: #050506; }
       from { --abb-wachs: 0.02; }
       to   { --abb-wachs: 1; }
     }
-    .essay .abb-8 .diagramm rect {
+    .essay .abb-7 .diagramm rect {
       transform-box: fill-box;
       transform-origin: left center;
       transform: scaleX(var(--abb-wachs, 1));
@@ -567,7 +567,7 @@ body { margin: 0; background: #050506; }
 
 <h3>Warum der Aufwand für jedes Ziel neu anfiel</h3>
 <p>Wenn die eine Person angegriffen wurde und die andere nicht, lag das deshalb selten an der Technik. Es lag an der Rechnung des Angreifers. Einen bestimmten Menschen aus gesammelten Daten zu rekonstruieren, seine Konten und Beziehungen zu finden, glaubwürdig mit mehreren Stellen zu kommunizieren und mehrere Prüfungen zu überwinden, kostete Zeit.</p>
-<p>Entscheidend daran war nicht die Höhe dieser Kosten, sondern ihre Form: Sie fielen für jedes Ziel neu an. Die Recherche zu einer Person war nicht übertragbar: Was über einen Menschen zusammengetragen war, half beim nächsten nicht, solange die beiden nichts miteinander zu tun hatten. Und wer sich in einem Telefonat als jemand anderes ausgab, musste dessen Verhältnisse kennen und auf Rückfragen antworten können. Wer zehn verschiedene Menschen angriff, zahlte deshalb ungefähr das Zehnfache. Der Stückpreis blieb gleich, wie viele Ziele es auch waren. Ein Angriff auf einen einzelnen Haushalt war damit nicht unmöglich, sondern unrentabel. Ob das so bleibt, hängt vor allem daran, ob diese Kosten ihre Form behalten. Welche beiden Formen dabei zur Wahl stehen, zeigt <a href="#abb-3">ABB. 3</a> am Ende dieses Kapitels.</p>
+<p>Entscheidend daran war nicht die Höhe dieser Kosten, sondern ihre Form: Sie fielen für jedes Ziel neu an. Die Recherche zu einer Person war nicht übertragbar: Was über einen Menschen zusammengetragen war, half beim nächsten nicht, solange die beiden nichts miteinander zu tun hatten. Und wer sich in einem Telefonat als jemand anderes ausgab, musste dessen Verhältnisse kennen und auf Rückfragen antworten können. Wer zehn verschiedene Menschen angriff, zahlte deshalb ungefähr das Zehnfache. Der Stückpreis blieb gleich, wie viele Ziele es auch waren. Ein Angriff auf einen einzelnen Haushalt war damit nicht unmöglich, sondern unrentabel. Ob das so bleibt, hängt vor allem daran, ob diese Kosten ihre Form behalten. Welche beiden Formen dabei zur Wahl stehen, zeigt <a href="#abb-2">ABB. 2</a> am Ende dieses Kapitels.</p>
 <aside class="notiz">
 <div class="box-label">DIE ANNAHME DAHINTER</div>
 <p class="klein">Das steht in keinem Sicherheitskonzept: Bestimmte Formen gezielter Angriffe sind für wirtschaftlich kalkulierende Angreifer wenig attraktiv, solange der erwartete Aufwand höher ist als der erwartete Nutzen.</p>
@@ -582,50 +582,56 @@ body { margin: 0; background: #050506; }
 <figcaption>ABB. 1 &#183; WAS EIN ZIEL KOSTET, EINBRINGT UND RISKIERT</figcaption>
 <span class="fig-tag">THESE DES BEITRAGS</span>
 </div>
-<svg class="diagramm" viewBox="0 0 670 268" role="img" aria-label="Schematischer Balkenvergleich. Links drei Zielklassen mit je drei Balken: Der Aufwand ist bei allen dreien gleich lang, Nutzen und Risiko nehmen von der Person mit folgenreichem Zugriff ueber das kleine Unternehmen bis zum durchschnittlichen Haushalt ab. Lohnend ist ein Ziel nur, wo der Nutzen ueber das Ende des Aufwands hinausreicht; beim Haushalt tut er das nicht. Rechts, auf gleicher Hoehe, derselbe Haushalt spaeter: gewachsener Nutzen, gesunkener Aufwand, unveraendertes Risiko, darueber die beiden Gruende. Der Aufwandsbalken ist kuerzer als links, der fehlende Teil nur umrissen; der Nutzen ist laenger, der hinzugekommene Teil blasser.">
+<svg class="diagramm" viewBox="0 0 670 292" role="img" aria-label="Schematischer Balkenvergleich. Links drei Zielklassen mit je vier Balken: Aufwand, Kapital und Ertrag, Zugang und Wirkung sowie Risiko fuer den Angreifer. Der Aufwand ist bei allen dreien gleich lang. Kapital und Ertrag unterscheiden sich zwischen den Klassen wenig, Zugang und Wirkung nehmen von der Person mit folgenreichem Zugriff bis zum durchschnittlichen Haushalt stark ab. Lohnend ist ein Ziel, wenn einer der beiden Nutzenbalken ueber das Ende des Aufwands hinausreicht; beim Haushalt tut das keiner. Rechts, auf gleicher Hoehe, derselbe Haushalt spaeter: Das Kapital waechst ueber den gesunkenen Aufwand hinaus, Zugang und Risiko bleiben.">
 <g font-family="Satoshi, Inter, sans-serif">
 <text x="24" y="18" fill="#75798c" font-size="10">heute</text>
 <text x="24" y="42" fill="#e4e7f5" font-size="10.5">Person mit folgenreichem Zugriff</text>
 <rect x="24" y="50" width="152" height="8" rx="2" fill="#8a8fa3"></rect>
-<rect x="24" y="62" width="280" height="8" rx="2" fill="#e4e7f5"></rect>
-<rect x="24" y="74" width="240" height="8" rx="2" fill="#9184d9"></rect>
-<text x="24" y="104" fill="#e4e7f5" font-size="10.5">kleines Unternehmen</text>
-<rect x="24" y="112" width="152" height="8" rx="2" fill="#8a8fa3"></rect>
-<rect x="24" y="124" width="184" height="8" rx="2" fill="#e4e7f5"></rect>
-<rect x="24" y="136" width="136" height="8" rx="2" fill="#9184d9"></rect>
-<text x="24" y="166" fill="#e4e7f5" font-size="10.5">durchschnittlicher Haushalt</text>
-<rect x="24" y="174" width="152" height="8" rx="2" fill="#8a8fa3"></rect>
-<rect x="24" y="186" width="80" height="8" rx="2" fill="#e4e7f5"></rect>
-<rect x="24" y="198" width="56" height="8" rx="2" fill="#9184d9"></rect>
-<line x1="176" y1="46" x2="176" y2="212" stroke="#b5abfc" stroke-width="1.2" stroke-dasharray="4 4"></line>
-<text x="24" y="226" fill="#b5abfc" font-size="9.5">Der Aufwand ist bei allen drei ungef&#228;hr gleich lang.</text>
-<rect x="24" y="242" width="10" height="8" rx="2" fill="#8a8fa3"></rect><text x="40" y="249" fill="#9397ab" font-size="9.5">Aufwand</text>
-<rect x="104" y="242" width="10" height="8" rx="2" fill="#e4e7f5"></rect><text x="120" y="249" fill="#9397ab" font-size="9.5">Nutzen</text>
-<rect x="168" y="242" width="10" height="8" rx="2" fill="#9184d9"></rect><text x="184" y="249" fill="#9397ab" font-size="9.5">Risiko f&#252;r den Angreifer</text>
+<rect x="24" y="62" width="85" height="8" rx="2" fill="#e4e7f5"></rect>
+<rect x="24" y="74" width="190" height="8" rx="2" fill="#b5abfc"></rect>
+<rect x="24" y="86" width="240" height="8" rx="2" fill="#6f63a8"></rect>
+<text x="24" y="110" fill="#e4e7f5" font-size="10.5">kleines Unternehmen</text>
+<rect x="24" y="118" width="152" height="8" rx="2" fill="#8a8fa3"></rect>
+<rect x="24" y="130" width="170" height="8" rx="2" fill="#e4e7f5"></rect>
+<rect x="24" y="142" width="95" height="8" rx="2" fill="#b5abfc"></rect>
+<rect x="24" y="154" width="136" height="8" rx="2" fill="#6f63a8"></rect>
+<text x="24" y="178" fill="#e4e7f5" font-size="10.5">durchschnittlicher Haushalt</text>
+<rect x="24" y="186" width="152" height="8" rx="2" fill="#8a8fa3"></rect>
+<rect x="24" y="198" width="65" height="8" rx="2" fill="#e4e7f5"></rect>
+<rect x="24" y="210" width="15" height="8" rx="2" fill="#b5abfc"></rect>
+<rect x="24" y="222" width="56" height="8" rx="2" fill="#6f63a8"></rect>
+<line x1="176" y1="46" x2="176" y2="236" stroke="#b5abfc" stroke-width="1.2" stroke-dasharray="4 4"></line>
+<text x="24" y="250" fill="#b5abfc" font-size="9.5">Kein Nutzenbalken des Haushalts reicht &#252;ber den Aufwand.</text>
 
-<line x1="406" y1="8" x2="406" y2="254" stroke="#3f424d" stroke-width="1"></line>
+<line x1="406" y1="8" x2="406" y2="262" stroke="#3f424d" stroke-width="1"></line>
 
 <text x="424" y="18" fill="#75798c" font-size="10">was sich verschiebt</text>
-<text x="424" y="48" fill="#b5abfc" font-size="9.5">Warum der Nutzen steigt</text>
+<text x="424" y="48" fill="#b5abfc" font-size="9.5">Warum das Kapital steigt</text>
 <text x="424" y="62" fill="#a7a1db" font-size="9.5">Selbst verwahrte Werte im Haushalt lassen</text>
 <text x="424" y="75" fill="#a7a1db" font-size="9.5">sich unwiderruflich &#252;bertragen.</text>
 <text x="424" y="103" fill="#b5abfc" font-size="9.5">Warum der Aufwand f&#228;llt</text>
 <text x="424" y="117" fill="#a7a1db" font-size="9.5">Angaben sind billig zu bekommen, das</text>
 <text x="424" y="130" fill="#a7a1db" font-size="9.5">Zuordnen &#252;bernehmen Maschinen.</text>
 
-<text x="424" y="166" fill="#e4e7f5" font-size="10.5">derselbe Haushalt, sp&#228;ter</text>
-<rect x="424" y="174" width="104" height="8" rx="2" fill="#8a8fa3"></rect>
-<rect x="528" y="174" width="48" height="8" rx="2" fill="none" stroke="#8a8fa3" stroke-width="1"></rect>
-<text x="582" y="181" fill="#9397ab" font-size="9.5">f&#228;llt</text>
-<rect x="424" y="186" width="80" height="8" rx="2" fill="#e4e7f5"></rect>
-<rect x="504" y="186" width="90" height="8" rx="2" fill="#e4e7f5" fill-opacity="0.32"></rect>
-<text x="600" y="193" fill="#e4e7f5" font-size="9.5">w&#228;chst</text>
-<rect x="424" y="198" width="56" height="8" rx="2" fill="#9184d9"></rect>
-<line x1="528" y1="170" x2="528" y2="212" stroke="#b5abfc" stroke-width="1.2" stroke-dasharray="4 4"></line>
-<text x="424" y="226" fill="#b5abfc" font-size="9.5">Jetzt reicht der Nutzen &#252;ber den Aufwand hinaus.</text>
+<text x="424" y="178" fill="#e4e7f5" font-size="10.5">derselbe Haushalt, sp&#228;ter</text>
+<rect x="424" y="186" width="104" height="8" rx="2" fill="#8a8fa3"></rect>
+<rect x="528" y="186" width="48" height="8" rx="2" fill="none" stroke="#8a8fa3" stroke-width="1"></rect>
+<text x="582" y="193" fill="#9397ab" font-size="9.5">f&#228;llt</text>
+<rect x="424" y="198" width="65" height="8" rx="2" fill="#e4e7f5"></rect>
+<rect x="489" y="198" width="105" height="8" rx="2" fill="#e4e7f5" fill-opacity="0.32"></rect>
+<text x="600" y="205" fill="#e4e7f5" font-size="9.5">w&#228;chst</text>
+<rect x="424" y="210" width="15" height="8" rx="2" fill="#b5abfc"></rect>
+<rect x="424" y="222" width="56" height="8" rx="2" fill="#6f63a8"></rect>
+<line x1="528" y1="182" x2="528" y2="236" stroke="#b5abfc" stroke-width="1.2" stroke-dasharray="4 4"></line>
+<text x="424" y="250" fill="#b5abfc" font-size="9.5">Jetzt reicht das Kapital &#252;ber den Aufwand.</text>
+
+<rect x="24" y="274" width="10" height="8" rx="2" fill="#8a8fa3"></rect><text x="40" y="281" fill="#9397ab" font-size="9.5">Aufwand</text>
+<rect x="104" y="274" width="10" height="8" rx="2" fill="#e4e7f5"></rect><text x="120" y="281" fill="#9397ab" font-size="9.5">Kapital und Ertrag</text>
+<rect x="226" y="274" width="10" height="8" rx="2" fill="#b5abfc"></rect><text x="242" y="281" fill="#9397ab" font-size="9.5">Zugang und Wirkung</text>
+<rect x="374" y="274" width="10" height="8" rx="2" fill="#6f63a8"></rect><text x="390" y="281" fill="#9397ab" font-size="9.5">Risiko f&#252;r den Angreifer</text>
 </g>
 </svg>
-<div class="fig-text">Links drei Zielklassen. Der Aufwand ist bei allen dreien gleich, weil &#252;berall dieselben Verfahren im Weg stehen; verschieden sind Nutzen und Risiko. Lohnend ist ein Ziel, wo der Nutzen &#252;ber das Ende des Aufwands hinausreicht - beim Haushalt tut er das nicht. Rechts derselbe Haushalt sp&#228;ter: Nutzen gewachsen, Aufwand gesunken, Risiko geblieben. Jetzt reicht er hinaus. Woran sich der Nutzen bemisst, steht gleich darunter.</div>
+<div class="fig-text">Links drei Zielklassen, je vier Gr&#246;&#223;en. Der Aufwand ist bei allen dreien gleich, weil &#252;berall dieselben Verfahren im Weg stehen. Verschieden sind die beiden Nutzenbalken, und zwar unterschiedlich: Kapital und Ertrag folgen keiner Rangfolge - ein kleines Unternehmen hat mehr davon als eine Person mit weitreichenden Rechten. Zugang und Wirkung steigen dagegen steil an. Lohnend ist ein Ziel, wenn einer der beiden &#252;ber das Ende des Aufwands hinausreicht - Beim Unternehmen ist das das Kapital, bei der Person der Zugang, beim Haushalt keiner von beiden. Jede Klasse lohnt sich also aus einem anderen Grund - und f&#252;r einen anderen Angreifer. Rechts derselbe Haushalt sp&#228;ter, mit gewachsenem Kapital und gesunkenem Aufwand.</div>
 </figure>
 <h3>Was mit dem Nutzen eines Ziels gemeint ist</h3>
 <p>Der Nutzen eines Ziels ist keine Bewertung eines Menschen, sondern das, was ein Angreifer aus einem erfolgreichen Angriff zu gewinnen hofft. Geld auf einem Konto ist der offensichtlichste Teil davon und je nach Ziel auch der wichtigste. Es ist nur nicht der einzige.</p>
@@ -637,32 +643,9 @@ body { margin: 0; background: #050506; }
 <tr><th scope="row">Druck statt Besitz</th><td>Manchmal liegt der erwartete Nutzen nicht in dem, was jemand besitzt, sondern in einem Verhalten, das sich durch Druck erzwingen lässt. Dabei zählt auch, wie leicht jemand zahlen kann: Wer bereits Kryptowerte hält, begleicht eine Forderung ohne Kontoeröffnung, Identitätsprüfung und Wartezeit, und unter Zeitdruck ist das ein Unterschied. Dass ihn das als Ziel zusätzlich attraktiv macht, ist eine Schlussfolgerung dieses Textes.</td></tr>
 </tbody>
 </table>
-<figure class="abb-2" id="abb-2">
-<div class="fig-kopf">
-<figcaption>ABB. 2 &#183; WORAUS DER NUTZEN BESTEHT</figcaption>
-<span class="fig-tag">SCHEMATISCH</span>
-</div>
-<svg class="diagramm" viewBox="0 0 670 216" role="img" aria-label="Schematischer Balkenvergleich derselben drei Zielklassen, der erwartete Nutzen in zwei Teile zerlegt. Der Geldanteil unterscheidet sich zwischen den Klassen wenig; der Anteil aus Zugang und Wirkung steigt steil von durchschnittlichem Haushalt ueber kleines Unternehmen bis zur Person mit folgenreichem Zugriff.">
-<g font-family="Satoshi, Inter, sans-serif">
-<text x="24" y="40" fill="#e4e7f5" font-size="10.5">Person mit folgenreichem Zugriff</text>
-<rect x="24" y="48" width="130" height="8" rx="2" fill="#e4e7f5"></rect>
-<rect x="24" y="60" width="290" height="8" rx="2" fill="#b5abfc"></rect>
-<text x="24" y="92" fill="#e4e7f5" font-size="10.5">kleines Unternehmen</text>
-<rect x="24" y="100" width="150" height="8" rx="2" fill="#e4e7f5"></rect>
-<rect x="24" y="112" width="170" height="8" rx="2" fill="#b5abfc"></rect>
-<text x="24" y="144" fill="#e4e7f5" font-size="10.5">durchschnittlicher Haushalt</text>
-<rect x="24" y="152" width="130" height="8" rx="2" fill="#e4e7f5"></rect>
-<rect x="24" y="164" width="45" height="8" rx="2" fill="#b5abfc"></rect>
-<rect x="24" y="190" width="10" height="8" rx="2" fill="#e4e7f5"></rect><text x="40" y="197" fill="#9397ab" font-size="9.5">Geld</text>
-<rect x="88" y="190" width="10" height="8" rx="2" fill="#b5abfc"></rect><text x="104" y="197" fill="#9397ab" font-size="9.5">Zugang und Wirkung</text>
-<text x="256" y="197" fill="#75798c" font-size="9.5">zusammen ergeben beide den erwarteten Nutzen aus <tspan fill="#b5abfc">ABB. 1</tspan></text>
-</g>
-</svg>
-<div class="fig-text">Dieselben drei Zielklassen, der Nutzen aufgeteilt. Der Geldanteil unterscheidet sich zwischen ihnen wenig - ein Haushalt kann mehr davon halten als jemand mit weitreichenden Rechten. Steil steigt dagegen der andere Teil: Zugang, Information, die M&#246;glichkeit zu st&#246;ren. Daran h&#228;ngt, welcher Angreifer sich f&#252;r wen interessiert. Wer nach Geld entscheidet, findet unten genug; wer im Auftrag handelt, sucht oben.</div>
-</figure>
 <h3>Zwei Folgen aus dieser Rechnung</h3>
 <p>Erstens liegt der eigene erwartete Nutzen oft gar nicht im Konto, sondern in der Rolle, der Zugehörigkeit oder dem Umfeld - also darin, wen oder was ein Angreifer über diese Person erreicht.</p>
-<p>Dieser Nutzen kann sich außerdem ändern. Wer selbst verwahrte digitale Vermögenswerte hält, wird für einen Angreifer wertvoller, ohne dass der dafür etwas tun müsste. Sichtbar ist das anders als ein Kontostand: Solche Bestände liegen auf einer offenen Blockchain. Wer eine Adresse einer Person zuordnen kann, sieht, was sie hält. Im rechten Feld von <a href="#abb-1">ABB. 1</a> ist das der Nutzensbalken: Er wächst, ohne dass ein Angreifer etwas dazu tut. Ein Sonderfall ist das nicht: Nach einer Erhebung der Europäischen Zentralbank vom November 2024 hält knapp jeder zehnte Haushalt im Euroraum Kryptowerte. Die Bestände sind meist klein, und gegenüber 2022 ist der Anteil nicht gewachsen. Bei einem Teil der Haushalte ist der erwartete Nutzen damit nicht mehr klein.</p>
+<p>Dieser Nutzen kann sich außerdem ändern. Wer selbst verwahrte digitale Vermögenswerte hält, wird für einen Angreifer wertvoller, ohne dass der dafür etwas tun müsste. Sichtbar ist das anders als ein Kontostand: Solche Bestände liegen auf einer offenen Blockchain. Wer eine Adresse einer Person zuordnen kann, sieht, was sie hält. Im rechten Feld von <a href="#abb-1">ABB. 1</a> ist das der Kapitalteil des Nutzenbalkens: Er wächst, ohne dass ein Angreifer etwas dazu tut. Ein Sonderfall ist das nicht: Nach einer Erhebung der Europäischen Zentralbank vom November 2024 hält knapp jeder zehnte Haushalt im Euroraum Kryptowerte. Die Bestände sind meist klein, und gegenüber 2022 ist der Anteil nicht gewachsen. Bei einem Teil der Haushalte ist der erwartete Nutzen damit nicht mehr klein.</p>
 <details class="beleg">
 <summary><span class="beleg-art">QUELLE</span><span class="beleg-was">EZB, Consumer Expectations Survey</span></summary>
 <div class="box-text">Die Europäische Zentralbank berichtet in ihrem Financial Stability Review vom Mai 2025 aus der Erhebung vom November 2024: Im Schnitt gaben 9,7 Prozent der Befragten an, dass sie oder jemand im Haushalt Kryptowerte besitzen, je nach Land zwischen 6 und 21 Prozent. Die Bestände sind überwiegend klein - 54 Prozent der Besitzenden nannten weniger als 1.000 Euro, 91 Prozent weniger als 20.000 Euro -, und zusammen machen sie rund 0,23 Prozent des Finanzvermögens der Haushalte aus. Gegenüber November 2022 ist der Anteil leicht gesunken; eine Zunahme belegt die Erhebung also nicht. Über die Hälfte der Besitzenden plante weitere Käufe, und 10 Prozent der Haushalte ohne Bestand wollten innerhalb eines Jahres welche erwerben.</div>
@@ -674,9 +657,9 @@ body { margin: 0; background: #050506; }
 <p class="klein">Gegen den ersten Fall lässt sich einwenden, dass ein wirtschaftlich rechnender Angreifer eine Alternative hat: das Massengeschäft. Ein gezielter Angriff muss also nicht nur billiger werden, er muss mehr einbringen als dasselbe Geld, breit gestreut. Dieser Vergleich fiel lange eindeutig aus, und deshalb blieben gezielte Angriffe auf Einzelne überwiegend denen vorbehalten, die nicht nach Rendite entscheiden. Was sich daran ändert, ist weniger der Vergleich als seine Grundlage: Das Massengeschäft liefert das Material, aus dem ein gezielter Angriff besteht. Wer breit sammelt, sammelt auch die Person, die ein anderer sucht - und verkauft sie ihm. <a href="#kapitel-02">Kapitel 2</a> zeigt das im Einzelnen.</p>
 </aside>
 <h3>Was sich an dieser Rechnung inzwischen verschiebt</h3>
-<figure class="abb-3" id="abb-3">
+<figure class="abb-2" id="abb-2">
 <div class="fig-kopf">
-<figcaption>ABB. 3 &#183; ZWEI KOSTENFORMEN</figcaption>
+<figcaption>ABB. 2 &#183; ZWEI KOSTENFORMEN</figcaption>
 <span class="fig-tag">SCHEMATISCH &#183; BELEGTE ZAHLEN</span>
 </div>
 <svg class="diagramm" viewBox="0 0 670 300" role="img" aria-label="Schematisches Diagramm: Kosten je Ziel &#252;ber der Zahl der Ziele. Eine waagrechte Linie steht f&#252;r den gezielten Angriff, dessen Aufwand f&#252;r jede Person neu anf&#228;llt; eine von demselben Punkt aus fallende Kurve steht f&#252;r den skalierbaren Angriff, dessen Kosten je Opfer mit wachsender Zahl gegen null gehen">
@@ -702,7 +685,7 @@ body { margin: 0; background: #050506; }
 <div class="fig-text">Die beiden Linien sind die zwei Kostenformen, die Cormac Herley 2010 unterschieden hat. Unten der skalierbare Angriff: eine feste Geb&#252;hr, beliebig viele Opfer, der Preis je Opfer geht gegen null. So sah breit gestreutes Phishing immer schon aus - f&#252;r diese Form war der einzelne Haushalt nie zu klein. Oben der gezielte Angriff: Was ein Angreifer &#252;ber eine bestimmte Person herausfinden und mit ihr tun muss, f&#228;llt f&#252;r jede neu an. Die waagrechte Achse z&#228;hlt dabei Ziele, nicht Zeit: Die obere Linie liegt flach, weil der Aufwand nicht mit der Zahl der Ziele sinkt - nicht, weil er sich nie &#228;ndern k&#246;nnte. Ob er &#252;ber die Zeit sinkt, ist die Frage dieses Textes. Nicht, ob es die untere Linie gibt: die gibt es seit jeher. Sondern, ob sich die obere ihr ann&#228;hert.</div>
 <div class="fig-methode">Die beiden Verl&#228;ufe sind schematisch und ohne Zahlenwerte; ihr gemeinsamer Startpunkt ist eine Annahme, keine Messung. Belegt sind allein die eingetragenen Angaben zu LabHost, und sie geh&#246;ren zur unteren Linie: Europol nennt im IOCTA 2025 eine Monatsgeb&#252;hr von rund 250 USD, rund 10.000 Nutzer und mindestens 40.000 Phishing-Domains; die Bilanz von 480.000 Kartennummern, 64.000 PINs und mehr als einer Million Passw&#246;rtern stammt aus Europols Mitteilung zur Zerschlagung. Der Fall belegt die Form der skalierbaren Kurve, nicht eine Ver&#228;nderung der gezielten. Ein Preis je Opfer l&#228;sst sich daraus nicht ableiten und wird hier nicht behauptet.</div>
 </figure>
-<p>Der Fall in <a href="#abb-3">ABB. 3</a> zeigt noch etwas anderes. Angriffswerkzeuge werden dort vermietet wie eine Software, und das entscheidet nicht nur über den Preis, sondern darüber, wer angreifen kann. Wer eine solche Plattform mietet, muss nicht können, was sie tut: Bausteine, Hosting und die Übersicht über laufende Kampagnen kommen fertig. Europol vermerkt zu diesen Angeboten, dass sie bei nachgeordneten Beteiligten beliebt sind, die sie als Einstiegszugang in ihre Angriffe nutzen. Was vorher Können verlangte, verlangt jetzt eine Zahlung. Das vergrößert nicht den erwarteten Nutzen eines Ziels. Es vergrößert die Zahl derer, die eine solche Rechnung überhaupt aufmachen können.</p>
+<p>Der Fall in <a href="#abb-2">ABB. 2</a> zeigt noch etwas anderes. Angriffswerkzeuge werden dort vermietet wie eine Software, und das entscheidet nicht nur über den Preis, sondern darüber, wer angreifen kann. Wer eine solche Plattform mietet, muss nicht können, was sie tut: Bausteine, Hosting und die Übersicht über laufende Kampagnen kommen fertig. Europol vermerkt zu diesen Angeboten, dass sie bei nachgeordneten Beteiligten beliebt sind, die sie als Einstiegszugang in ihre Angriffe nutzen. Was vorher Können verlangte, verlangt jetzt eine Zahlung. Das vergrößert nicht den erwarteten Nutzen eines Ziels. Es vergrößert die Zahl derer, die eine solche Rechnung überhaupt aufmachen können.</p>
 <details class="beleg">
 <summary><span class="beleg-art">QUELLE</span><span class="beleg-was">Europol, IOCTA 2025 - Einstiegsh&#252;rde</span></summary>
 <div class="box-text">Zu den Phishing-Plattformen h&#228;lt der Bericht fest: &#8222;These specialised platforms are popular with lower-level affiliates of ransomware groups, who use these commodities as initial access points in their attacks.&#8220; Gemeint sind nachgeordnete Beteiligte innerhalb krimineller Strukturen, nicht die Allgemeinheit; eine Aussage dar&#252;ber, wie viele Menschen solche Dienste insgesamt nutzen, trifft der Bericht nicht.</div>
@@ -748,9 +731,9 @@ body { margin: 0; background: #050506; }
 </details>
 <h3>Wie viele Wege es tatsächlich gibt</h3>
 <p>Mehrere Wege in dasselbe Konto ändern auch, wonach überhaupt zu fragen ist. Nicht: Wie stark ist das Anmeldeverfahren? Sondern: Welche Wege führen in dieses Konto, und was kostet der günstigste davon? Es sind mehr Wege, als die meisten im Kopf haben.</p>
-<figure class="abb-4">
+<figure class="abb-3">
 <div class="fig-kopf">
-<figcaption>ABB. 4 · MEHRERE ZUGANGSPFADE</figcaption>
+<figcaption>ABB. 3 · MEHRERE ZUGANGSPFADE</figcaption>
 <span class="fig-tag">SCHEMATISCH</span>
 </div>
 <svg class="diagramm" viewBox="0 0 670 416" role="img" aria-label="Schematisches Diagramm: mehrere Zugangspfade betreffen dasselbe Konto mit unterschiedlicher Reichweite">
@@ -778,7 +761,7 @@ body { margin: 0; background: #050506; }
 <rect x="424" y="112" width="228" height="90" fill="#14151c" stroke="#595d6c"></rect>
 <text x="442" y="146" fill="#f3f5fe" font-size="12">dasselbe Konto -</text>
 <text x="442" y="168" fill="#b5abfc" font-size="11">unterschiedliche Reichweite</text>
-<text x="424" y="236" fill="#9397ab" font-size="9.5">Dieselben Wege gibt es beim Anbieter -</text><text x="424" y="250" fill="#9397ab" font-size="9.5">dort für alle seine Kunden auf einmal.</text><text x="424" y="264" fill="#b5abfc" font-size="9.5">Siehe ABB. 7.</text>
+<text x="424" y="236" fill="#9397ab" font-size="9.5">Dieselben Wege gibt es beim Anbieter -</text><text x="424" y="250" fill="#9397ab" font-size="9.5">dort für alle seine Kunden auf einmal.</text><text x="424" y="264" fill="#b5abfc" font-size="9.5">Siehe ABB. 6.</text>
 <line x1="18" y1="318" x2="652" y2="318" stroke="#292b31"></line>
 <rect x="18" y="322" width="634" height="82" fill="#191627" stroke="#9184d9" stroke-width="1.4"></rect>
 <rect x="18" y="322" width="3" height="82" fill="#9184d9"></rect>
@@ -885,9 +868,9 @@ body { margin: 0; background: #050506; }
 <p>Die beiden Fälle zeigen dieselbe Rechnung von zwei Seiten, an zwei verschiedenen Wegen: Der eine funktionierte, weil eine Kontrolle fehlte, der andere endete, weil eine gebundene Kontrolle griff.</p>
 <p>Das ist ausdrücklich keine Entwarnung. Mailkonto und Telefonnummer bleiben besonders wertvoll, weil viele Dienste sie gleichzeitig für Kommunikation, Wiederherstellung und Bestätigung verwenden. Wird einer von beiden kompromittiert, ist der Schaden groß, breit und schwer zurückzuholen.</p>
 <p>Der Domino fällt nicht von selbst. Was passiert, ist banaler: Jeder gelungene Schritt macht den nächsten billiger. Bereits bestätigte Angaben, bestehende Sitzungen und delegierte Zugriffe lassen sich wiederverwenden. Wer eine Rechnungsadresse aus einem Postfach hat, muss sie beim nächsten Anbieter nicht mehr erraten. Sinkt der Aufwand je Versuch, werden weitere Versuche wirtschaftlich vertretbar - und damit steigt die Chance, irgendwo auf einen schwächeren Prozess zu treffen.</p>
-<figure class="abb-5">
+<figure class="abb-4">
 <div class="fig-kopf">
-<figcaption>ABB. 5 · KOSTEN DES NÄCHSTEN SCHRITTS</figcaption>
+<figcaption>ABB. 4 · KOSTEN DES NÄCHSTEN SCHRITTS</figcaption>
 <span class="fig-tag">SCHEMATISCH</span>
 </div>
 <svg class="diagramm" viewBox="0 0 670 240" role="img" aria-label="Schematisches Diagramm: mit jedem gelungenen Schritt sinken die Kosten des nächsten Schritts">
@@ -968,9 +951,9 @@ body { margin: 0; background: #050506; }
 <div class="box-label">WAS EIN ZWISCHENZIEL IST</div>
 <p class="klein">Eine andere Person, Stelle oder ein anderes System als das Endziel, das etwas besitzt, weiß oder erzeugt, das einen späteren Angriffsschritt erleichtert: Information, Kontext, Bestätigung, ein bereits geprüftes Merkmal, eine begrenzte Berechtigung oder eine legitime Beziehung.</p>
 </aside>
-<figure class="abb-6" id="abb-6">
+<figure class="abb-5" id="abb-5">
 <div class="fig-kopf">
-<figcaption>ABB. 6 · WAS EIN ZWISCHENZIEL BEITRÄGT</figcaption>
+<figcaption>ABB. 5 · WAS EIN ZWISCHENZIEL BEITRÄGT</figcaption>
 <span class="fig-tag">SCHEMATISCH</span>
 </div>
 
@@ -1002,9 +985,9 @@ body { margin: 0; background: #050506; }
 
 </figure>
 <p>Bei einem direkten Angriff fällt die Vorbereitung für jedes Ziel neu an. Bei einem gemeinsam genutzten Zwischenziel kann ein Teil dieser Arbeit einmal anfallen und danach mehrere mögliche Endziele betreffen. Genau darin liegt der Konzentrationseffekt: Ein Anbieter, der für sehr viele Nutzer Postfachzugriff hält, bündelt deren Berechtigungen - ein einziger erfolgreicher Angriff senkt dann den Stückpreis je Opfer erheblich. Das Postfach des Einzelnen wird nicht über ihn selbst angegriffen, sondern über einen Dienst, den er vor zwei Jahren einmal verbunden und danach vergessen hat.</p>
-<figure class="abb-7">
+<figure class="abb-6">
 <div class="fig-kopf">
-<figcaption>ABB. 7 · WARUM EIN GEMEINSAMER PUNKT DEN STÜCKPREIS SENKT</figcaption>
+<figcaption>ABB. 6 · WARUM EIN GEMEINSAMER PUNKT DEN STÜCKPREIS SENKT</figcaption>
 <span class="fig-tag">SCHEMATISCH</span>
 </div>
 
@@ -1041,7 +1024,7 @@ body { margin: 0; background: #050506; }
 </svg>
 <div class="fig-text">Oben fällt die Vorbereitung für jedes Ziel neu an. Unten trägt ein einziger erfolgreicher Angriff auf eine gemeinsam genutzte Stelle zu mehreren Konten bei.</div>
 
-<div class="fig-methode">Schematisch, ohne Zahlenwerte. Drei Konten stehen für beliebig viele. Gestrichelt wie in <a href="#abb-6">ABB. 6</a>: Die Stelle öffnet die Konten nicht automatisch - sie senkt den Preis des nächsten Schritts.</div>
+<div class="fig-methode">Schematisch, ohne Zahlenwerte. Drei Konten stehen für beliebig viele. Gestrichelt wie in <a href="#abb-5">ABB. 5</a>: Die Stelle öffnet die Konten nicht automatisch - sie senkt den Preis des nächsten Schritts.</div>
 
 </figure>
 <p>Ein solcher Baustein öffnet für sich genommen nichts. Er liefert nur, was an anderer Stelle fehlt. Der einfachste Fall davon ist eine bloße Kennung.</p>
@@ -1089,9 +1072,9 @@ body { margin: 0; background: #050506; }
 <summary><span class="beleg-art">QUELLE</span><span class="beleg-was">NIST SP 800-63A-4 zu Identitätsnachweisen</span></summary>
 <div class="box-text">NIST SP 800-63A-4 trennt konsequent zwischen Identität, Identitätsnachweis und dem Besitz eines Authentifikators. Stärkere Verfahren prüfen nicht, ob jemand bestimmte Informationen kennt, sondern ob präsentierte Nachweise echt sind und zur behaupteten Person gehören.</div>
 </details>
-<figure class="abb-8">
+<figure class="abb-7">
 <div class="fig-kopf">
-<figcaption>ABB. 8 · ALLEINIGE BEWEISKRAFT: MERKMALE, AUTHENTIFIKATOREN, IDENTITÄTSNACHWEISE</figcaption>
+<figcaption>ABB. 7 · ALLEINIGE BEWEISKRAFT: MERKMALE, AUTHENTIFIKATOREN, IDENTITÄTSNACHWEISE</figcaption>
 <span class="fig-tag">SCHEMATISCH</span>
 </div>
 <svg class="diagramm" viewBox="0 0 670 250" role="img" aria-label="Schematische Skala: wie viel ein Identitätsmerkmal allein noch trägt">
