@@ -744,7 +744,7 @@ body { margin: 0; background: #050506; }
 </details>
 <h3>Wie viele Wege es tatsächlich gibt</h3>
 <p>Mehrere Wege in dasselbe Konto ändern auch, wonach überhaupt zu fragen ist. Nicht: Wie stark ist das Anmeldeverfahren? Sondern: Welche Wege führen in dieses Konto, und was kostet der günstigste davon? Es sind mehr Wege, als die meisten im Kopf haben.</p>
-<figure class="abb-3">
+<figure class="abb-3" id="abb-3">
 <div class="fig-kopf">
 <figcaption>ABB. 3 &#183; MEHRERE ZUGANGSPFADE</figcaption>
 <span class="fig-tag">SCHEMATISCH</span>
@@ -878,6 +878,11 @@ body { margin: 0; background: #050506; }
 
         <p>Für die Rechnung heißt das: Ein Weg kann billig sein und trotzdem weit führen. Was ein Zugriff einbringt, entscheidet sich nicht daran, wie schwer er zu nehmen war, sondern daran, wo er endet.</p>
 <p>Erteilt wird ein delegierter Zugriff, damit eine App ihre Arbeit tun kann: Termine eintragen, Rechnungen sortieren, Post durchsuchen. Dafür muss sie das Postfach sehen. Und was sie sieht, sieht auch, wer sie übernimmt. Vier Eigenschaften machen einen solchen Zugriff deshalb zu einem eigenen Risiko. Er läuft an der Anmeldung vorbei, ein Passkey oder ein zweiter Faktor greift dort also nicht. Das Token liegt beim anderen Dienst, dessen Sicherheit damit zur eigenen wird. Der erteilte Umfang ist meist größer als nötig - lesen und schreiben statt einer einzelnen Nachricht. Und er endet nicht von selbst: Eine Sitzung läuft ab, eine Berechtigung gilt, bis jemand sie widerruft.</p>
+<p>Ein dokumentierter Fall zeigt, wie unscheinbar das aussieht. Bei Signal lässt sich ein zweites Gerät über einen QR-Code mit dem Konto verbinden - ein mitberechtigter Zugang, wie ihn <a href="#abb-3">ABB. 3</a> nennt. Wer jemanden dazu bringt, den falschen Code zu scannen, hängt sein eigenes Gerät an dieses Konto und liest ab da mit. Ein Passwort wird dabei nicht gebraucht, kein zweiter Faktor überwunden und keine Schadsoftware installiert.</p>
+<details class="beleg">
+<summary><span class="beleg-art">DOKUMENTIERTER FALL</span><span class="beleg-was">Signal, verknüpfte Geräte 2025</span></summary>
+<div class="box-text">ENISA hält im Threat Landscape 2025 fest, übersetzt: „Sandworm wurde außerdem dabei beobachtet, die Funktion ‚verknüpfte Geräte‘ zu missbrauchen, indem bösartige QR-Codes erstellt wurden, um das Konto eines Opfers mit einer vom Angreifer kontrollierten Signal-Instanz zu verknüpfen.“ Derselbe Abschnitt nennt WhatsApp, Signal und Telegram als Ziele und beschreibt, dass auf dem Gefechtsfeld eingesammelte Geräte mit eigener Infrastruktur verbunden wurden. Es handelt sich um einen staatsnahen Akteur in einem Kriegsgebiet; der Bericht sagt nichts darüber, wie verbreitet dieses Vorgehen sonst ist. Die Funktion selbst ist keine Schwachstelle, sondern vorgesehen.</div>
+</details>
 <p>Daraus folgt nicht, nichts mehr anzubinden. Es folgt, dass ein delegierter Zugriff dieselbe Aufmerksamkeit verdient wie ein Passwort. Er sollte befristet sein, überprüfbar und widerrufbar.</p>
 <h3>Was davon in eigener Hand liegt</h3>
 <p>Über die Beschaffenheit der aufgezählten Wege entscheidet allerdings meist nicht der Kontoinhaber, sondern der Anbieter: wie lange eine Sitzung gilt, ob ein Passwortwechsel sie beendet, wie die Wiederherstellung aufgebaut ist, was ein Supportmitarbeiter im Kundenkonto sehen und zurücksetzen darf. In der eigenen Hand liegen drei Dinge: welches Anmeldeverfahren man wählt, soweit der Anbieter eine Wahl lässt, ob man einen einmal erteilten Zugriff wieder entzieht, und was auf dem eigenen Gerät läuft.</p>
@@ -911,7 +916,7 @@ body { margin: 0; background: #050506; }
 <p>Die beiden Fälle zeigen dieselbe Rechnung von zwei Seiten, an zwei verschiedenen Wegen: Der eine funktionierte, weil eine Kontrolle fehlte, der andere endete, weil eine gebundene Kontrolle griff.</p>
 <p>Das ist ausdrücklich keine Entwarnung. Mailkonto und Telefonnummer bleiben besonders wertvoll, weil viele Dienste sie gleichzeitig für Kommunikation, Wiederherstellung und Bestätigung verwenden. Wird einer von beiden kompromittiert, ist der Schaden groß, breit und schwer zurückzuholen.</p>
 <p>Der Domino fällt nicht von selbst. Was passiert, ist banaler: Jeder gelungene Schritt macht den nächsten billiger. Bereits bestätigte Angaben, bestehende Sitzungen und delegierte Zugriffe lassen sich wiederverwenden. Wer eine Rechnungsadresse aus einem Postfach hat, muss sie beim nächsten Anbieter nicht mehr erraten. Sinkt der Aufwand je Versuch, werden weitere Versuche wirtschaftlich vertretbar - und damit steigt die Chance, irgendwo auf einen schwächeren Prozess zu treffen.</p>
-<figure class="abb-4">
+<figure class="abb-4" id="abb-4">
 <div class="fig-kopf">
 <figcaption>ABB. 4 · KOSTEN DES NÄCHSTEN SCHRITTS</figcaption>
 <span class="fig-tag">SCHEMATISCH</span>
@@ -1028,7 +1033,7 @@ body { margin: 0; background: #050506; }
 
 </figure>
 <p>Bei einem direkten Angriff fällt die Vorbereitung für jedes Ziel neu an. Bei einem gemeinsam genutzten Zwischenziel kann ein Teil dieser Arbeit einmal anfallen und danach mehrere mögliche Endziele betreffen. Genau darin liegt der Konzentrationseffekt: Ein Anbieter, der für sehr viele Nutzer Postfachzugriff hält, bündelt deren Berechtigungen - ein einziger erfolgreicher Angriff senkt dann den Stückpreis je Opfer erheblich. Das Postfach des Einzelnen wird nicht über ihn selbst angegriffen, sondern über einen Dienst, den er vor zwei Jahren einmal verbunden und danach vergessen hat.</p>
-<figure class="abb-6">
+<figure class="abb-6" id="abb-6">
 <div class="fig-kopf">
 <figcaption>ABB. 6 · WARUM EIN GEMEINSAMER PUNKT DEN STÜCKPREIS SENKT</figcaption>
 <span class="fig-tag">SCHEMATISCH</span>
@@ -1115,7 +1120,7 @@ body { margin: 0; background: #050506; }
 <summary><span class="beleg-art">QUELLE</span><span class="beleg-was">NIST SP 800-63A-4 zu Identitätsnachweisen</span></summary>
 <div class="box-text">NIST SP 800-63A-4 trennt konsequent zwischen Identität, Identitätsnachweis und dem Besitz eines Authentifikators. Stärkere Verfahren prüfen nicht, ob jemand bestimmte Informationen kennt, sondern ob präsentierte Nachweise echt sind und zur behaupteten Person gehören.</div>
 </details>
-<figure class="abb-7">
+<figure class="abb-7" id="abb-7">
 <div class="fig-kopf">
 <figcaption>ABB. 7 · ALLEINIGE BEWEISKRAFT: MERKMALE, AUTHENTIFIKATOREN, IDENTITÄTSNACHWEISE</figcaption>
 <span class="fig-tag">SCHEMATISCH</span>
