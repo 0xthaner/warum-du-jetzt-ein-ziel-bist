@@ -779,13 +779,13 @@ body { margin: 0; background: #050506; }
 <rect x="18" y="322" width="634" height="82" fill="#191627" stroke="#9184d9" stroke-width="1.4"></rect>
 <rect x="18" y="322" width="3" height="82" fill="#9184d9"></rect>
 <text x="34" y="346" fill="#f3f5fe" font-size="13">Externe Abhängigkeiten</text>
-<text x="34" y="366" fill="#cfd3e5" font-size="10.5">Kaum ein Anbieter baut seinen Dienst ganz aus eigener Software. Er stützt sich auf fremde Komponenten</text>
-<text x="34" y="379" fill="#cfd3e5" font-size="10.5">und Dienstleister; deren Fehler öffnen kein Konto, können aber die Sicherheit des Ganzen beeinflussen.</text>
-<text x="34" y="392" fill="#cfd3e5" font-size="10.5">Dasselbe Muster liegt auf dem Gerät des Nutzers - dort allerdings mit Zugriff auf Sitzungen und Token.</text>
+<text x="34" y="366" fill="#cfd3e5" font-size="10.5">Kaum eine Software ist ganz selbst gebaut - weder beim Anbieter noch auf dem eigenen Rechner. Beide</text>
+<text x="34" y="379" fill="#cfd3e5" font-size="10.5">ziehen fremde Bausteine nach. Ein Fehler darin öffnet kein Konto. Ein absichtlich veränderter Baustein</text>
+<text x="34" y="392" fill="#cfd3e5" font-size="10.5">führt fremden Code aus - und auf einem Gerät liegen Sitzungen und Zugangsdaten.</text>
 <path d="M209 322 V300" stroke="#9184d9" stroke-width="1.4" stroke-dasharray="4 4"></path>
 </g>
 </svg>
-<div class="fig-text">Stärkere Anmeldung kann andere Zugangspfade relativ attraktiver machen. Der abgesetzte Kasten zeigt keinen zusätzlichen Kontozugang beim Anbieter, sondern technische Abhängigkeiten, die einzelne Sicherheitsprozesse mittragen.</div>
+<div class="fig-text">Stärkere Anmeldung kann andere Zugangspfade relativ attraktiver machen. Der abgesetzte Kasten zeigt keinen Weg, der als Zugang gebaut wäre, sondern fremde Bausteine, die mitlaufen - beim Anbieter wie auf dem eigenen Rechner.</div>
 
 <div class="fig-methode">Schematisch. Nicht jeder Dienst hat alle diese Pfade, und sie sind unterschiedlich gut gesichert. Die Reichweite ist ebenfalls verschieden: dasselbe Konto, nicht dieselben Rechte. Dargestellt sind die Wege selbst, nicht die Herkunft dessen, der sie benutzt: Wer über einen angegriffenen Anbieter oder Dienstleister hereinkommt, erscheint hier nicht als eigener Pfad - er benutzt die gezeichneten.</div>
 
@@ -797,7 +797,7 @@ body { margin: 0; background: #050506; }
 <tr><th scope="row">Delegierter Zugriff</th><td>Wer einem Mailprogramm, einem Kalenderdienst oder einem Assistenten Zugriff erteilt, vergibt eine längerlebige Berechtigung, typischerweise über ein Token.</td></tr>
 <tr><th scope="row">Mitberechtigter Zugang</th><td>Familie, Team, Vollmacht: legitime Rechte am Konto, mit eigener Reichweite.</td></tr>
 <tr><th scope="row">Anbieter- und Supportzugriff</th><td>Verwaltungswerkzeuge des Betreibers, bedient von Menschen. Ein Zugang mit solchen Rechten ist selbst ein Ziel: Wird er übernommen oder sein Inhaber getäuscht, bleibt der Vorgang von einem regulären Supportfall nicht zu unterscheiden. Notwendig, und außerhalb der Kontrolle des Nutzers.</td></tr>
-<tr><th scope="row">Externe Abhängigkeiten<br><span class="klein">kein Kontozugang</span></th><td>Systeme und Dienstleister, auf die ein Anbieter selbst vertraut. Sie öffnen kein Konto, können aber einen bestehenden Pfad beeinflussen.</td></tr>
+<tr><th scope="row">Externe Abhängigkeiten<br><span class="klein">nicht als Zugang gebaut</span></th><td>Fremde Bausteine, auf die sich ein Anbieter oder ein Nutzer stützt. Ein Fehler darin öffnet kein Konto; ein absichtlich veränderter Baustein führt fremden Code aus und kommt an das, was auf dem System liegt.</td></tr>
 </tbody>
 </table>
 <details class="beleg">
