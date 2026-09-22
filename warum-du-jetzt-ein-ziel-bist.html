@@ -1220,7 +1220,11 @@ body { margin: 0; background: #050506; }
    Beschriftung auf einem Telefon rund fuenf Pixel gross; untereinander
    bekommt jede Tafel die volle Breite. Die Wachstumsfaktoren sind die
    viewBox-Breiten - dadurch sind beide Tafeln nebeneinander gleich hoch. */
-.essay .abb-paar { display: flex; gap: 14px; align-items: flex-start; }
+/* align-items MUSS stretch sein. Mit flex-start bekommt jede Tafel in der
+   gestapelten Anordnung nur ihre Inhaltsbreite - und ein SVG ohne
+   width-Angabe faellt dabei auf die Vorgabe von 300px zurueck. Die Tafeln
+   waren deshalb auf jedem Telefon 302px breit, egal wie breit der Platz war. */
+.essay .abb-paar { display: flex; gap: 14px; align-items: stretch; }
 .essay .abb-tafel { min-width: 0; }
 .essay .abb-tafel-links, .essay .abb-tafel-rechts { flex: 1 1 0; }
 /* Beide Tafeln haben dieselbe Zeichenflaeche (306 breit). Nur so ist die
@@ -1233,6 +1237,17 @@ body { margin: 0; background: #050506; }
      brauchte es dort nicht mehr. Die uebrigen Abbildungen sind einteilig
      und schrumpfen weiterhin, dort bleibt er. */
   .essay .abb-1 .fig-lupe { display: none; }
+
+  /* Die Tafeln brechen aus dem Seitenrand aus und laufen von Kante zu
+     Kante: auf einem Telefon sind das rund zehn Prozent mehr Zeichenbreite.
+     Ueberschrift, Legende und Bildtext bleiben eingerueckt, sonst klebte
+     der Text am Bildschirmrand. Seitliche Rahmen und Rundungen fallen weg,
+     damit es nach Absicht aussieht und nicht nach einem verrutschten
+     Kasten. Der Wert 18px ist der Seitenrand aus .essay. */
+  .essay .abb-1 .abb-paar { margin-left: -18px; margin-right: -18px; }
+  .essay .abb-1 .abb-tafel .diagramm {
+    border-left: 0; border-right: 0; border-radius: 0;
+  }
 }
 
 /* Legende als Liste statt als SVG-Text: so bricht sie auf schmalen
