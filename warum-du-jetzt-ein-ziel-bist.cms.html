@@ -616,7 +616,7 @@ body { margin: 0; background: #050506; }
 <text x="24" y="250" fill="#b5abfc" font-size="9.5">Kein Nutzenbalken des Haushalts reicht über den Aufwand.</text>
 </g>
 </svg></div>
-<div class="abb-tafel abb-tafel-rechts"><svg class="diagramm" viewBox="0 0 252 262" role="img" aria-label="Derselbe Haushalt spaeter. Das Kapital waechst ueber den gesunkenen Aufwand hinaus, Zugang und Risiko bleiben unveraendert. Daneben zwei Begruendungen: warum das Kapital steigt und warum der Aufwand faellt.">
+<div class="abb-tafel abb-tafel-rechts"><svg class="diagramm" viewBox="0 0 306 262" role="img" aria-label="Derselbe Haushalt spaeter. Das Kapital waechst ueber den gesunkenen Aufwand hinaus, Zugang und Risiko bleiben unveraendert. Daneben zwei Begruendungen: warum das Kapital steigt und warum der Aufwand faellt.">
 <g font-family="Satoshi, Inter, sans-serif">
 <text x="24" y="18" fill="#75798c" font-size="10">was sich verschiebt</text>
 <text x="24" y="48" fill="#b5abfc" font-size="9.5">Warum das Kapital steigt</text>
@@ -1221,9 +1221,18 @@ body { margin: 0; background: #050506; }
    viewBox-Breiten - dadurch sind beide Tafeln nebeneinander gleich hoch. */
 .essay .abb-paar { display: flex; gap: 14px; align-items: flex-start; }
 .essay .abb-tafel { min-width: 0; }
-.essay .abb-tafel-links { flex: 306 1 0; }
-.essay .abb-tafel-rechts { flex: 252 1 0; }
-@media (max-width: 720px) { .essay .abb-paar { flex-direction: column; gap: 12px; } }
+.essay .abb-tafel-links, .essay .abb-tafel-rechts { flex: 1 1 0; }
+/* Beide Tafeln haben dieselbe Zeichenflaeche (306 breit). Nur so ist die
+   Beschriftung in beiden gleich gross - nebeneinander wie untereinander.
+   Mit verschieden breiten viewBoxen wurde die rechte Tafel gestapelt um
+   ein Fuenftel groesser gezeichnet als die linke. */
+@media (max-width: 720px) {
+  .essay .abb-paar { flex-direction: column; gap: 12px; }
+  /* Gestapelt ist ABB. 1 bereits in voller Breite lesbar - der Knopf
+     brauchte es dort nicht mehr. Die uebrigen Abbildungen sind einteilig
+     und schrumpfen weiterhin, dort bleibt er. */
+  .essay .abb-1 .fig-lupe { display: none; }
+}
 
 /* Legende als Liste statt als SVG-Text: so bricht sie auf schmalen
    Geraeten um, statt mitzuschrumpfen. */
@@ -1285,8 +1294,7 @@ dialog.fig-gross::backdrop { background: rgba(5, 5, 6, 0.9); }
    werden - auf einem Telefon ist das der eigentliche Gewinn. */
 .fig-gross-buehne > svg { width: clamp(860px, 100%, 1500px); height: auto; }
 .fig-gross-buehne > .abb-paar { display: flex; gap: 14px; width: clamp(860px, 100%, 1500px); }
-.fig-gross-buehne .abb-tafel-links { flex: 306 1 0; }
-.fig-gross-buehne .abb-tafel-rechts { flex: 252 1 0; }
+.fig-gross-buehne .abb-tafel-links, .fig-gross-buehne .abb-tafel-rechts { flex: 1 1 0; }
 .fig-gross-buehne .abb-paar svg { width: 100%; height: auto; }
 .fig-gross-buehne img { max-width: 100%; max-height: 100%; width: auto; height: auto; }
 </style>
