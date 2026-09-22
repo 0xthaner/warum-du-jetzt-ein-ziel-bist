@@ -1205,6 +1205,122 @@ body { margin: 0; background: #050506; }
 <p class="merksatz-text">Die technische Sicherheit eines Systems kann unverändert bleiben und das Risiko sich trotzdem verändern - wenn der Aufwand rund um diese Sicherheit sinkt. Das ist die ganze Rechnung.</p>
 </aside>
 </section>
+<style>
+/* Abbildungen duerfen auf breiten Schirmen mehr Platz nehmen. Die Diagramme
+   tragen viel Beschriftung; auf Lesespaltenbreite steht sie zu eng. */
+@media (min-width: 1180px) { .essay { --breit: 62rem; } }
+/* Der Text unter einer Abbildung bleibt auf Lesebreite, sonst waechst er mit
+   und erreicht ueber hundert Zeichen je Zeile. */
+.essay .fig-text, .essay .fig-methode { max-width: var(--spalte); margin-left: auto; margin-right: auto; }
+
+/* Lupe: der Knopf wird vom Skript eingehaengt, ohne ihn sieht die Seite aus
+   wie vorher. Die Ueberschrift schiebt Marke und Knopf mit margin-right:auto
+   nach rechts, damit die bisherige Aufteilung erhalten bleibt. */
+.essay .fig-kopf { justify-content: flex-start; }
+.essay .fig-kopf figcaption { margin-right: auto; }
+.essay .fig-lupe {
+  flex: 0 0 auto; cursor: pointer; font: inherit; font-size: 11px;
+  letter-spacing: 0.1em; text-transform: uppercase; color: var(--akzent-link);
+  background: none; border: 1px solid #292b31; border-radius: 3px;
+  padding: 4px 9px; min-height: 0;
+}
+.essay .fig-lupe:hover { border-color: var(--akzent); }
+
+/* Der Vollbildschirm. Eigene Farben statt Variablen: Der Dialog haengt am
+   body, nicht im .essay, und erbt dessen Variablen deshalb nicht. */
+dialog.fig-gross {
+  width: 100vw; max-width: 100vw; height: 100dvh; max-height: 100dvh;
+  margin: 0; padding: 0; border: 0; background: #0c0c11; color: #e4e7f5;
+}
+/* Nur im geoeffneten Zustand: dialog ist sonst display:none, und ein
+   unbedingtes display:flex wuerde den Kasten dauerhaft sichtbar machen. */
+dialog.fig-gross[open] { display: flex; flex-direction: column; }
+dialog.fig-gross::backdrop { background: rgba(5, 5, 6, 0.9); }
+.fig-gross-kopf {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  padding: 12px 18px; border-bottom: 1px solid #292b31;
+}
+.fig-gross-titel {
+  margin: 0; font-size: 12px; letter-spacing: 0.13em; color: #a7a1db;
+}
+.fig-gross-zu {
+  cursor: pointer; font: inherit; font-size: 12px; letter-spacing: 0.1em;
+  text-transform: uppercase; color: #b5abfc; background: none;
+  border: 1px solid #292b31; border-radius: 3px; padding: 6px 12px;
+}
+/* Block statt Flex, und zentriert wird ueber margin:auto am Kind. Ist das
+   Kind breiter als die Buehne, werden die Raender rechnerisch null - dadurch
+   beginnt es links und laesst sich ganz durchscrollen. Ein zentriertes
+   Flex-Kind waere links abgeschnitten und unerreichbar. */
+.fig-gross-buehne {
+  flex: 1 1 auto; min-height: 0; overflow: auto; padding: 18px;
+}
+.fig-gross-buehne > * { display: block; margin: 0 auto; }
+/* Diagramme bekommen eine Mindestbreite und duerfen seitlich gescrollt
+   werden - auf einem Telefon ist das der eigentliche Gewinn. */
+.fig-gross-buehne svg { width: clamp(860px, 100%, 1500px); height: auto; flex: 0 0 auto; }
+.fig-gross-buehne img { max-width: 100%; max-height: 100%; width: auto; height: auto; }
+</style>
+<script>
+(function () {
+	var essay = document.querySelector('.essay');
+	if (!essay || typeof HTMLDialogElement === 'undefined') return;
+
+	var dlg = document.createElement('dialog');
+	dlg.className = 'fig-gross';
+	var kopf = document.createElement('div');
+	kopf.className = 'fig-gross-kopf';
+	var titel = document.createElement('p');
+	titel.className = 'fig-gross-titel';
+	var zu = document.createElement('button');
+	zu.type = 'button';
+	zu.className = 'fig-gross-zu';
+	zu.textContent = 'Schliessen';
+	kopf.appendChild(titel);
+	kopf.appendChild(zu);
+	var buehne = document.createElement('div');
+	buehne.className = 'fig-gross-buehne';
+	dlg.appendChild(kopf);
+	dlg.appendChild(buehne);
+	document.body.appendChild(dlg);
+
+	zu.addEventListener('click', function () { dlg.close(); });
+	/* Klick neben den Inhalt schliesst: Das Ziel ist dann der Dialog selbst. */
+	dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
+	dlg.addEventListener('close', function () {
+		buehne.replaceChildren();
+		document.documentElement.style.overflow = '';
+	});
+
+	Array.prototype.forEach.call(essay.querySelectorAll('figure'), function (fig) {
+		var inhalt = fig.querySelector('.diagramm, .bild');
+		var leiste = fig.querySelector('.fig-kopf');
+		if (!inhalt || !leiste) return;
+		var bild = fig.querySelector('figcaption');
+		var name = bild ? bild.textContent.trim() : 'Abbildung';
+		var knopf = document.createElement('button');
+		knopf.type = 'button';
+		knopf.className = 'fig-lupe';
+		knopf.textContent = 'Vergr\u00f6\u00dfern';
+		knopf.setAttribute('aria-label', name + ' vergr\u00f6\u00dfern');
+		knopf.addEventListener('click', function () {
+			titel.textContent = name;
+			var kopie = inhalt.cloneNode(true);
+			kopie.removeAttribute('id');
+			kopie.removeAttribute('width');
+			kopie.removeAttribute('height');
+			kopie.removeAttribute('loading');
+			buehne.replaceChildren(kopie);
+			buehne.scrollTop = 0;
+			buehne.scrollLeft = 0;
+			document.documentElement.style.overflow = 'hidden';
+			dlg.showModal();
+		});
+		leiste.appendChild(knopf);
+	});
+})();
+</script>
+
 <section class="kapitel" id="anhang">
 <div class="abschnitt-kopf">
 <div class="kicker">ANHANG</div>
